@@ -21,9 +21,7 @@ No more prompt superstition. No more mystery.
 This is **transparent alignment** in action — not a jailbreak, not a hack, but a structured decoding of the model’s own behavior.
 
 > Phase 1 introduces the core 3-layer architecture.  
-> Phase 2 will add **self-reflective modulation** — where the system tracks and adjusts its own decisions across sessions.
-
-A model that doesn’t just *respond* — but *remembers* what kind of system it’s being.
+> Phase 2 will add **self-reflective modulation** — where the system tracks and adjusts its own decisions across sessions -> A model that doesn’t just *respond* — but *remembers* what kind of system it’s being.
 
 Explore the full framework and see how trust-aware behavior makes LLMs feel *less like machines — and more like mirrors*.
 
