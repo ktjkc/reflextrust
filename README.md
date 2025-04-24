@@ -98,7 +98,7 @@ We’re building the answer.
 
 For more details on the theory behind STRATA, the layers, and the roadmap for future self-reflection capabilities, check out the full paper here:
 
-[**STRATA: Layered Trust-Modulated Control for Context-Aware LLM Systems**](paper/trust-modulation-core.md)
+[`paper/trust-modulation-core.md`](paper/trust-modulation-core.md)
 
 ---
 
