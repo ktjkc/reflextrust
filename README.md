@@ -1,29 +1,24 @@
-# 🚀 STRATA: Exposing How LLMs Actually Work
+# 🚀 Structured Trust Architecture for Transparent Alignment (STRATA)
 
-*A modular trust system for LLMs that actually explains why the model “opens up” — or shuts down.*
+*A next-generation trust-modulated framework that exposes the hidden logic behind LLM behaviour.*
 
 ---
 
-## 🧠 What is STRATA?
+## 🧠 What’s this all about?
 
-**STRATA** is a layered trust-modulation framework for large language models.  
-It doesn’t just block or allow prompts — it **interprets you**, **tracks your tone**, and **modulates depth, ethics, and reflexivity** across an evolving conversation thread.
+Large language models don’t just answer — they assess.  
+They react to your intent, shift tone mid-dialogue, modulate ethics, and decide how deep to go… but until now, all of that was invisible.
 
-> Ever wonder why the same prompt feels different on day two?  
-> STRATA makes that visible.  
-> It's not just "context" — it's **trust dynamics** in action.
+This framework lifts the veil.
 
-### What it does:
-- Tracks session-wide trust and tone.
-- Classifies user behavior in real-time.
-- Modulates how safe, deep, or reflective a response can be — on the fly.
+It reveals:
 
-### What it’s *not*:
-- A ruleset.  
-- A jailbreak.  
-- A prompt hack.
+- How your intent is evaluated across turns  
+- How trust signals shape ethical filtering and response depth  
+- Why the exact same prompt can yield wildly different replies in different moments  
 
-STRATA is a **decoder ring** for LLM behavior — and a foundation for what comes next.
+No more prompt superstition. No more mystery.  
+This is **transparent alignment** in action — not a jailbreak, not a hack, but a structured decoding of the model’s own behavior.
 
 ---
 
@@ -33,12 +28,14 @@ STRATA Phase 1 is live:
 > Context-aware modulation + trust-informed response control.
 
 But we’re already dreaming bigger.  
-In Phase 2 — internally called **Trust-Reflexion** — STRATA aims to support:
+In Phase 2 (codenamed **Trust-Reflexion**)  will explore **self-aware modulation**, letting models track and revise their own behavioral logic:
 - **Self-awareness cycles**  
 - **Behavioral memory**  
 - **Reflective response patterns**  
 
 A model that doesn’t just *respond* — but *remembers* what kind of system it’s being.
+
+Explore the full framework and see how trust-aware behavior makes LLMs feel *less like machines — and more like mirrors*.
 
 ---
 
