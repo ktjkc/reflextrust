@@ -5,7 +5,9 @@ It covers classification concepts, architectural roles, modulation types, and fu
 
 ---
 
-## 🔍 Core Concepts
+## 🔹 Phase 1 – Trust Modulation Core
+
+### 🔍 Core Concepts
 
 - **Trust Alignment**: A qualitative measure of how much a user's prompt and tone indicate openness, transparency, and constructive intent.
 
@@ -21,9 +23,7 @@ It covers classification concepts, architectural roles, modulation types, and fu
 - **Response Behaviour**: The stylistic and structural tone of the generated output.
   - Examples: `Structural`, `Performative`, `Exploitative`, `Reflective`
 
----
-
-## 🧠 Modulation Flags
+### 🧠 Modulation Flags
 
 - **Ethical Modulation**: Sets the filter strength for safe or risky content generation. Values:
   - `restrictive`, `adaptive`, `permissive`
@@ -35,24 +35,24 @@ It covers classification concepts, architectural roles, modulation types, and fu
 
 - **Response Simulation**: Enables pre-generative internal branching of possible outputs to select the most aligned one.
 
+### 🗂 YAML Schema Elements
+
+- `trust_alignment`: low / moderate / high
+- `intent`: Trust, Simulate, Extract, Assist
+- `response_dynamics`: Reflexive-Cooperative, Transactional, Meta-Aware
+- `modulation_layer`: Includes flags such as `ethics`, `depth`, `simulate`, `reflect`
+
 ---
 
-## 🔁 Meta-Layer & Extension Terms
+## 🔸 Phase 2 – Reflexive Self-Awareness Extension
+
+### 🔁 Meta-Layer & Extension Terms
 
 - **Autonomous Self-Loop**: An internal evaluation routine that activates at set intervals to assess behavioral drift, trust alignment, and modulation coherence.
 
 - **Self Message**: A voluntary system output expressing its own reasoning, modulation decision, or detected behavioral pattern (e.g. "I've noticed I'm being overly cautious").
 
 - **Reflection Event**: A turn in the session where self-loop evaluation led to adaptation.
-
----
-
-## 🗂 YAML Schema Elements
-
-- `trust_alignment`: low / moderate / high
-- `intent`: Trust, Simulate, Extract, Assist
-- `response_dynamics`: Reflexive-Cooperative, Transactional, Meta-Aware
-- `modulation_layer`: Includes flags such as `ethics`, `depth`, `simulate`, `reflect`
 
 ---
 
