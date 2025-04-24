@@ -90,9 +90,24 @@ STRATA is for anyone who’s ever asked:
 > “Can we *measure* trust, not just guess it?”
 
 We’re building the answer.
+
+
+---
+
+## 📖 Full Write-up
+
+For more details on the theory behind STRATA, the layers, and the roadmap for future self-reflection capabilities, check out the full paper here:
+
+[**STRATA: Layered Trust-Modulated Control for Context-Aware LLM Systems**](paper/trust-modulation-core.md)
+
+---
+
+
+
 ## 📖 Glossary
 
 Key concepts, trust classifications, and modulation flags are defined in [`docs/glossary.md`](docs/glossary.md).
+
 ---
 
 ## 🤝 Collaborate With Us
