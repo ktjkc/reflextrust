@@ -17,6 +17,24 @@ Together, these layers enable adaptive, trust-aligned behavior in real-time inte
 
 ---
 
+### **PRE. Motivation: Bridging the Gap Between Behavior and Structure**
+
+Despite advances in alignment and safety research, a critical gap remains in our understanding of how LLMs behave over time:  
+there is no established framework that explains **how trust, context, and internal modulation interact to shape a model's output** across multi-turn conversations.
+
+STRATA (Structured Trust Architecture for Transparent Alignment) closes this gap by offering a **layered, interpretable system** that reveals:
+
+- Why the same prompt can yield vastly different responses across sessions.
+- How user behavior influences ethical filtering, structural depth, and self-reflective features.
+- What internal mechanisms lead a model to open up, remain cautious, or modulate its tone.
+
+Rather than treating inconsistencies as limitations, STRATA frames them as **systemic behavior** governed by **trust-sensitive decision-making**.  
+It transforms the black-box nature of LLMs into a transparent, modulated dialogue system — one that can be studied, guided, and explained.
+
+---
+
+
+
 ### **1. Introduction**
 
 The output of an LLM is never isolated from its context. User interactions span multiple turns and often implicitly shape the behavior of the system. However, little formal work has been done to classify the internal layers of engagement modulation that determine how responses evolve across a session. 
@@ -238,7 +256,6 @@ The **STRATA** approach doesn’t just generate answers—it creates meaningful,
 - **Explainable Trust Dashboards**: Developing **visualizations** that offer insights into the **evolution of trust** and its impact on system responses. This would make trust dynamics more understandable for users.
 - **RLHF Fine-Tuning**: Incorporating **Reinforcement Learning from Human Feedback (RLHF)** to fine-tune **STRATA**’s responses based on personalized trust calibration and user feedback, allowing it to adapt more effectively over time.
 
----
 By integrating these improvements, **STRATA** can continue to evolve, offering even more personalized and ethically aligned interactions with users.
 
 ---

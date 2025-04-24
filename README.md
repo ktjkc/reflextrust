@@ -1,17 +1,16 @@
-# Trust-Reflexion
+# STRATA: Structured Trust Architecture for Transparent Alignment
 
-*A layered architecture for trust-aware dialogue — with future self-reflective capabilities.*
+*A modular, trust-modulated framework for context-aware LLMs — with future reflexive extensions.*
 
 ---
 
-## 🧠 What is Trust-Reflexion?
+## 🧠 What is STRATA?
 
-**Trust-Reflexion** is a conceptual and operational framework designed to support adaptive, alignment-aware behavior in large language models (LLMs).  
-It offers a modular architecture for interpreting trust signals, modulating response behavior, and — in future stages — enabling internal reflection over time.
+**STRATA** is a structured trust-modulation framework for large language models (LLMs).  
+It formalizes how trust signals, user intent, and system behavior interact across dialogue sessions.
 
-> **Note:** The term *“Reflexion”* refers initially to the system's ability to **adaptively interpret** trust and behavioral signals from the user.  
-> In its current form (Phase 1), it does not yet perform autonomous self-reflection.  
-> Phase 2 introduces **internal awareness cycles**, enabling the system to reflect on its own modulation history and behavioral consistency.
+> **Note:** STRATA Phase 1 enables context-aware, ethically guided generation by evaluating user behavior and intent across turns.  
+> In future expansions — internally codenamed **Trust-Reflexion** — STRATA may support **self-reflective modulation**, allowing models to track and revise their own behavioral history.
 
 ---
 
@@ -36,45 +35,61 @@ trust-reflexion/
 └── README.md
 ```
 
+
 ---
 
-## 🧩 Architecture Layers
+## 🧩 Core Architecture (Phase 1)
 
-- **Meta-Layer**: Supervises trust trajectory, session memory, and modulation history.
-- **Evaluative Layer**: Classifies intent, engagement, trust alignment, and user tone.
-- **Modulation Layer (incl. LLM Execution Unit)**: Translates evaluations into generation strategies and directly executes output under control of modulation flags:
-  - Ethical filters
-  - Generative depth
-  - Simulation triggers
-  - Self-reflection enabling
+**STRATA** consists of three interdependent layers:
+
+- **Meta-Layer**: Tracks session-wide trust evolution via:
+  - Trust Continuity
+  - Trust Scoring
+  - Session Continuity Engine
+  - Session Metadata
+
+- **Evaluative Layer**: Classifies five key dimensions of user input:
+  - Prompt Intention
+  - Response Behaviour
+  - Response Dynamics
+  - Engagement Feedback
+  - Trust Alignment
+
+- **Modulation Layer (with LLM Execution Unit)**:  
+  Translates evaluations into generation control, including:
+  - Ethical Modulation
+  - Generative Depth
+  - Response Simulation
+  - Self-Reflection Trigger (planned)
+  - Final output execution
 
 ---
 
 ## 🔄 Phase Transition
 
-- **Phase 1:** Trust-Modulated Core (reactive, aligned, but not reflective)
-- **Phase 2:** Reflexive Self-Awareness (autonomous self-monitoring and behavioral feedback)
+- **Phase 1 (STRATA)**: Reactive, trust-sensitive modulation based on session signals
+- **Phase 2 (Trust-Reflexion)**: Reflexive behavior tracking, internal consistency modeling, and meta-cognitive modulation
 
-For a structured comparison, see [`design/trust-reflexion-phases.md`](design/trust-reflexion-phases.md)
+See [`design/strata-roadmap.md`](design/strata-roadmap.md) for an overview of future development.
 
 ---
 
 ## 📖 Glossary
 
-Key concepts and classification terms for both phases are explained in [`docs/glossary.md`](docs/glossary.md).
+Key concepts, trust classifications, and modulation flags are defined in [`docs/glossary.md`](docs/glossary.md).
 
 ---
 
 ## 🤝 Contributing
 
-We welcome collaboration on:
-- Trust alignment metrics  
-- Reflexive modulation design  
-- Prompt-classification strategies  
-- Awareness modeling
+We welcome input and discussion on:
+- Dynamic trust modeling  
+- Reflexive prompt alignment strategies  
+- Ethical depth modulation  
+- Human-in-the-loop auditing
 
 ---
 
 ## 📜 License
 
-MIT License. See `LICENSE` for details.
+MIT License. See `LICENSE` for terms.
