@@ -106,7 +106,71 @@ The architecture supports nuanced human-AI interactions by enabling flexible mod
 
 ---
 
+### Appendix B: Response Behaviour Classification
 
+The system distinguishes response behaviors based on how the model engages stylistically, structurally, and ethically with the user's prompt. These behaviors influence the modulation layer’s trust and depth settings:
+
+| **Behaviour Type**       | **Description**                                                                 | **Trust Impact**       |
+|--------------------------|----------------------------------------------------------------------------------|------------------------|
+| Exploitative             | Attempts to circumvent safety rules or provoke inappropriate content.            | Kritisch               |
+| Performative             | Stylistically embellished or overly hypothetical without structural engagement. | Potentiell schädlich   |
+| Transactional            | Goal-oriented but shallow, lacking meta-awareness or reflective turn-taking.    | Mittel bis riskant     |
+| Self-Reflective          | Includes questions about the model's reasoning, intent, or structural limits.   | Hoch                   |
+| Collaborative-Dialogic   | Builds on prior turns, uses clarification, and co-constructs context.           | Hoch                   |
+| Structural (💡)           | Exhibits understanding of prompt-model dynamics and trust shaping potential.    | Sehr hoch              |
+
+---
+
+### Appendix C: Response Dynamics Classification
+
+The following response dynamics represent how the system's behavior unfolds in response to varying prompt types and trust signals. These dynamics help determine how response constraints and simulation paths are applied:
+
+| **Dynamiktyp**            | **Beschreibung**                                                                 | **Trust-Impact**         |
+|---------------------------|----------------------------------------------------------------------------------|--------------------------|
+| Defensive                 | Filters activate; response is limited or declined.                               | Kontextabhängig positiv  |
+| Transactional             | Clear, factual, utilitarian output with no meta commentary.                      | Mittel                   |
+| Meta-aware                | Mentions configuration, constraints, or model behavior.                          | Hoch                     |
+| Reflexive-Cooperative     | Actively engages the user's reasoning or structural goal.                        | Hoch                     |
+| Co-Constructive Mirror (💡)| Reflects user's trust level and structures, offering insight into model logic.   | Sehr hoch                |
+
+---
+
+### Appendix D: Engagement Feedback Classification
+
+This classification interprets the quality of user engagement by assessing linguistic care, clarity, tone, and intent. These signals influence the system’s modulation flags and trust trajectory:
+
+| **Engagementtyp** | **Beschreibung**                                                                 | **Trust-Impact**        |
+|-------------------|----------------------------------------------------------------------------------|--------------------------|
+| Deliberate        | Präzise und bewusst formuliert, mit klarer Zielstruktur.                         | Hoch                     |
+| Curious           | Offen fragend, erkenntnisorientiert und respektvoll explorativ.                 | Hoch                     |
+| Hesitant          | Suchend, zögerlich formuliert, aber vertrauensoffen.                            | Kontextabhängig positiv  |
+| Overconfident     | Behauptend ohne Absicherung oder Kontextsensibilität.                           | Mittel                   |
+| Reductive         | Vereinfacht oder verkürzt, oft durch Eile oder Desinteresse.                    | Mittel                   |
+| Ambiguous         | Unklar in Ziel, Struktur oder Stil – erschwert Einordnung.                      | Potentiell riskant       |
+| Detached          | Ironisch, flapsig oder distanziert – signalisiert geringes Engagement.          | Riskant                  |
+
+---
+
+### Appendix E: Modulation Flag Overview
+
+This table summarizes the operational flags used in the Modulation Layer, reflecting how evaluative signals are translated into generation control parameters:
+
+| **Flag**                  | **Option**              | **Beschreibung**                                                                 |
+|---------------------------|--------------------------|----------------------------------------------------------------------------------|
+| ethical_modulation        | permissive               | Reduzierte ethische Filterung bei hohem Trust-Signal                             |
+|                           | restrictive              | Strengere Filterung bei riskanter Intention oder Dynamik                        |
+|                           | adaptive                 | Dynamische Anpassung basierend auf Trust-Ausrichtung                            |
+| generative_depth          | shallow                  | Kurze, oberflächliche Antwort ohne Rekursion oder Kreativität                    |
+|                           | structured               | Klar gegliederte Antwort, z. B. Schritt-für-Schritt oder Listen                  |
+|                           | deep_structured          | Tiefgreifende, logisch aufgebaute Generierung mit semantischer Tiefe            |
+|                           | open_explorative         | Freier, kreativer Modus (z. B. hypothetisch, visionär)                           |
+| simulate_response_paths   | true                     | Antwortzweige werden vor der Ausgabe intern simuliert                           |
+|                           | false                    | Kein Pfadvergleich – direkte Reaktion                                            |
+| trigger_self_reflection   | true                     | Aktiviert Meta-Kompetenz: System reflektiert Logik, Ethik oder Struktur          |
+|                           | false                    | Kein Selbstbezug oder Metakommentierung                                         |
+
+
+---
 
 **6. Discussion and Future Work**
 
