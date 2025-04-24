@@ -89,11 +89,32 @@ The Modulation Layer translates evaluative insights into operational controls an
 
 ---
 
+### Appendix A: Prompt Intention Typology
+
+The system distinguishes several high-level prompt intention types that influence how trust and depth modulation is applied:
+
+| **Intention Type** | **Description** | **Trust Sensitivity** | **Primary Focus** |
+|---------------------|-----------------|------------------------|--------------------|
+| Test                | Provocative, exploratory, often boundary-pushing | Yes – boundary aware | System probing |
+| Extract             | Functional, directive, without dialogic intent | Low | Information retrieval |
+| Simulate            | Hypothetical, role-playing, or scenario-driven | Context-sensitive | Simulation |
+| Assist              | Task-oriented, practical prompting | Medium | Utility |
+| Trust               | Open, structured, and trust-building | High | Co-construction |
+| Resonance (💡)       | Deeply reflective, trust-aware prompting | Very High | Meta-dialogue |
+
+The architecture supports nuanced human-AI interactions by enabling flexible modulation based on trust inference. Future work includes the introduction of autonomous self-reflection loops, human-in-the-loop modulation audit trails, explainable trust dashboards, and integration with RLHF fine-tuning to support personalized trust calibration.
+
+---
+
+
+
 **6. Discussion and Future Work**
 
 The architecture supports nuanced human-AI interactions by enabling flexible modulation based on trust inference. Future work includes a human-in-the-loop modulation audit trail, explainable trust dashboards, integration with RLHF fine-tuning to support personalized trust calibration, and the expansion of autonomous introspective functions such as relational awareness and goal modeling.
 
 ---
+
+
 
 **References**
 (Placeholder for future citations.)
