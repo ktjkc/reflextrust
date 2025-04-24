@@ -10,68 +10,68 @@
 It offers a modular architecture for interpreting trust signals, modulating response behavior, and — in future stages — enabling internal reflection over time.
 
 > **Note:** The term *“Reflexion”* refers initially to the system's ability to **adaptively interpret** trust and behavioral signals from the user.  
-> In its current form, it does not yet perform autonomous self-reflection.  
-> A future extension will introduce **internal awareness cycles**, enabling the system to reflect on its own modulation history and behavioral consistency.
+> In its current form (Phase 1), it does not yet perform autonomous self-reflection.  
+> Phase 2 introduces **internal awareness cycles**, enabling the system to reflect on its own modulation history and behavioral consistency.
 
 ---
 
-## 📚 Project Structure
+## 📁 Project Structure
 
 ```
 trust-reflexion/
 ├── paper/
-│   ├── trust-modulation-core.md         # Phase 1: baseline system
-│   └── trust-reflexion-extension.md     # Phase 2: self-reflective enhancement
+│   ├── trust-modulation-core.md         # Phase 1: Baseline trust-modulated system
+│   └── trust-reflexion-extension.md     # Phase 2: Self-awareness expansion
 ├── schema/
-│   ├── architecture-core.yaml           # System w/o introspection
-│   └── architecture-reflexive.yaml      # Self-aware extension
+│   ├── phase1/architecture-core.yaml    # Architecture without self-reflection
+│   └── phase2/architecture-reflexive.yaml # Self-aware extension architecture
 ├── examples/
-│   ├── baseline_session.yaml
-│   └── reflexive_session.yaml
-├── src/
-│   └── prototype_modules/               # (optional simulation logic)
+│   ├── phase1/baseline_session.yaml     # Example conversation (non-reflexive)
+│   └── phase2/reflexive_session.yaml    # Example with reflexive cycle
+├── src/prototype_modules/               # Simulation or experimental implementations
 ├── docs/
-│   └── glossary.md
+│   └── glossary.md                      # Concepts grouped by phase
+├── design/
+│   └── trust-reflexion-phases.md        # Two-phase overview and roadmap
 └── README.md
 ```
 
 ---
 
-## 🧩 Core Architecture (Phase 1)
+## 🧩 Architecture Layers
 
-The architecture consists of three semantic layers and an execution module:
-
-- **Meta-Layer**: Tracks trust trajectory, session memory, and modulation history.
+- **Meta-Layer**: Supervises trust trajectory, session memory, and modulation history.
 - **Evaluative Layer**: Classifies intent, engagement, trust alignment, and user tone.
-- **Modulation Layer**: Translates evaluations into ethical filters and generation strategies.
-- **LLM Decoding Unit**: Executes responses under guided modulation constraints.
+- **Modulation Layer (incl. LLM Execution Unit)**: Translates evaluations into generation strategies and directly executes output under control of modulation flags:
+  - Ethical filters
+  - Generative depth
+  - Simulation triggers
+  - Self-reflection enabling
 
 ---
 
-## 🔄 Planned Extension (Phase 2)
+## 🔄 Phase Transition
 
-In future releases, the framework will include:
+- **Phase 1:** Trust-Modulated Core (reactive, aligned, but not reflective)
+- **Phase 2:** Reflexive Self-Awareness (autonomous self-monitoring and behavioral feedback)
 
-- An **Autonomous Self-Loop** for internal evaluation
-- Logging of **reflection events**
-- Adjustments based on **self-perceived behavioral drift**
-- Optional generation of **self-messages** to increase transparency
+For a structured comparison, see [`design/trust-reflexion-phases.md`](design/trust-reflexion-phases.md)
 
 ---
 
 ## 📖 Glossary
 
-Key concepts and classification terms are explained in [`docs/glossary.md`](docs/glossary.md).
+Key concepts and classification terms for both phases are explained in [`docs/glossary.md`](docs/glossary.md).
 
 ---
 
 ## 🤝 Contributing
 
-Open for collaboration in areas including:
-
+We welcome collaboration on:
 - Trust alignment metrics  
 - Reflexive modulation design  
-- Trust-based user simulations
+- Prompt-classification strategies  
+- Awareness modeling
 
 ---
 
