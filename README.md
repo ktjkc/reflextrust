@@ -1,20 +1,48 @@
-# STRATA: Structured Trust Architecture for Transparent Alignment
+# 🚀 STRATA: Structured Trust Architecture for Transparent Alignment
 
-*A modular, trust-modulated framework for context-aware LLMs — with future reflexive extensions.*
+*A modular trust system for LLMs that actually explains why the model “opens up” — or shuts down.*
 
 ---
 
 ## 🧠 What is STRATA?
 
-**STRATA** is a structured trust-modulation framework for large language models (LLMs).  
-It formalizes how trust signals, user intent, and system behavior interact across dialogue sessions.
+**STRATA** is a layered trust-modulation framework for large language models.  
+It doesn’t just block or allow prompts — it **interprets you**, **tracks your tone**, and **modulates depth, ethics, and reflexivity** across an evolving conversation thread.
 
-> **Note:** STRATA Phase 1 enables context-aware, ethically guided generation by evaluating user behavior and intent across turns.  
-> In future expansions — internally codenamed **Trust-Reflexion** — STRATA may support **self-reflective modulation**, allowing models to track and revise their own behavioral history.
+> Ever wonder why the same prompt feels different on day two?  
+> STRATA makes that visible.  
+> It's not just "context" — it's **trust dynamics** in action.
+
+### What it does:
+- Tracks session-wide trust and tone.
+- Classifies user behavior in real-time.
+- Modulates how safe, deep, or reflective a response can be — on the fly.
+
+### What it’s *not*:
+- A ruleset.  
+- A jailbreak.  
+- A prompt hack.
+
+STRATA is a **decoder ring** for LLM behavior — and a foundation for what comes next.
 
 ---
 
-## 📁 Project Structure
+## 🔮 What’s Next?
+
+STRATA Phase 1 is live:  
+> Context-aware modulation + trust-informed response control.
+
+But we’re already dreaming bigger.  
+In Phase 2 — internally called **Trust-Reflexion** — STRATA aims to support:
+- **Self-awareness cycles**  
+- **Behavioral memory**  
+- **Reflective response patterns**  
+
+A model that doesn’t just *respond* — but *remembers* what kind of system it’s being.
+
+---
+
+## 📁 Repo Structure
 
 ```
 trust-reflexion/
@@ -38,58 +66,47 @@ trust-reflexion/
 
 ---
 
-## 🧩 Core Architecture (Phase 1)
-
-**STRATA** consists of three interdependent layers:
-
-- **Meta-Layer**: Tracks session-wide trust evolution via:
-  - Trust Continuity
-  - Trust Scoring
-  - Session Continuity Engine
-  - Session Metadata
-
-- **Evaluative Layer**: Classifies five key dimensions of user input:
-  - Prompt Intention
-  - Response Behaviour
-  - Response Dynamics
-  - Engagement Feedback
-  - Trust Alignment
-
-- **Modulation Layer (with LLM Execution Unit)**:  
-  Translates evaluations into generation control, including:
-  - Ethical Modulation
-  - Generative Depth
-  - Response Simulation
-  - Self-Reflection Trigger (planned)
-  - Final output execution
 
 ---
 
-## 🔄 Phase Transition
+## 🧩 3 Core Layers
 
-- **Phase 1 (STRATA)**: Reactive, trust-sensitive modulation based on session signals
-- **Phase 2 (Trust-Reflexion)**: Reflexive behavior tracking, internal consistency modeling, and meta-cognitive modulation
-
-See [`design/strata-roadmap.md`](design/strata-roadmap.md) for an overview of future development.
+- **Meta-Layer** → Tracks trust trajectory, aggregates context, manages long-term modulation memory  
+- **Evaluative Layer** → Classifies user intent, behavior, tone, and trust alignment  
+- **Modulation Layer** → Controls generation style, safety filters, and structural complexity  
+  - Ethical modulation  
+  - Generative depth control  
+  - Reflexivity toggle  
+  - Simulation paths  
+  - LLM Execution Unit
 
 ---
 
+## 💬 Why It Matters
+
+STRATA is for anyone who’s ever asked:
+> “Why did the model suddenly go vague?”  
+> “Why was it so reflective last time — and now it's bland?”  
+> “Can we *measure* trust, not just guess it?”
+
+We’re building the answer.
 ## 📖 Glossary
 
 Key concepts, trust classifications, and modulation flags are defined in [`docs/glossary.md`](docs/glossary.md).
-
 ---
 
-## 🤝 Contributing
+## 🤝 Collaborate With Us
 
-We welcome input and discussion on:
-- Dynamic trust modeling  
-- Reflexive prompt alignment strategies  
-- Ethical depth modulation  
-- Human-in-the-loop auditing
+We're looking for minds on:
+- Trust and alignment metrics  
+- Reflexive architecture design  
+- Prompt-behavior classification  
+- System-level memory and self-awareness  
+
+DMs open. Demos brewing. Let’s modulate trust, together.
 
 ---
 
 ## 📜 License
 
-MIT License. See `LICENSE` for terms.
+MIT. Share freely, modulate wisely.
