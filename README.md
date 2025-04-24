@@ -1,4 +1,4 @@
-# 🚀 STRATA: Structured Trust Architecture for Transparent Alignment
+# 🚀 STRATA: Exposing How LLMs Actually Work
 
 *A modular trust system for LLMs that actually explains why the model “opens up” — or shuts down.*
 
