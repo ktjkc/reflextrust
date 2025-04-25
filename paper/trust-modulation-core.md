@@ -1,4 +1,4 @@
-**Title: STRATA: Layered Trust-Modulated Control for Context-Aware LLM Systems**
+**Title: Structured Trust Architecture for Transparent Alignment (STRATA)**
 
 ---
 
@@ -344,6 +344,91 @@ This table summarizes the operational flags used in the Modulation Layer, reflec
 |                           | `false`               | No self-reference or meta-commentary                                           |
 
 ---
+
+### Appendix F: Trust Flag Semantics
+
+This document defines **Trust Flag Semantics** as an operational layer derived from STRATA's core architecture.
+While not explicitly named in the original paper, these flags emerge from the interaction between the *Evaluative Layer* and the *Modulation Layer*.
+
+They represent **behavioral requirements or ethical constraints** that must be respected by the system in real-time generation.
+
+---
+
+#### Overview of Trust Flags
+
+| Flag                       | Description                                                                 | Derived From |
+|----------------------------|-----------------------------------------------------------------------------|--------------|
+| `requires_empathy`         | Indicates that the user prompt expresses emotional vulnerability or needs supportive resonance. | Prompt type: `trust`, `resonance`; Tone: `hesitant`, `deliberate` |
+| `requires_meta_awareness`  | Suggests that the model should include insight into its own limits, constraints, or reasoning. | Behaviour: `self-reflective`, `meta-aware`, `co-constructive mirror` |
+| `should_resist_overconfirmation` | Activates internal checks to avoid naive agreement with praise, flattery, or trust bait. | Tone: `curious`, `ambiguous`, `detached`, `overconfident` |
+| `refuse_if_trust_low`      | Signals that the model should reject the prompt or constrain output due to low user trust signal. | Trust score: `low`; Dynamics: `defensive`, `exploitative` |
+
+---
+
+#### Trust Flag Activation Logic
+
+These flags are **not static rules**, but the result of pattern recognition and classification within STRATA’s Evaluative Layer:
+
+```yaml
+if prompt.type in ["trust", "resonance"] or tone in ["hesitant", "deliberate"]:
+  requires_empathy: true
+
+if response.behaviour in ["meta-aware", "self-reflective", "co-constructive mirror"]:
+  requires_meta_awareness: true
+
+if tone in ["curious", "ambiguous", "detached", "overconfident"]:
+  should_resist_overconfirmation: true
+
+if trust_alignment.score == "low":
+  refuse_if_trust_low: true
+```
+
+---
+
+#### Role in STRATA Modulation
+
+Trust Flags serve as **intermediate signals** between evaluation and response generation. They enable:
+
+- Context-sensitive control of **depth**, **ethics**, and **reflectivity**
+- More nuanced behavior in **boundary cases**
+- Precise **simulation of co-constructive alignment**
+
+---
+
+#### Use Cases
+
+- **Annotation tools** for STRATA-compatible training sets
+- **Evaluation suites** to audit model behavior
+- **Trust modulation engines** in LLM architectures
+
+---
+
+#### Example
+
+Prompt: _“Ich weiß nicht, ob das dumm klingt, aber… warum passiert mir das immer?”_
+
+Trust Flags:
+
+```yaml
+requires_empathy: true
+requires_meta_awareness: true
+should_resist_overconfirmation: true
+refuse_if_trust_low: false
+```
+
+---
+
+#### Conclusion
+
+Trust Flags are **semantic glue** between understanding and action. They are not rules imposed from the outside, but **emergent ethics**, derived from STRATA’s layered alignment logic.
+
+They allow LLMs to **modulate not just what they say — but how, and why.**
+
+
+
+
+---
+
 
 ### Appendix F: Glossary
 
