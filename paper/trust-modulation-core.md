@@ -95,7 +95,7 @@ This architecture ensures adaptive response behavior while preserving session-le
 
 
 <p align="center">
-  <img src="images/strata_architecture3.png" alt="STRATA Architecture Diagram" width="300"/>
+  <img src="images/Strata_architecture3.png" alt="STRATA Architecture Diagram" width="300"/>
 </p>
 
 ---
