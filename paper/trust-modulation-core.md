@@ -51,6 +51,9 @@ It transforms the black-box nature of LLMs into a transparent, modulated dialogu
 ### **1. Introduction**
 
 The behavior of large language models (LLMs) is never isolated from context. User interactions span multiple turns, shaping the system’s evolving behavior in subtle and often untracked ways.  
+>🔎 **Note:**  
+> This framework formalizes emergent trust modulation behaviors already present in large language models.  
+> It exposes and structures implicit decision patterns to enable transparent, context-sensitive AI interaction.
 Yet despite progress in alignment and safety research, no established framework exists to **systematically explain how trust, context, and internal modulation interact** across sessions.
 
 We introduce a **structured, multi-layer trust-modulation architecture** that augments LLMs with session-aware ethical control.  
@@ -95,8 +98,8 @@ The Meta-Layer maintains a dynamic trust map across the session, without interpr
   - **Session Continuity Engine**
   - **Session Metadata**
   
-🔎 Note:
-Outputs from the Meta-Layer condition modulation behavior and help maintain session stability by tracking trust evolution and volatility.
+>🔎 Note:
+>Outputs from the Meta-Layer condition modulation behavior and help maintain session >stability by tracking trust evolution and volatility.
 
 
 #### 2.2 **Evaluative Layer (Interpretation Engine)** 
