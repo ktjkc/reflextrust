@@ -14,9 +14,9 @@ They react to your intent, adapt their ethics, shift their depth of engagement �
 
 You’ll see:
 
-- How your intent is classified across a session  
-- How trust signals shape ethical filters and generative depth  
-- Why identical prompts can behave differently depending on session dynamics  
+- *How your intent is classified across a session*
+- *How trust signals shape ethical filters and generative depth*  
+- *Why identical prompts can behave differently depending on session dynamics*  
 
 This isn’t a jailbreak.  
 It’s **semantic transparency** — showing how models *decide* to respond.
@@ -117,9 +117,8 @@ This work was developed as part of an independent research initiative exploring 
 Driven by the belief that true progress in AI must be transparent, interpretable, and trust-aware, the author shares STRATA as an open contribution to the emerging field of dynamic human-AI collaboration.
 
 > "Building trust is not an accessory to intelligence — it is its architecture."
-
-—
-Hossa
+> 
+> —Hossa
 
 
 ## 🤝 Acknowledgements

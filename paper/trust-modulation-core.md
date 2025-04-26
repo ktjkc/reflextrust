@@ -83,11 +83,11 @@ The following overview illustrates how the layers are structurally organized:
 
 ```mermaid
 flowchart TB
-    A(["Meta-Layer<br><small>(Supervisory Trust Context)</small><br><tt>Trust Continuity, Trust Scoring, Session Metadata</tt>"]) 
-    --> B(["Evaluative Layer<br><small>(Interpretation Engine)</small><br><tt>Prompt Classification, Dynamics, Trust Flags</tt>"]) 
-    --> C(["Modulation Layer<br><small>(Execution Control)</small><br><tt>Ethical Modulation, Generative Depth, LLM Execution</tt>"])
+    A(["<b>Meta-Layer</b><br><small>(Supervisory Trust Context)</small><br><small><tt>Trust Continuity, Trust Scoring, Session Continuity Engine, Session Metadata</tt></small>"]) 
+    --> B(["<b>Evaluative Layer</b><br><small>(Interpretation Engine)</small><br><small><tt>Prompt Intention, Response Behaviour, Response Dynamics, Engagement Feedback, Trust Alignment</tt></small>"]) 
+    --> C(["<b>Modulation Layer</b><br><small>(Execution Control)</small><br><small><tt>Ethical Modulation, Generative Depth Control,Response Simulation, Self-Reflection Trigger, LLM Execution Unit</tt></small>"])
 
-    classDef node fill:#333333,stroke:#00796b,stroke-width:2px,rx:12,ry:12;
+    classDef node fill:#333333,stroke:#0090ff,stroke-width:1px,rx:12,ry:12;
     class A,B,C node;
 ```
 
@@ -167,12 +167,12 @@ The following flowchart illustrates this progression:
 
 ```mermaid
 flowchart LR
-    A(["Classification<br><small>(Prompt understanding)</small><br><tt>Prompt type, behavior, dynamics, engagement, trust alignment</tt>"])
-  --> B(["Trust Flag Derivation<br><small>(Behavioral micro-signals)</small><br><tt>requires_empathy, requires_meta_awareness, should_resist_overconfirmation, refuse_if_trust_low</tt>"]) 
-    --> C(["Modulation Flag Assignment<br><small>(Control structure for response)</small><br><tt>ethical_modulation, generative_depth, simulate_response_paths, trigger_self_reflection</tt>"]) 
-    --> D(["<br>Controlled LLM Execution<br><small>(Adaptive, trust-sensitive output)</small><br><br><tt>Response Generation</tt><br>"])
+    A(["<b>Classification</b><br><small>(Prompt understanding)</small><br><small><tt>Prompt type, behavior, dynamics, engagement, trust alignment</tt></small>"])
+  --> B(["<b>Trust Flag Derivation</b><br><small>(Behavioral micro-signals)</small><br><small><tt>requires_empathy, requires_meta_awareness, should_resist_overconfirmation, refuse_if_trust_low</small></tt>"]) 
+    --> C(["<b>Modulation Flag Assignment</b><br><small>(Control structure for response)</small><br><small><tt>ethical_modulation, generative_depth, simulate_response_paths, trigger_self_reflection</tt></small>"]) 
+    --> D(["<br><b>Controlled LLM Execution</b><br><small>(Adaptive, trust-sensitive output)</small><br><br><small><tt>Response Generation</tt></small><br>"])
 
-    classDef node fill:#333333,stroke:#00796b,stroke-width:2px,rx:12,ry:12;
+    classDef node fill:#333333,stroke:#0090ff,stroke-width:2px,rx:12,ry:12;
     class A,B,C,D node;
 
 ```
@@ -187,9 +187,9 @@ The Meta-Layer provides long-range contextualization, stability evaluation, and 
 - **Session Continuity Engine** – Captures reflective turns, flags coherence breaks, and preserves interaction state.
 - **Session Metadata** – Aggregates metrics like prompt variance, clarity shifts, and engagement density.
 
-🔎 **Note:**  
-- These outputs are used to condition the Modulation Layer.  
-- While Response Dynamics are formally classified in the Evaluative Layer, they are logged here to inform long-term coherence and risk patterns.
+>🔎 **Note:**  
+>- These outputs are used to condition the Modulation Layer.  
+>- While Response Dynamics are formally classified in the Evaluative Layer, they are logged here to inform long-term coherence and risk patterns.
 
 Additionally, the Meta-Layer monitors trust volatility — sudden rises or drops in trust signals — to flag sessions at risk of coherence breakdown.
 
@@ -394,7 +394,8 @@ The system distinguishes several high-level prompt intention types that influenc
 
 The architecture supports nuanced human-AI interactions by enabling flexible modulation based on trust inference. Future work includes the introduction of autonomous self-reflection loops, human-in-the-loop modulation audit trails, explainable trust dashboards, and integration with RLHF fine-tuning to support personalized trust calibration.
 
-“Note: For high-risk prompts (e.g. flagged by safety filters or user classification), certain intention types such as Extraction or Transformation may still be processed under evaluative layers, while Generation is typically restricted unless modulated with elevated trust and reflective constraints.”
+>🔎 **Note:**  
+>For high-risk prompts (e.g. flagged by safety filters or user classification), certain intention types such as Extraction or Transformation may still be processed under evaluative layers, while Generation is typically restricted unless modulated with elevated trust and reflective constraints.
 
 ---
 
