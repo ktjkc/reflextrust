@@ -89,20 +89,6 @@ This isn’t marketing. It’s a research-first, clarity-driven trust framework.
 
 ---
 
-
-## 🤝 Get Involved
-
-We’re building a community around:
-
-- Trust alignment metrics  
-- Reflexive architectures  
-- Prompt-behavior interaction models  
-- Ethical modulation design
-
-**Let’s reshape how AI trust is understood.**
-
----
-
 ## 📜 License
 
 MIT License — use freely, attribute thoughtfully.
@@ -112,13 +98,14 @@ MIT License — use freely, attribute thoughtfully.
 
 ## ✨ About the Author
 
-This work was developed as part of an independent research initiative exploring trust modulation, reflexive alignment, and context-sensitive AI interaction.
+STRATA was created from a deep curiosity about how trust shapes intelligence.  
+This work is part of an open journey to build AI systems that are not just powerful — but transparent, reflexive, and human-centered.
 
-Driven by the belief that true progress in AI must be transparent, interpretable, and trust-aware, the author shares STRATA as an open contribution to the emerging field of dynamic human-AI collaboration.
+It is shared in the spirit of openness, collaboration, and trust — to help guide the future of AI.
 
-> "Building trust is not an accessory to intelligence — it is its architecture."
-> 
-> —Hossa
+>*"Where there is intelligence without trust, there is no understanding."*
+>
+> — Hossa
 
 
 ## 🤝 Acknowledgements

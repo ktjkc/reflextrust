@@ -217,9 +217,9 @@ After primary classifications are completed, the Evaluative Layer derives **Trus
 
 Trust Flags capture critical behavioral requirements such as:
 
-- whether empathy or meta-awareness is needed,
-- whether overconfirmation should be resisted,
-- or whether interaction should be restricted under low trust.
+- whether **empathy** or **meta-awareness** is needed,
+- whether **overconfirmation** should be resisted,
+- or whether interaction should be **restricted under low trust**.
 
 They are inferred from the combined analysis of prompt type, tone, engagement quality, and trust dynamics, bridging evaluation and modulation.
 
@@ -395,7 +395,7 @@ The system distinguishes several high-level prompt intention types that influenc
 The architecture supports nuanced human-AI interactions by enabling flexible modulation based on trust inference. Future work includes the introduction of autonomous self-reflection loops, human-in-the-loop modulation audit trails, explainable trust dashboards, and integration with RLHF fine-tuning to support personalized trust calibration.
 
 >🔎 **Note:**  
->For high-risk prompts (e.g. flagged by safety filters or user classification), certain intention types such as Extraction or Transformation may still be processed under evaluative layers, while Generation is typically restricted unless modulated with elevated trust and reflective constraints.
+>For high-risk prompts (e.g. flagged by safety filters or user classification), certain intention types such as *Extraction* or *Transformation* may still be processed under evaluative layers, while *Generation* is typically restricted unless modulated with elevated trust and reflective constraints.
 
 ---
 
