@@ -576,6 +576,7 @@ These enhancements aim to make STRATA even more adaptive, transparent, and ethic
 >  
 > STRATA is designed as a modular, extensible architecture for context-sensitive AI behavior modeling.  
 > Contributions, critical discussions, and collaborative refinements are explicitly welcome.
+> STRATA system prompts are available upon request to contributors, collaborators, or independent researchers supporting trust-based AI development.
 
 ---
 
