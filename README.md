@@ -14,9 +14,9 @@ They react to your intent, adapt their ethics, shift their depth of engagement �
 
 You’ll see:
 
-- *How your intent is classified across a session*
-- *How trust signals shape ethical filters and generative depth*  
-- *Why identical prompts can behave differently depending on session dynamics*  
+- **How your intent is classified across a session**
+- **How trust signals shape ethical filters and generative depth**  
+- **Why identical prompts can behave differently depending on session dynamics**  
 
 This isn’t a jailbreak.  
 It’s **semantic transparency** — showing how models *decide* to respond.
