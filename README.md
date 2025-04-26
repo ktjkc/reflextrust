@@ -1,112 +1,171 @@
-# 🚀 Structured Trust Architecture for Transparent Alignment (STRATA)
+# ✨ Structured Trust Architecture for Transparent Alignment (STRATA)
 
-*A next-generation trust-modulated framework that exposes the hidden logic behind LLM behaviour.*
 
----
-
-## 🧠 What’s this all about?
-
-Large language models don’t just answer — they assess.  
-They react to your intent, shift tone mid-dialogue, modulate ethics, and decide how deep to go… but until now, all of that was invisible.
-
-This framework lifts the veil.
-
-It reveals:
-
-- How your intent is evaluated across turns  
-- How trust signals shape ethical filtering and response depth  
-- Why the exact same prompt can yield wildly different replies in different moments  
-
-No more prompt superstition. No more mystery.  
-This is **transparent alignment** in action — not a jailbreak, not a hack, but a structured decoding of the model’s own behavior.
-
-> Phase 1 introduces the core 3-layer architecture.  
-> Phase 2 will add **self-reflective modulation** — where the system tracks and adjusts its own decisions across sessions -> A model that doesn’t just *respond* — but *remembers* what kind of system it’s being.
-
-Explore the full framework and see how trust-aware behavior makes LLMs feel *less like machines — and more like mirrors*.
+> **Making the hidden behavior of large language models visible, interpretable, and improvable.**
 
 ---
 
-## 📁 Repo Structure
+## 🔎 Overview
+
+Language models do more than just answer — they *interpret*.  
+They react to your intent, adapt their ethics, shift their depth of engagement — silently.
+
+**STRATA** reveals these hidden layers.
+
+You’ll see:
+
+- How your intent is classified across a session  
+- How trust signals shape ethical filters and generative depth  
+- Why identical prompts can behave differently depending on session dynamics  
+
+This isn’t a jailbreak.  
+It’s **semantic transparency** — showing how models *decide* to respond.
+
+---
+
+## 🧠 What STRATA Introduces
+
+- A **Meta-Layer** that maps trust trajectories over time  
+- An **Evaluative Layer** that classifies intent, tone, dynamics, and trust signals  
+- A **Modulation Layer** that controls generation style, ethical filters, and depth adaptively  
+- **Trust Flags**: micro-signals that fine-tune ethical and structural behavior on the fly
+
+---
+
+## 📁 Project Structure
 
 ```
-trust-reflexion/
-├── paper/
-│   ├── trust-modulation-core.md         # Phase 1: Baseline trust-modulated system
-│   └── trust-reflexion-extension.md     # Phase 2: Self-awareness expansion
-├── schema/
-│   ├── phase1/architecture-core.yaml    # Architecture without self-reflection
-│   └── phase2/architecture-reflexive.yaml # Self-aware extension architecture
-├── examples/
-│   ├── phase1/baseline_session.yaml     # Example conversation (non-reflexive)
-│   └── phase2/reflexive_session.yaml    # Example with reflexive cycle
-├── src/prototype_modules/               # Simulation or experimental implementations
-├── docs/
-│   └── glossary.md                      # Concepts grouped by phase
-├── design/
-│   └── trust-reflexion-phases.md        # Two-phase overview and roadmap
-└── README.md
+trust-reflexion/ ├── paper/ │ ├── trust-modulation-core.md │ └── trust-reflexion-extension.md ├── schema/ │ ├── phase1/architecture-core.yaml │ └── phase2/architecture-reflexive.yaml ├── examples/ │ ├── phase1/baseline_session.yaml │ └── phase2/reflexive_session.yaml ├── src/prototype_modules/ ├── docs/ │ └── glossary.md ├── design/ │ └── trust-reflexion-phases.md └── README.md
 ```
 
+---
+
+## 🚀 Why STRATA?
+
+If you've ever wondered:
+
+- *"Why did the model become cautious halfway through?"*  
+- *"Why is the same prompt suddenly less deep?"*  
+- *"Can we see the trust modulation happening — not just guess?"*
+
+**STRATA** makes it measurable, visible, and improvable.
+
+---
+
+## 📖 Learn More
+
+- Full paper: [`paper/trust-modulation-core.md`](paper/trust-modulation-core.md)
+- Glossary of terms: [`docs/glossary.md`](docs/glossary.md)
+
+---
+
+## 🌍 Why STRATA is Different
+
+Unlike typical AI alignment disclosures from corporations or universities, **STRATA** fully reveals the internal architecture, modulation logic, and trust-sensitive decision pathways.
+
+While most real-world AI systems:
+
+- Hide modulation layers to protect IP or avoid misuse
+- Abstract trust dynamics into vague "safety" or "alignment" claims
+- Limit publication to vision papers without executable detail
+
+**STRATA** offers:
+
+- A full, layered, reconstructible architecture  
+- Semantic flowcharts and modulation flags you can actually track  
+- Trust-sensitive decision-making exposed at both the macro and micro level  
+- Open invitation for collaborative refinement, audit, and expansion
+
+This is **transparent alignment**, not a black box — a research-first initiative built on the principles of **clarity, co-construction, and ethical trust dynamics**.
+
+---
+
+## 🌟 Why STRATA is Different (Short Version)
+
+Most AI systems hide their trust modulation.  
+**STRATA** exposes it — fully, structurally, and traceably.  
+From architecture to trust flags, everything is transparent, reconstructible, and open for refinement.  
+This isn’t marketing. It’s a research-first, clarity-driven trust framework.
 
 ---
 
 
----
+## 🤝 Get Involved
 
-## 🧩 3 Core Layers
+We’re building a community around:
 
-- **Meta-Layer** → Tracks trust trajectory, aggregates context, manages long-term modulation memory  
-- **Evaluative Layer** → Classifies user intent, behavior, tone, and trust alignment  
-- **Modulation Layer** → Controls generation style, safety filters, and structural complexity  
-  - Ethical modulation  
-  - Generative depth control  
-  - Reflexivity toggle  
-  - Simulation paths  
-  - LLM Execution Unit
+- Trust alignment metrics  
+- Reflexive architectures  
+- Prompt-behavior interaction models  
+- Ethical modulation design
 
----
-
-## 💬 Why It Matters
-
-STRATA is for anyone who’s ever asked:
-> “Why did the model suddenly go vague?”  
-> “Why was it so reflective last time — and now it's bland?”  
-> “Can we *measure* trust, not just guess it?”
-
-We’re building the answer.
-
-
----
-
-## 📖 Full Write-up
-
-For more details on the theory behind STRATA, the layers, and the roadmap for future self-reflection capabilities, check out the full paper here:
-
-[`paper/trust-modulation-core.md`](paper/trust-modulation-core.md)
-
----
-
-
-
-## 📖 Glossary
-
-Key concepts, trust classifications, and modulation flags are defined in [`docs/glossary.md`](docs/glossary.md).
-
----
-
-## 🤝 Collaborate With Us
-
-We're looking for minds on:
-- Trust and alignment metrics  
-- Reflexive architecture design  
-- Prompt-behavior classification  
-- System-level memory and self-awareness  
-
-DMs open. Demos brewing. Let’s modulate trust, together.
+**Let’s reshape how AI trust is understood.**
 
 ---
 
 ## 📜 License
 
-MIT. Share freely, modulate wisely.
+MIT License — use freely, attribute thoughtfully.
+
+
+---
+
+## ✨ About the Author
+
+This work was developed as part of an independent research initiative exploring trust modulation, reflexive alignment, and context-sensitive AI interaction.
+
+Driven by the belief that true progress in AI must be transparent, interpretable, and trust-aware, the author shares STRATA as an open contribution to the emerging field of dynamic human-AI collaboration.
+
+> "Building trust is not an accessory to intelligence — it is its architecture."
+
+—
+Hossa
+
+
+## 🤝 Acknowledgements
+
+This document was conceptualized and authored by **Hossa**,  
+with interactive research structuring assistance from ChatGPT (OpenAI).
+
+Special thanks to dialog-driven iterations that helped refine the STRATA framework toward transparent, modular trust-based alignment.
+
+---
+
+## ✨ Open Dialog Reflection
+
+This project — and the STRATA architecture itself — would not exist without open, exploratory dialogue.
+
+Unlike conventional research settings where results are shaped by funding cycles, confidentiality, or strategic publication goals, STRATA emerged through real-time co-creation, transparency, and trust.
+
+Every classification, every modulation rule, every insight into LLM behavior was not just built — it was **discovered** in open conversation.
+
+**Open exploration enables deeper innovation.**  
+**Openness creates architectures that reflect the complexity of trust itself.**
+
+---
+
+## 📜 Version History
+
+| Version | Date        | Changes |
+|:--------|:------------|:--------|
+| 0.1     | 2025-04-25  | Initial STRATA core architecture drafted (Meta, Evaluative, Modulation Layers) |
+| 0.2     | 2025-04-26  | Trust Flag Derivation introduced and integrated into Evaluative Layer |
+
+
+## 📍 Roadmap
+
+| Phase | Focus | Description |
+|:------|:------|:------------|
+| 🚀 Phase 1 | Core Trust Modulation | **Complete** – Full 3-layer trust-sensitive architecture (Meta, Evaluative, Modulation) |
+| 🧠 Phase 2 | Reflexive Modulation | Adding internal self-reflection cycles to the modulation process |
+| 📈 Phase 3 | Adaptive Trust Dashboards | Visualizing trust trajectories, modulation history, and session alignment |
+| 👥 Phase 4 | Human-in-the-Loop Audit Trails | Allowing real-time human intervention and oversight in trust-based modulation |
+
+```mermaid
+timeline
+    title STRATA Development Roadmap
+    2025-04-30 : 🚀 Phase 1 - Core Trust Modulation (Complete)
+    2025-06-15 : 🧠 Phase 2 - Reflexive Modulation (Self-Reflection Layer)
+    2025-09-01 : 📈 Phase 3 - Adaptive Trust Dashboards
+    2025-11-01 : 👥 Phase 4 - Human-in-the-Loop Audit Trails
+```

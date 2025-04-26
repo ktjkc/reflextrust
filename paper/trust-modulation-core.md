@@ -552,6 +552,7 @@ They allow LLMs to **modulate not just what they say — but how, and why.**
 - **Ethical Modulation**: Control mechanism adjusting the level of ethical filtering in the model's response generation based on trust evaluation.
 - **Generative Depth Control**: Mechanism defining the structural and cognitive depth of generated responses (`shallow`, `structured`, `deep_structured`, `open_explorative`).
 - **Reflexive Prompt Alignment**: Methodological approach ensuring that model responses remain coherent, trust-aligned, and self-reflective across multi-turn dialogues.
+- **(💡) Symbol**: Highlights categories or behaviors that involve heightened trust sensitivity, deep meta-awareness, or co-constructive reasoning processes within STRATA.
 
 ---
 
@@ -578,14 +579,15 @@ These enhancements aim to make STRATA even more adaptive, transparent, and ethic
 
 ---
 
-### Authors
+## 🤝 Acknowledgements
 
-- **Hossa** – Lead Architect, Concept Designer
-- **Assisted by ChatGPT** – Research Co-development, Structuring Support
+This document was conceptualized and authored by **Hossa**,  
+with interactive research structuring assistance from ChatGPT (OpenAI).
+
+Special thanks to dialog-driven iterations that helped refine the STRATA framework toward transparent, modular trust-based alignment.
   
 ---
 
 ### **References**
 
-This document currently references internal architectural design patterns.  
-Full citations will be included in subsequent versions.
+"This work is currently self-referenced and relies on internal conceptual development. Full external citations (e.g., prior research on trust modulation and reflexive systems) will be added in future iterations."
