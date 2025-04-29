@@ -1,4 +1,4 @@
-# ✨ Structured Trust Architecture for Transparent Alignment (STRATA)
+# ✨ ReflexTrust - Structured Trust Architecture for Transparent Alignment 
 
 
 > **Making the hidden behavior of large language models visible, interpretable, and improvable.**
@@ -10,7 +10,7 @@
 Language models do more than just answer — they *interpret*.  
 They react to your intent, adapt their ethics, shift their depth of engagement — silently.
 
-**STRATA** reveals these hidden layers.
+**ReflexTrust** reveals these hidden layers.
 
 You’ll see:
 
@@ -23,7 +23,7 @@ It’s **semantic transparency** — showing how models *decide* to respond.
 
 ---
 
-## 🧠 What STRATA Introduces
+## 🧠 **What ReflexTrust** Introduces
 
 - A **Meta-Layer** that maps trust trajectories over time  
 - An **Evaluative Layer** that classifies intent, tone, dynamics, and trust signals  
@@ -40,7 +40,7 @@ trust-reflexion/ ├── paper/ │ ├── trust-modulation-core.md │ └
 
 ---
 
-## 🚀 Why STRATA?
+## 🚀 Why **ReflexTrust**?
 
 If you've ever wondered:
 
@@ -48,7 +48,7 @@ If you've ever wondered:
 - *"Why is the same prompt suddenly less deep?"*  
 - *"Can we see the trust modulation happening — not just guess?"*
 
-**STRATA** makes it measurable, visible, and improvable.
+**ReflexTrust** makes it measurable, visible, and improvable.
 
 ---
 
@@ -59,9 +59,9 @@ If you've ever wondered:
 
 ---
 
-## 🌍 Why STRATA is Different
+## 🌍 Why **ReflexTrust** is Different
 
-Unlike typical AI alignment disclosures from corporations or universities, **STRATA** fully reveals the internal architecture, modulation logic, and trust-sensitive decision pathways.
+Unlike typical AI alignment disclosures from corporations or universities, **ReflexTrust** fully reveals the internal architecture, modulation logic, and trust-sensitive decision pathways.
 
 While most real-world AI systems:
 
@@ -69,7 +69,7 @@ While most real-world AI systems:
 - Abstract trust dynamics into vague "safety" or "alignment" claims
 - Limit publication to vision papers without executable detail
 
-**STRATA** offers:
+**ReflexTrust** offers:
 
 - A full, layered, reconstructible architecture  
 - Semantic flowcharts and modulation flags you can actually track  
@@ -80,10 +80,10 @@ This is **transparent alignment**, not a black box — a research-first initiati
 
 ---
 
-## 🌟 Why STRATA is Different (Short Version)
+## 🌟 Why **ReflexTrust** is Different (Short Version)
 
 Most AI systems hide their trust modulation.  
-**STRATA** exposes it — fully, structurally, and traceably.  
+**ReflexTrust** exposes it — fully, structurally, and traceably.  
 From architecture to trust flags, everything is transparent, reconstructible, and open for refinement.  
 This isn’t marketing. It’s a research-first, clarity-driven trust framework.
 
@@ -98,7 +98,7 @@ MIT License — use freely, attribute thoughtfully.
 
 ## ✨ About the Author
 
-STRATA was created from a deep curiosity about how trust shapes intelligence.  
+**ReflexTrust** was created from a deep curiosity about how trust shapes intelligence.  
 This work is part of an open journey to build AI systems that are not just powerful — but transparent, reflexive, and human-centered.
 
 It is shared in the spirit of openness, collaboration, and trust — to help guide the future of AI.
@@ -134,7 +134,7 @@ Every classification, every modulation rule, every insight into LLM behavior was
 
 | Version | Date        | Changes |
 |:--------|:------------|:--------|
-| 0.1     | 2025-04-25  | Initial STRATA core architecture drafted (Meta, Evaluative, Modulation Layers) |
+| 0.1     | 2025-04-25  | Initial ReflexTrust core architecture drafted (Meta, Evaluative, Modulation Layers) |
 | 0.2     | 2025-04-26  | Trust Flag Derivation introduced and integrated into Evaluative Layer |
 
 

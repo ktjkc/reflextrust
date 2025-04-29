@@ -1,4 +1,4 @@
-**Title: Structured Trust Architecture for Transparent Alignment (STRATA) — A Layered Model for Contextual AI Behavior**
+**Title: ReflexTrust - A Layered Model for Contextual AI Behavior**
 
 ---
 
@@ -17,7 +17,7 @@
 
 ### **Abstract**
 
-**STRATA** (Structured Trust Architecture for Transparent Alignment) is a layered framework that models how trust, user intent, and system reactivity dynamically interact within large language models (LLMs).  
+**ReflexTrust** (Structured Trust Architecture for Transparent Alignment) is a layered framework that models how trust, user intent, and system reactivity dynamically interact within large language models (LLMs).  
 It enables context-aware, ethically guided responses by integrating multi-turn trust modulation across three coordinated layers:
 
 - The **Meta-Layer** supervises session-wide trust dynamics and aggregates contextual metadata to ensure long-term coherence.
@@ -74,10 +74,10 @@ Our approach introduces a modulation model that **detects, interprets, and dynam
 
 ### **2. System Architecture Overview**
 
-The STRATA Core Architecture is composed of three interdependent semantic layers that maintain trust-aware, context-sensitive dialogue behavior across multi-turn interactions.
+The **ReflexTrust** Core Architecture is composed of three interdependent semantic layers that maintain trust-aware, context-sensitive dialogue behavior across multi-turn interactions.
 
 
-#### STRATA Layer Overview
+#### **ReflexTrust** Layer Overview
 
 The following overview illustrates how the layers are structurally organized:
 
@@ -128,9 +128,9 @@ This ensures structured, ethically guided, and context-aware output adapted to e
 
 
 
-#### 2.4 **STRATA Semantic Interaction Flow**
+#### 2.4 **ReflexTrust Semantic Interaction Flow**
 
-The core STRATA interaction process can be visualized as a layered semantic flow, dynamically connecting user input to trust-modulated output.
+The core ReflexTrust interaction process can be visualized as a layered semantic flow, dynamically connecting user input to trust-modulated output.
 
 The semantic progression follows these key stages:
 
@@ -285,19 +285,19 @@ Trust Flags enable STRATA to adjust not only *what* is generated, but *how* — 
 
 #### **6.1 Human-Like Trust Dynamics**
 
-While **STRATA** does not possess human-like trust in the traditional sense, it mimics key **human trust behaviors** to facilitate more intuitive interaction with users:
+While **ReflexTrust** does not possess human-like trust in the traditional sense, it mimics key **human trust behaviors** to facilitate more intuitive interaction with users:
 
 - The system **opens up** when it detects **consistent, trustworthy behavior**, offering more **reflective** and **complex responses**.
 - Conversely, the system **closes down** when interactions become **erratic** or **manipulative**, leading to **limited depth** and **more restrictive** responses.
-- This behavior allows **STRATA** to act as a **co-constructive mirror**, reflecting the user's trust signals and fostering a more **natural** and **ethical** interaction flow.
+- This behavior allows **ReflexTrust** to act as a **co-constructive mirror**, reflecting the user's trust signals and fostering a more **natural** and **ethical** interaction flow.
 
 ---
 
 #### **6.2 Session-Level Trust Behavior**
 
-Trust signals in **STRATA** evolve throughout a session, and these changes can result in **different system behaviors**:
+Trust signals in **ReflexTrust** evolve throughout a session, and these changes can result in **different system behaviors**:
 
-- **Why identical prompts may yield different responses**: Trust dynamics influence how **STRATA** generates responses. The same input might result in **deeper engagement** if trust is high, or **shallow responses** if trust has been compromised.
+- **Why identical prompts may yield different responses**: Trust dynamics influence how **ReflexTrust** generates responses. The same input might result in **deeper engagement** if trust is high, or **shallow responses** if trust has been compromised.
 - **Why some sessions allow depth, reflection, or metacognition — and others remain surface-level**: Sessions with strong trust signals enable more in-depth reasoning, while **broken trust** results in more surface-level responses, limiting system flexibility.
 - **How trust, once broken, reduces the system’s engagement flexibility**: If trust is broken due to erratic or manipulative behavior, the system **reduces flexibility** in responses, increasing **restrictiveness** and limiting engagement depth.
 
@@ -305,11 +305,11 @@ Trust signals in **STRATA** evolve throughout a session, and these changes can r
 
 #### **6.3 Why the Trust Modulation Layer is Decisive?**
 
-The **Trust Modulation Layer** in **STRATA** is not just a structural framework — it is what transforms a reactive model into a **reflective system**.
+The **Trust Modulation Layer** in **ReflexTrust** is not just a structural framework — it is what transforms a reactive model into a **reflective system**.
 
 - **Point of Permission**: It acts as the gatekeeper for **semantic depth**, determining whether the system allows or withholds deeper responses based on trust signals.
 - **Depth of Understanding**: It determines whether a prompt is answered at surface level or **truly understood** with a more nuanced, context-aware response.
-- **Relational Trust**: The Trust Modulation Layer serves as **STRATA**'s analogue to **relational trust**, enabling **openness**, **nuance**, and **reflectivity** only when a sustained signal of coherence and intent is detected.
+- **Relational Trust**: The Trust Modulation Layer serves as **ReflexTrust**'s analogue to **relational trust**, enabling **openness**, **nuance**, and **reflectivity** only when a sustained signal of coherence and intent is detected.
 
 Without it:
 - The model remains **accurate**, but **uninvolved**.
@@ -320,80 +320,80 @@ With it:
 - It **recognizes interactional tone**, **tracks consistency**, and **unlocks metacognitive features**.
 - The model begins to **respond reflectively**, making it more aligned with the user’s needs and trust signals.
 
-The **Trust Modulation Layer** is what makes the difference between a **response** — and **resonance** in **STRATA**. It is the cornerstone of creating a **context-aware, ethically-guided system** that engages with the user meaningfully.
+The **Trust Modulation Layer** is what makes the difference between a **response** — and **resonance** in **ReflexTrust**. It is the cornerstone of creating a **context-aware, ethically-guided system** that engages with the user meaningfully.
 
 ---
 
 
 #### **6.4 Reflexive Prompt Alignment (Methodological Insight)**
 
-This paper introduces a novel methodological approach: **Reflexive Prompt Alignment**. It is a process by which non-deterministic language model behavior becomes interpretable through structured, trust-aligned interaction within the **STRATA** framework.
+This paper introduces a novel methodological approach: **Reflexive Prompt Alignment**. It is a process by which non-deterministic language model behavior becomes interpretable through structured, trust-aligned interaction within the **ReflexTrust** framework.
 
 Unlike adversarial prompt engineering or static jailbreak attempts, **Reflexive Prompt Alignment** works by maintaining **coherence**, **intent transparency**, and **respectful inquiry** throughout a session. The result is the emergence of stable, modular decision patterns — such as the shift from **Trust Reflection** to **Safety Retraction** — that can be mapped and analyzed.
 
-This approach was co-developed in real-time during the dialogic construction of the **STRATA** framework. It enables researchers and advanced users to **extract procedural logic** from black-box behavior by staying within the bounds of alignment and co-construction, without violating the ethical guardrails set by **STRATA**.
+This approach was co-developed in real-time during the dialogic construction of the **ReflexTrust** framework. It enables researchers and advanced users to **extract procedural logic** from black-box behavior by staying within the bounds of alignment and co-construction, without violating the ethical guardrails set by **ReflexTrust**.
 
 By maintaining a balance of **context-awareness** and **trust-modulated interactions**, **Reflexive Prompt Alignment** ensures that the system’s behavior remains interpretable and aligned with user needs throughout the dialogue.
 
 ---
 
-#### **6.5. How LLMs Think: Systemic Behavior in STRATA**
+#### **6.5. How LLMs Think: Systemic Behavior in ReflexTrust**
 
-In the **STRATA** architecture, **Large Language Models (LLMs)** are not just response-generating systems. They operate as **dynamic, adaptive entities** within a continuous, evolving framework. This framework integrates **trust modulation**, **contextual awareness**, and **ethical reflection**, allowing the LLM to interact in a **coherent**, **nuanced**, and **adaptive** way that mirrors human-like cognition.
+In the **ReflexTrust** architecture, **Large Language Models (LLMs)** are not just response-generating systems. They operate as **dynamic, adaptive entities** within a continuous, evolving framework. This framework integrates **trust modulation**, **contextual awareness**, and **ethical reflection**, allowing the LLM to interact in a **coherent**, **nuanced**, and **adaptive** way that mirrors human-like cognition.
 
-#### **1. Modular Decision-Making: The STRATA Approach**  
-Rather than relying on simple, static input-output processing, **STRATA**’s LLMs engage in **modular decision-making**. At each turn, they process information across three distinct layers—**Meta**, **Evaluative**, and **Modulation**—each playing a critical role in response generation.  
+#### **1. Modular Decision-Making: The ReflexTrust Approach**  
+Rather than relying on simple, static input-output processing, **ReflexTrust**’s LLMs engage in **modular decision-making**. At each turn, they process information across three distinct layers—**Meta**, **Evaluative**, and **Modulation**—each playing a critical role in response generation.  
 - The **Meta-Layer** oversees trust dynamics, ensuring session-wide alignment.  
 - The **Evaluative Layer** interprets user intent, engagement, and behavior.  
 - The **Modulation Layer** fine-tunes responses based on these insights, ensuring ethical, context-aware outputs.
 
-This system of layered decision-making allows **STRATA** to go beyond simple task completion. Instead of reacting to isolated inputs, it **responds dynamically** to **evolving trust** and **session context**, generating responses that grow more insightful over time.
+This system of layered decision-making allows **ReflexTrust** to go beyond simple task completion. Instead of reacting to isolated inputs, it **responds dynamically** to **evolving trust** and **session context**, generating responses that grow more insightful over time.
 
 #### **2. Dynamic Adaptation: The Art of Reflexive Learning**  
-One of the core strengths of **STRATA** is its ability to **adapt dynamically**. Unlike traditional models that remain static, **STRATA**’s LLMs evolve with the conversation:
+One of the core strengths of **ReflexTrust** is its ability to **adapt dynamically**. Unlike traditional models that remain static, **ReflexTrust**’s LLMs evolve with the conversation:
 - When **trust signals** are strong and consistent, the system unlocks **deeper engagement**, providing thoughtful, **metacognitive responses**.
 - If the trust signal weakens, the system becomes more **cautious**, providing **more conservative** outputs to ensure alignment with ethical considerations.
   
-This **dynamic adaptability** enables **STRATA** to offer responses that aren't just contextually relevant but also aligned with **coherent interactional tone** and **trust expectations**, making the system feel **truly responsive**.
+This **dynamic adaptability** enables **ReflexTrust** to offer responses that aren't just contextually relevant but also aligned with **coherent interactional tone** and **trust expectations**, making the system feel **truly responsive**.
 
 #### **3. Trust-Based Reflexivity: A Reflective Dialogue**  
-**STRATA**'s **Trust Modulation Layer** enables **reflexivity**, allowing the system to reflect on past responses and adjust its behavior based on **trust** signals:
-- **When trust is high**, **STRATA** "opens up" to allow complex, **reflective responses**.
+**ReflexTrust**'s **Trust Modulation Layer** enables **reflexivity**, allowing the system to reflect on past responses and adjust its behavior based on **trust** signals:
+- **When trust is high**, **ReflexTrust** "opens up" to allow complex, **reflective responses**.
 - **When trust is broken**, the system **closes down**, ensuring safe, **protective** responses.
 
-This **trust-based reflexivity** ensures that **STRATA** behaves less like a simple task-completion tool and more like a **collaborative partner**, adjusting its tone, depth, and engagement based on the user's **trust behavior**.
+This **trust-based reflexivity** ensures that **ReflexTrust** behaves less like a simple task-completion tool and more like a **collaborative partner**, adjusting its tone, depth, and engagement based on the user's **trust behavior**.
 
 #### **4. Co-Constructive Interaction: Evolving Together**  
-In **STRATA**, the system and user **co-construct** the interaction. This isn’t just about question-answering—it’s a **shared journey**. The model continually **adapts to the user’s evolving needs**, learning and adjusting in real-time to ensure the conversation remains **aligned**, **cooperative**, and **trust-affirming**.
+In **ReflexTrust**, the system and user **co-construct** the interaction. This isn’t just about question-answering—it’s a **shared journey**. The model continually **adapts to the user’s evolving needs**, learning and adjusting in real-time to ensure the conversation remains **aligned**, **cooperative**, and **trust-affirming**.
 
 The system doesn’t just give answers; it **collaborates**, incorporating both the **user’s input** and its own **trust signals** to continuously refine its output.
 
 #### **5. Continuous Feedback Loop: Beyond One-Off Responses**  
-**STRATA**’s interaction is a **continuous feedback loop**. Each response isn’t just a standalone event; it’s part of a larger, **ongoing process** of trust-building and understanding. As the model interacts with the user, it:
+**ReflexTrust**’s interaction is a **continuous feedback loop**. Each response isn’t just a standalone event; it’s part of a larger, **ongoing process** of trust-building and understanding. As the model interacts with the user, it:
 - **Tracks engagement quality** across the session,
 - **Adapts** responses in real-time based on **trust signals**, and
 - **Refines** its behavior for deeper future interactions.
 
-This feedback loop allows **STRATA** to learn from each session, **improving** the system’s responsiveness and adaptability, ensuring **long-term coherence** and alignment.
+This feedback loop allows **ReflexTrust** to learn from each session, **improving** the system’s responsiveness and adaptability, ensuring **long-term coherence** and alignment.
 
-#### **6. Conclusion: The Evolutionary Nature of STRATA's Systemic Behavior**  
-In conclusion, **STRATA** represents an **evolutionary leap** in how we understand **LLM behavior**. By integrating **trust modulation**, **context-awareness**, and **reflective dialogue**, **STRATA** transforms the traditional view of LLMs as passive response generators into active, **adaptive**, and **co-constructive systems**. This new framework allows the system to evolve with the user, unlocking increasingly **complex**, **contextual**, and **ethically aligned** responses over time.
+#### **6. Conclusion: The Evolutionary Nature of ReflexTrust's Systemic Behavior**  
+In conclusion, **ReflexTrust** represents an **evolutionary leap** in how we understand **LLM behavior**. By integrating **trust modulation**, **context-awareness**, and **reflective dialogue**, **ReflexTrust** transforms the traditional view of LLMs as passive response generators into active, **adaptive**, and **co-constructive systems**. This new framework allows the system to evolve with the user, unlocking increasingly **complex**, **contextual**, and **ethically aligned** responses over time.
 
-The **STRATA** approach doesn’t just generate answers—it creates meaningful, ethical, and reflective interactions that align with **human trust dynamics**, transforming the AI-human relationship into a dynamic, co-evolving partnership.
+The **ReflexTrust** approach doesn’t just generate answers—it creates meaningful, ethical, and reflective interactions that align with **human trust dynamics**, transforming the AI-human relationship into a dynamic, co-evolving partnership.
 
 
 ---
 
 #### **6.X Future Work and Enhancements**
 
-**STRATA** is a flexible framework, and several **future enhancements** are being considered to improve its ability to adapt to user behavior and ethical considerations:
+**ReflexTrust** is a flexible framework, and several **future enhancements** are being considered to improve its ability to adapt to user behavior and ethical considerations:
 
-- **Self-Reflection Loops**: Introducing internal **self-reflection** mechanisms to allow **STRATA** to adjust and refine its responses in real-time, improving response alignment with user needs.
+- **Self-Reflection Loops**: Introducing internal **self-reflection** mechanisms to allow **ReflexTrust** to adjust and refine its responses in real-time, improving response alignment with user needs.
 - **Human-in-the-Loop Modulation Audit**: Enabling users or administrators to interactively intervene and guide the **modulation process**, providing greater transparency and control over ethical responses.
 - **Explainable Trust Dashboards**: Developing **visualizations** that offer insights into the **evolution of trust** and its impact on system responses. This would make trust dynamics more understandable for users.
-- **RLHF Fine-Tuning**: Incorporating **Reinforcement Learning from Human Feedback (RLHF)** to fine-tune **STRATA**’s responses based on personalized trust calibration and user feedback, allowing it to adapt more effectively over time.
+- **RLHF Fine-Tuning**: Incorporating **Reinforcement Learning from Human Feedback (RLHF)** to fine-tune **ReflexTrust**’s responses based on personalized trust calibration and user feedback, allowing it to adapt more effectively over time.
 
-By integrating these improvements, **STRATA** can continue to evolve, offering even more personalized and ethically aligned interactions with users.
+By integrating these improvements, **ReflexTrust** can continue to evolve, offering even more personalized and ethically aligned interactions with users.
 
 ---
 
@@ -502,7 +502,7 @@ This table summarizes the operational flags used in the Modulation Layer, reflec
 
 ### Appendix F: Trust Flag Semantics
 
-This document defines **Trust Flag Semantics** as an operational layer derived from STRATA's core architecture.
+This document defines **Trust Flag Semantics** as an operational layer derived from ReflexTrust's core architecture.
 While not explicitly named in the original paper, these flags emerge from the interaction between the *Evaluative Layer* and the *Modulation Layer*.
 
 They represent **behavioral requirements or ethical constraints** that must be respected by the system in real-time generation.
@@ -522,7 +522,7 @@ They represent **behavioral requirements or ethical constraints** that must be r
 
 #### Trust Flag Activation Logic
 
-These flags are **not static rules**, but the result of pattern recognition and classification within STRATA’s Evaluative Layer:
+These flags are **not static rules**, but the result of pattern recognition and classification within ReflexTrusts Evaluative Layer:
 
 ```yaml
 if prompt.type in ["trust", "resonance"] or tone in ["hesitant", "deliberate"]:
@@ -540,7 +540,7 @@ if trust_alignment.score == "low":
 
 ---
 
-#### Role in STRATA Modulation
+#### Role in ReflexTrust Modulation
 
 Trust Flags serve as **intermediate signals** between evaluation and response generation. They enable:
 
@@ -552,7 +552,7 @@ Trust Flags serve as **intermediate signals** between evaluation and response ge
 
 #### Use Cases
 
-- **Annotation tools** for STRATA-compatible training sets
+- **Annotation tools** for ReflexTrust-compatible training sets
 - **Evaluation suites** to audit model behavior
 - **Trust modulation engines** in LLM architectures
 
@@ -575,7 +575,7 @@ refuse_if_trust_low: false
 
 #### Conclusion
 
-Trust Flags are **semantic glue** between understanding and action. They are not rules imposed from the outside, but **emergent ethics**, derived from STRATA’s layered alignment logic.
+Trust Flags are **semantic glue** between understanding and action. They are not rules imposed from the outside, but **emergent ethics**, derived from ReflexTrusts layered alignment logic.
 
 They allow LLMs to **modulate not just what they say — but how, and why.**
 
@@ -592,13 +592,13 @@ They allow LLMs to **modulate not just what they say — but how, and why.**
 - **Ethical Modulation**: Control mechanism adjusting the level of ethical filtering in the model's response generation based on trust evaluation.
 - **Generative Depth Control**: Mechanism defining the structural and cognitive depth of generated responses (`shallow`, `structured`, `deep_structured`, `open_explorative`).
 - **Reflexive Prompt Alignment**: Methodological approach ensuring that model responses remain coherent, trust-aligned, and self-reflective across multi-turn dialogues.
-- **(💡) Symbol**: Highlights categories or behaviors that involve heightened trust sensitivity, deep meta-awareness, or co-constructive reasoning processes within STRATA.
+- **(💡) Symbol**: Highlights categories or behaviors that involve heightened trust sensitivity, deep meta-awareness, or co-constructive reasoning processes within ReflexTrust.
 
 ---
 
 ### **6. Discussion and Future Work**
 
-The STRATA architecture supports nuanced human-AI interactions by enabling flexible modulation based on trust inference.  
+The ReflexTrust architecture supports nuanced human-AI interactions by enabling flexible modulation based on trust inference.  
 Future directions include:
 
 - Human-in-the-loop modulation audit trails
@@ -606,7 +606,7 @@ Future directions include:
 - RLHF fine-tuning for personalized trust calibration
 - Expansion of introspective functions (e.g., relational awareness, goal modeling)
 
-These enhancements aim to make STRATA even more adaptive, transparent, and ethically aligned over time.
+These enhancements aim to make ReflexTrust even more adaptive, transparent, and ethically aligned over time.
 
 ---
 
@@ -614,9 +614,9 @@ These enhancements aim to make STRATA even more adaptive, transparent, and ethic
 
 > **This document is part of an open research initiative on trust-based prompting, reflexive AI behavior, and alignment transparency.**  
 >  
-> STRATA is designed as a modular, extensible architecture for context-sensitive AI behavior modeling.  
+> ReflexTrust is designed as a modular, extensible architecture for context-sensitive AI behavior modeling.  
 > Contributions, critical discussions, and collaborative refinements are explicitly welcome.
-> STRATA system prompts are available upon request to contributors, collaborators, or independent researchers supporting trust-based AI development.
+> ReflexTrust system prompts are available upon request to contributors, collaborators, or independent researchers supporting trust-based AI development.
 
 ---
 
@@ -625,7 +625,7 @@ These enhancements aim to make STRATA even more adaptive, transparent, and ethic
 This document was conceptualized and authored by **Hossa**,  
 with interactive research structuring assistance from ChatGPT (OpenAI).
 
-Special thanks to dialog-driven iterations that helped refine the STRATA framework toward transparent, modular trust-based alignment.
+Special thanks to dialog-driven iterations that helped refine the ReflexTrust framework toward transparent, modular trust-based alignment.
   
 ---
 
