@@ -1,31 +1,36 @@
-**Title: ReflexTrust - A Layered Model for Contextual AI Behavior**
+# ReflexTrust  
+### A Layered Model for Contextual AI Behavior
 
 ---
 
 ## ✨ Executive Overview
 
-| Section | Description |
-|:--------|:------------|
-| **Abstract** | Summarizes STRATA’s layered trust-modulation architecture for dynamic, context-sensitive AI behavior. |
-| **Motivation** | Identifies the gap in current AI behavior models and frames trust-sensitive dynamics as systemic behavior. |
-| **Architecture** | Introduces a structured three-layer system (Meta, Evaluative, Modulation) for trust-informed interaction. |
-| **Semantic Flow** | Visualizes the real-time interaction pipeline from prompt classification to adaptive output modulation. |
-| **Trust Flags** | Defines fine-grained trust indicators to refine ethical control and engagement quality dynamically. |
-| **Future Work** | Outlines enhancements such as self-reflection loops, human-in-the-loop auditing, and RLHF personalization. |
+| Section          | Description |
+|------------------|-------------|
+| **Introduction** | Frames the need for context-sensitive, trust-modulated AI behavior and outlines ReflexTrust’s systemic solution. |
+| **Architecture** | Presents the three-layer ReflexTrust model (Meta, Evaluative, Modulation) with clear roles and flow. |
+| **Interaction Flow** | Shows how input is processed into output through classification, flag derivation, and controlled execution. |
+| **Trust Flags**  | Defines micro-signals used to adjust ethical filtering, generative depth, and system caution. |
+| **Modulation Logic** | Details how trust evaluations influence generation via operational flags. |
+| **Applied Behavior** | Demonstrates how ReflexTrust adapts in real sessions: from deep engagement to protective shutdown. |
+| **Future Work**  | Describes planned features such as self-reflection, human-in-the-loop control, and personalized alignment. |
+| **Glossary**     | Provides formal definitions of all architectural elements and behavioral classifications. |
 
 ---
 
-### **Abstract**
+## 🧩 Abstract
 
-**ReflexTrust** (Structured Trust Architecture for Transparent Alignment) is a layered framework that models how trust, user intent, and system reactivity dynamically interact within large language models (LLMs).  
-It enables context-aware, ethically guided responses by integrating multi-turn trust modulation across three coordinated layers:
+**ReflexTrust** is a modular framework for enabling **trust-sensitive, context-aware behavior** in large language models (LLMs).  
+By structuring model interaction across three semantic layers — **Meta**, **Evaluative**, and **Modulation** — it introduces a system capable of adapting to user tone, intent, and trust trajectory over multi-turn sessions.
 
-- The **Meta-Layer** supervises session-wide trust dynamics and aggregates contextual metadata to ensure long-term coherence.
-- The **Evaluative Layer** classifies user intent, behavioral tone, engagement quality, and trust alignment, generating modulation-relevant signals.
-- The **Modulation Layer**, including the **LLM Execution Unit**, translates these signals into operational flags that dynamically guide generation style, ethical filtering, and structural depth.
+The architecture operates as follows:
 
-Together, these layers enable adaptive, trust-aligned behavior in real-time interactions, supporting explainable AI in high-stakes and trust-sensitive environments.
+- The **Meta-Layer** tracks trust continuity, coherence, and session-level alignment across turns.
+- The **Evaluative Layer** classifies prompts by intent, engagement tone, and alignment quality, deriving behavioral trust flags.
+- The **Modulation Layer** uses these flags to dynamically shape response generation — adjusting ethical filtering, structural depth, and introspection logic.
 
+This layered approach turns reactive output into **adaptive dialogue**, where behavior reflects both prompt content and relational dynamics.  
+ReflexTrust is designed for **transparent alignment**, enabling both interpretability and control — critical in high-stakes, collaborative, or trust-sensitive AI applications.
 
 ---
 
@@ -95,7 +100,7 @@ flowchart TB
 
     classDef node fill:#333,stroke:#00aaff,stroke-width:2px,rx:12,ry:12;
     class A,B,C node;
-
+```
 
 
 ---
@@ -215,7 +220,7 @@ engagement: deliberate
 alignment: moderate
 response_dynamics: reflexive-cooperative
 
-
+```
 
 ---
 
@@ -293,6 +298,7 @@ intent: co-reflection
 tone: curious
 trust_alignment: high
 engagement: deliberate
+```
 
 
 
