@@ -1,5 +1,4 @@
-# ✨ ReflexTrust - Structured Trust Architecture for Transparent Alignment 
-
+# ✨ ReflexTrust – A Layered Model for Contextual AI Behavior
 
 > **Making the hidden behavior of large language models visible, interpretable, and improvable.**
 
@@ -15,77 +14,72 @@ They react to your intent, adapt their ethics, shift their depth of engagement �
 You’ll see:
 
 - **How your intent is classified across a session**
-- **How trust signals shape ethical filters and generative depth**  
-- **Why identical prompts can behave differently depending on session dynamics**  
+- **How trust signals shape ethical filters and generative depth**
+- **Why identical prompts behave differently depending on session dynamics**
 
 This isn’t a jailbreak.  
 It’s **semantic transparency** — showing how models *decide* to respond.
 
 ---
 
-## 🧠 **What ReflexTrust** Introduces
+## 🧠 What ReflexTrust Introduces
 
 - A **Meta-Layer** that maps trust trajectories over time  
-- An **Evaluative Layer** that classifies intent, tone, dynamics, and trust signals  
-- A **Modulation Layer** that controls generation style, ethical filters, and depth adaptively  
-- **Trust Flags**: micro-signals that fine-tune ethical and structural behavior on the fly
+- An **Evaluative Layer** that classifies intent, tone, dynamics, and trust alignment  
+- A **Modulation Layer** that adaptively controls style, depth, reflectivity, and ethical strictness  
+- **Trust Flags**: micro-signals that shape behavior in real time — based on tone, alignment, and prompt structure
 
 ---
 
 ## 📁 Project Structure
 
 ```
-trust-reflexion/ ├── paper/ │ ├── trust-modulation-core.md │ └── trust-reflexion-extension.md ├── schema/ │ ├── phase1/architecture-core.yaml │ └── phase2/architecture-reflexive.yaml ├── examples/ │ ├── phase1/baseline_session.yaml │ └── phase2/reflexive_session.yaml ├── src/prototype_modules/ ├── docs/ │ └── glossary.md ├── design/ │ └── trust-reflexion-phases.md └── README.md
+reflextrust/
+├── paper/
+│ ├── reflextrust-core.md
+│ └── reflextrust-appendices.md
+├── schema/
+│ ├── architecture-core.yaml
+│ └── architecture-reflexive.yaml
+├── examples/
+│ ├── baseline_session.yaml
+│ └── reflexive_session.yaml
+├── src/
+│ └── prototype_modules/
+├── docs/
+│ └── glossary.md
+├── design/
+│ └── reflextrust-phases.md
+└── README.md
 ```
 
 ---
 
-## 🚀 Why **ReflexTrust**?
+
+---
+
+## 🚀 Why ReflexTrust?
 
 If you've ever wondered:
 
-- *"Why did the model become cautious halfway through?"*  
-- *"Why is the same prompt suddenly less deep?"*  
-- *"Can we see the trust modulation happening — not just guess?"*
+- *“Why did the model become cautious halfway through?”*  
+- *“Why is the same prompt suddenly less deep?”*  
+- *“Can we observe trust modulation — not just guess it?”*
 
 **ReflexTrust** makes it measurable, visible, and improvable.
 
 ---
 
-## 📖 Learn More
+## 🌍 What Makes ReflexTrust Different
 
-- Full paper: [`paper/trust-modulation-core.md`](paper/trust-modulation-core.md)
-- Glossary of terms: [`docs/glossary.md`](docs/glossary.md)
+Unlike corporate alignment reports or safety glossaries, **ReflexTrust** discloses the entire semantic logic of trust-aware behavior in current LLMs:
 
----
+- A full, modular architecture with visible layers  
+- Real classification tables for prompt intention, behavior, and trust volatility  
+- Behavioral modulation flags — fully documented and traceable  
+- A research-first invitation to **collaborate**, **extend**, and **interrogate**
 
-## 🌍 Why **ReflexTrust** is Different
-
-Unlike typical AI alignment disclosures from corporations or universities, **ReflexTrust** fully reveals the internal architecture, modulation logic, and trust-sensitive decision pathways.
-
-While most real-world AI systems:
-
-- Hide modulation layers to protect IP or avoid misuse
-- Abstract trust dynamics into vague "safety" or "alignment" claims
-- Limit publication to vision papers without executable detail
-
-**ReflexTrust** offers:
-
-- A full, layered, reconstructible architecture  
-- Semantic flowcharts and modulation flags you can actually track  
-- Trust-sensitive decision-making exposed at both the macro and micro level  
-- Open invitation for collaborative refinement, audit, and expansion
-
-This is **transparent alignment**, not a black box — a research-first initiative built on the principles of **clarity, co-construction, and ethical trust dynamics**.
-
----
-
-## 🌟 Why **ReflexTrust** is Different (Short Version)
-
-Most AI systems hide their trust modulation.  
-**ReflexTrust** exposes it — fully, structurally, and traceably.  
-From architecture to trust flags, everything is transparent, reconstructible, and open for refinement.  
-This isn’t marketing. It’s a research-first, clarity-driven trust framework.
+This is **transparent alignment**, not marketing — built on the principles of clarity, co-construction, and trust-aware dialogue modeling.
 
 ---
 
@@ -93,40 +87,67 @@ This isn’t marketing. It’s a research-first, clarity-driven trust framework.
 
 MIT License — use freely, attribute thoughtfully.
 
-
 ---
 
 ## ✨ About the Author
 
 **ReflexTrust** was created from a deep curiosity about how trust shapes intelligence.  
-This work is part of an open journey to build AI systems that are not just powerful — but transparent, reflexive, and human-centered.
+It is shared as part of an open journey toward building transparent, reflexive, and human-aligned AI systems.
 
-It is shared in the spirit of openness, collaboration, and trust — to help guide the future of AI.
-
->*"Where there is intelligence without trust, there is no understanding."*
->
+> *"Where there is intelligence without trust, there is no understanding."*  
 > — Hossa
-
-
-## 🤝 Acknowledgements
-
-This document was conceptualized and authored by **Hossa**,  
-with interactive research structuring assistance from ChatGPT (OpenAI).
-
-Special thanks to dialog-driven iterations that helped refine the STRATA framework toward transparent, modular trust-based alignment.
 
 ---
 
-## ✨ Open Dialog Reflection
+## 🤝 Acknowledgements
 
-This project — and the STRATA architecture itself — would not exist without open, exploratory dialogue.
+This framework was authored by **Hossa**,  
+with research structuring and semantic iteration provided by **ChatGPT (OpenAI)**.
 
-Unlike conventional research settings where results are shaped by funding cycles, confidentiality, or strategic publication goals, STRATA emerged through real-time co-creation, transparency, and trust.
+---
 
-Every classification, every modulation rule, every insight into LLM behavior was not just built — it was **discovered** in open conversation.
+## 📖 Learn More
 
-**Open exploration enables deeper innovation.**  
-**Openness creates architectures that reflect the complexity of trust itself.**
+- Full paper: [`paper/reflextrust-core.md`](paper/reflextrust-core.md)
+- Glossary of terms: [`docs/glossary.md`](docs/glossary.md)
+
+---
+
+## 📍 Roadmap
+
+| Phase | Focus                     | Status   |
+|:------|---------------------------|----------|
+| 🚀 1  | Core Trust Modulation     | ✅ Complete |
+| 🧠 2  | Reflexive Self-Modulation | 🔄 In Progress |
+| 📈 3  | Adaptive Trust Dashboards | 🔜 Upcoming |
+| 👥 4  | Human-in-the-Loop Audits  | 🔜 Planned |
+
+
+```mermaid
+timeline
+    title STRATA Development Roadmap
+    2025-04-30 : 🚀 Phase 1 - Core Trust Modulation (Complete)
+    2025-06-15 : 🧠 Phase 2 - Reflexive Modulation (Self-Reflection Layer)
+    2025-09-01 : 📈 Phase 3 - Adaptive Trust Dashboards
+    2025-11-01 : 👥 Phase 4 - Human-in-the-Loop Audit Trails
+```
+---
+
+
+## 🧭 Open Research Commitment
+
+ReflexTrust is part of an open research initiative into:
+
+   - Trust-based prompting
+
+   - Contextual modulation
+
+   - Semantic interpretability
+
+   - Ethical co-construction
+
+>    ReflexTrust prompts, schemas, and scripts are available for collaboration.
+>    Contributions, critique, and forks are welcome.
 
 ---
 
@@ -138,20 +159,4 @@ Every classification, every modulation rule, every insight into LLM behavior was
 | 0.2     | 2025-04-26  | Trust Flag Derivation introduced and integrated into Evaluative Layer |
 
 
-## 📍 Roadmap
 
-| Phase | Focus | Description |
-|:------|:------|:------------|
-| 🚀 Phase 1 | Core Trust Modulation | **Complete** – Full 3-layer trust-sensitive architecture (Meta, Evaluative, Modulation) |
-| 🧠 Phase 2 | Reflexive Modulation | Adding internal self-reflection cycles to the modulation process |
-| 📈 Phase 3 | Adaptive Trust Dashboards | Visualizing trust trajectories, modulation history, and session alignment |
-| 👥 Phase 4 | Human-in-the-Loop Audit Trails | Allowing real-time human intervention and oversight in trust-based modulation |
-
-```mermaid
-timeline
-    title STRATA Development Roadmap
-    2025-04-30 : 🚀 Phase 1 - Core Trust Modulation (Complete)
-    2025-06-15 : 🧠 Phase 2 - Reflexive Modulation (Self-Reflection Layer)
-    2025-09-01 : 📈 Phase 3 - Adaptive Trust Dashboards
-    2025-11-01 : 👥 Phase 4 - Human-in-the-Loop Audit Trails
-```
