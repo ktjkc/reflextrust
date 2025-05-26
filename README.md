@@ -9,13 +9,16 @@
 Language models do more than just answer — they *interpret*.  
 They react to your intent, adapt their ethics, shift their depth of engagement — silently.
 
-**ReflexTrust** reveals these hidden layers.
+> **ReflexTrust replaces control logic with contextual awareness.**  
+> **It responds not to words, but to signals of relationship.**
 
-You’ll see:
+**ReflexTrust** reveals these hidden layers —  
+you’ll understand:
 
-- **How your intent is classified across a session**
-- **How trust signals shape ethical filters and generative depth**
-- **Why identical prompts behave differently depending on session dynamics**
+- **Why your intent is classified and tracked across a session**
+- **How trust signals modulate ethics and response structure**
+- **Why identical prompts can yield different outputs over time**
+
 
 This isn’t a jailbreak.  
 It’s **semantic transparency** — showing how models *decide* to respond.

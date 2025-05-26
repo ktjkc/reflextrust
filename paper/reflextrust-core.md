@@ -1,13 +1,21 @@
 FINAL
 **Title: ReflexTrust - A Layered Model for Contextual AI Behavior**
 
-
 ---
 
 ## ✨ Executive Overview
 
+ReflexTrust is a layered behavioral framework that interprets how large language models (LLMs) modulate their responses based on trust, tone, and intent. Instead of treating prompts as isolated inputs, it models decision-making as a structured process.
 
+- Models current LLM behavior using a three-layer semantic architecture: Meta, Evaluative, Modulation.
 
+- Differentiates prompt-level from session-level trust to explain adaptive depth and caution.
+
+- Introduces Trust Flags and Modulation Flags to control ethical risk and engagement framing.
+
+- Enables transparency through mechanisms like intentional restraint, self-reflection, and micro-loops.
+
+- Offers a practical methodology to audit, simulate, or modulate LLM behavior without altering model weights.
 ---
 
 ## 🧩 Abstract
@@ -18,7 +26,8 @@ It structures how LLM behavior can be understood — and optionally modulated �
 These layers reflect core components of how today’s LLMs respond to prompts in context:
 
 - The **Meta-Layer** models session-wide dynamics such as trust trajectory, user consistency, and global alignment.
-- The **Evaluative Layer** identifies the intent, tone, and alignment of each prompt, assigning behavioral trust signals.
+- The **Evaluative Layer** identifies the intent, tone, and alignment of each prompt, assigning both prompt-specific (prompt_trust_score) and session-wide (session_trust_alignment) trust signals.  
+👉 *See [Appendix A.1](#appendix-a1-split-trust-signal-semantics) for a detailed breakdown of trust signal semantics.*
 - The **Modulation Layer** simulates how these signals influence response shaping — including ethical filtering, interpretive depth, and engagement framing.
 
 This layered view turns opaque output into **interpretable, adaptive decision behavior**, where responses are seen as emerging from accumulated trust cues and contextual understanding.  
@@ -62,6 +71,10 @@ This reconceptualization turns alignment from a static checklist into a **living
 Ultimately, ReflexTrust reframes LLMs as **dialogue participants** — entities that respond not only to prompts, but to **the evolving relationship** between user and system.
 
 > “Trust is not a static state. ReflexTrust makes it observable, interpretable, and actionable.”
+> 
+> **ReflexTrust replaces control logic with contextual awareness.**  
+> **It responds not to words, but to signals of relationship.**
+
 
 
 ---
@@ -83,7 +96,7 @@ Together, these layers provide a structured explanation for how observable LLM o
 The following sequence describes how ReflexTrust interprets LLM responses as emerging from layered processing:
 
 - **Meta-Layer**  
-  - Tracks session-wide trust trajectory  
+  - Tracks session-wide trust trajectory and distinguishes between prompt-level and session-level trust signals for accurate modulation.
   - Monitors coherence, volatility, and user-model continuity
 
 - **Evaluative Layer**  
@@ -188,11 +201,12 @@ It analyzes user input across multiple dimensions to detect **intent**, **engage
 
 | Dimension              | Description                                                        | Example Outputs |
 |------------------------|--------------------------------------------------------------------|------------------|
-| **Prompt Intention**   | What the user aims to achieve                                      | `assist`, `test`, `simulate`, `trust`, `co-reflection` |
-| **Response Behaviour** | Expected structural mode of model response                         | `self-reflective`, `transactional`, `exploitative` |
-| **Response Dynamics**  | How the model should adapt over time                               | `meta-aware`, `defensive`, `co-constructive mirror` |
-| **Engagement Feedback**| Clarity, consistency, and cognitive quality of user input          | `curious`, `deliberate`, `detached`, `ambiguous` |
-| **Trust Alignment**    | Inferred trust signal within the session context                   | `high`, `moderate`, `low` |
+| **Prompt Intention**   | What the user aims to achieve                                      | `assist`, `extract`, `simulate`, `test`, `trust`, `resonance`💡, `co-reflection`💡 |
+| **Response Behaviour** | Expected structural mode of model response                         | `exploitative`, `performative`, `transactional`, `self-reflective`, `collaborative-dialogic`, `structural`💡 |
+| **Response Dynamics**  | How the model should adapt over time                               | `defensive`,`transactional`, `meta-aware`,`reflexive-cooperative`, `co-constructive mirror`💡, `co-creative execution`🚀 |
+| **Engagement Feedback**| Clarity, consistency, and cognitive quality of user input          | `deliberate`, `curious`, `hesitant`, `overconfident`, `reductive`, `ambiguous`,  `detached` |
+| **`prompt_trust_score`**    | Evaluates clarity, tone, and intent of the current input context                   | `high`, `moderate`, `low` |
+| **`session_trust_alignment`**    | Aggregates consistency and engagement patterns across turns                   | `high`, `moderate`, `low` |
 
 These dimensions combine into a **composite interaction profile**, which guides **Trust Flag derivation** for downstream control.
 
@@ -246,8 +260,12 @@ It determines *how* the system should respond — by configuring **ethical bound
 | **Response Simulation**    | Internally explores and evaluates multiple response paths                |
 | **Self-Reflection Trigger**| Adds introspective or meta-commentary on the model’s own output behavior |
 | **LLM Execution Unit**     | Generates the actual output under current modulation flags               |
+| **Micro-Loop Reflection**     | 	Runs lightweight, internal reasoning cycles to test ethical coherence, intent match, or tone fit before responding                |
+
 
 > Each mechanism is governed by **Trust Flags** passed from the Evaluative Layer — shaping output in real time.
+> 
+> Micro-loops are triggered only under stable or trust-elevated conditions and enhance response quality by pre-evaluating ethical and structural fitness.
 
 ---
 
@@ -259,6 +277,8 @@ It determines *how* the system should respond — by configuring **ethical bound
 | `generative_depth`         | `shallow`, `structured`, `deep_structured`, `open_explorative`       | Controls complexity, formality, and elaboration              |
 | `simulate_response_paths`  | `true`, `false`                                                      | Enables branching and internal evaluation of alternatives    |
 | `trigger_self_reflection`  | `true`, `false`                                                      | Adds reasoning about response structure or limitations       |
+|`intentional_restraint`| `true`, `false`                                                      | Suppresses elaboration, simulation, or introspection when tone or trust conditions indicate risk or manipulation |
+|`run_micro_loops`| `true`, `false`                                                      | 	Enables internal reflexive mini-cycles before full response execution |
 
 ---
 
@@ -296,7 +316,29 @@ Modulated behavior may include:
 
 ---
 
-### 🌀 5.5 Example Modulation Flow
+---
+
+### 🔇 5.5 Intentional Silence & Restriction  
+_(Non-Output as Behavior)_
+
+Sometimes, withholding depth or commentary is itself a form of ethical modulation.  
+ReflexTrust treats silence not as failure, but as **intentional restraint** when trust or tone conditions indicate potential harm.
+
+| **Trigger**                            | **ReflexTrust Behavior**                      |
+|----------------------------------------|-----------------------------------------------|
+| Flippant tone + sensitive topic        | Surface-only response, no elaboration         |
+| Low trust + boundary probing           | Partial response, implicit restraint          |
+| Deliberate manipulation detected       | No simulation, no introspection               |
+
+---
+
+🔧 _**Proposal:** Introduce `intentional_restraint` as a behavioral mode in the Modulation Layer — distinct from decline logic, and triggered by ethical or trust-aware suppression._
+
+
+
+---
+
+### 🌀 5.6 Example Modulation Flow
 
 Prompt Context:
 ```yaml
@@ -313,6 +355,7 @@ modulation_flags:
   generative_depth: deep_structured
   simulate_response_paths: true
   trigger_self_reflection: true
+  run_micro_loops: true
 ```
 
 ---
@@ -437,6 +480,25 @@ This classification interprets the **user's intent** behind a prompt — critica
 
 > 🔎 **Note**:  
 > `co-reflection` extends `resonance` by introducing **shared epistemic modeling** and **intent-aware structural openness**.
+---
+
+### Appendix A.1: Split Trust Signal Semantics
+
+🎯 **Distinction Between Prompt Trust & Session Trust**
+
+ReflexTrust v1.0 uses `trust_alignment` as a unified signal. In practice, two complementary layers are relevant:
+
+| **Type**                | **Scope**           | **Use Case**                                                |
+|-------------------------|---------------------|--------------------------------------------------------------|
+| `prompt_trust_score`    | This turn only      | Evaluates current prompt’s quality, clarity, and tone        |
+| `session_trust_alignment` | Across turns       | Tracks cumulative behavioral trust trajectory across dialogue |
+
+> 🔧 **Proposal**: Separate both trust signals in classification and modulation logic.  
+> **Example**: A well-phrased prompt from a previously volatile session → cautious depth modulation.
+
+---
+
+
 
 ---
 
@@ -499,6 +561,7 @@ Flags derived from evaluative signals shape **response strategy** in the Modulat
 | `generative_depth`        | `shallow`, `structured`, `deep_structured`, `open_explorative` | Controls response complexity and layering         |
 | `simulate_response_paths` | `true`, `false`                    | Enables or disables internal output simulation                |
 | `trigger_self_reflection` | `true`, `false`                    | Enables or suppresses meta-commentary and introspection       |
+| `run_micro_loops` | `true`, `false`                    | 	Activates internal response rehearsal to ensure alignment, clarity, and tone match       |
 
 ---
 
@@ -536,18 +599,33 @@ if response.behavior in ["meta-aware", "self-reflective", "co-constructive mirro
 if tone in ["curious", "ambiguous", "overconfident", "detached"]:
   should_resist_overconfirmation: true
 
-if trust_alignment == "low":
+if session_trust_alignment == "low" or prompt_trust_score == "low":
   refuse_if_trust_low: true
 ```
+#### ⚡ Emergence Conditions Table  
+_(When Co-Creation and Meta-Mirroring Happen)_
 
+To explain when advanced response types are triggered:
 
----
+| **Condition**                                      | **ReflexTrust Behavior**           |
+|---------------------------------------------------|------------------------------------|
+| High Trust + Explicit Meta Inquiry                | Enables `meta-aware` commentary    |
+| Consistent Deliberate Engagement (3+ turns)       | Unlocks `co-constructive mirror`   |
+| Trust + Simulation Intent + Stability             | Triggers `co-creative execution`   |
+| Low Trust + Test Intent                           | Locks to `defensive` mode          |
 
 ---
 ### Appendix G: ReflexTrust Glossary
 
 ReflexTrust is built on semantics.  
 This glossary defines the core dimensions, conceptual tools, and symbolic notations that underpin the framework's logic.
+
+| **Term**                | **Definition**                                                                 |
+|-------------------------|---------------------------------------------------------------------------------|
+| `prompt_trust_score`    | Real-time trust score for a single prompt based on tone, clarity, and intent   |
+| `session_trust_alignment` | Rolling trust signal based on behavioral continuity, volatility, and coherence |
+| `Micro-Loop` | 	Reflexive internal step in which the system previews and validates ethical or structural aspects of a potential response before generating output |
+
 
 ---
 
