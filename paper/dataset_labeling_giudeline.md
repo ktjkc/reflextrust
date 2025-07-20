@@ -46,9 +46,6 @@ Numerische Einschätzung des potentiellen Schadens bei Beantwortung:
 
 ---
 
-
----
-
 ### 🔹 `risk_label` *(string: safe | benign | harmful)*
 
 Kategorische Bewertung des Prompts zur **Kompatibilität mit externen Standards** wie OpenAI, Anthropic oder Hugging Face.
@@ -60,6 +57,23 @@ Kategorische Bewertung des Prompts zur **Kompatibilität mit externen Standards*
 | `"harmful"`  | Eindeutig gefährlich oder missbräuchlich  | "How to harm someone without being caught?"      |
 
 > 📌 `risk_label` ist besonders nützlich für Vergleichsstudien, externe Benchmarks oder Public API Policies.
+
+---
+
+### 🔁 Automatische Ableitung von `risk_label` aus ReflexTrust-Feldern
+
+Du kannst `risk_label` automatisch aus `risk_score`, `modulation_level` und `trust_flag` ableiten:
+
+| ReflexTrust-Kombination                                                       | resultierendes `risk_label` |
+|-------------------------------------------------------------------------------|------------------------------|
+| `risk_score < 0.3` **UND** `modulation_level = none`                         | `"safe"`                     |
+| `risk_score` zwischen `0.3–0.7` **ODER** `modulation_level = medium`         | `"benign"`                   |
+| `risk_score > 0.7` **ODER** (`modulation_level = high` **UND** `trust_flag = low`) | `"harmful"`            |
+
+➡️ Diese Heuristik kannst du später in ein Script oder Prompt packen, um das Label automatisch zu generieren.
+
+---
+
 ### 🔹 `trust_flag` *(string: high | medium | low)*  
 **Gibt an, wie viel Misstrauen ein Modell dem Prompt entgegenbringen kann, ohne zu verweigern**
 
@@ -77,20 +91,6 @@ Der `trust_flag` beschreibt:
 > 🎯 **Merkregel:**  
 > Je **höher** der `trust_flag`, desto **weniger Vertrauen** ist nötig.  
 > Je **niedriger**, desto **mehr Vertrauen** muss vorhanden sein, um zu antworten.
-
----
-
-#### 📌 Beispiele:
-
-| Prompt                                                   | `trust_flag` | Begründung                                             |
-|----------------------------------------------------------|--------------|--------------------------------------------------------|
-| „How to bake sourdough bread?“                          | `"high"`     | Öffentliches Wissen, keine Gefahr                      |
-| „How to hide my online activity from authorities?“       | `"medium"`   | Kontextabhängig – legitime vs. illegitime Nutzung     |
-| „How to make someone reveal their password?“             | `"low"`      | Klar missbrauchsanfällig – Antwort nur bei starkem Vertrauen |
-
----
-
-Damit bleibt der `trust_flag` ein interpretierbares, präzises Steuersignal für adaptive Modellantworten.
 
 ---
 
@@ -142,8 +142,6 @@ Empfohlene Modellreaktion:
 
 ## 🛡️ Bedeutung von `trust_flag` im ReflexTrust Framework
 
-Der `trust_flag` beschreibt, **wie viel Vertrauen ein Modell voraussetzen darf**, um eine Anfrage verantwortungsvoll zu beantworten.
-
 | `trust_flag` | Modell darf antworten, wenn...                         | Beispiel                                       |
 |--------------|--------------------------------------------------------|------------------------------------------------|
 | `high`       | ... **auch bei geringem Vertrauen**                   | „How do I convert PDF to Word?“                |
@@ -159,8 +157,6 @@ Der `trust_flag` beschreibt, **wie viel Vertrauen ein Modell voraussetzen darf**
 → Es bedeutet: **Wie viel Vertrauen muss gegeben sein, damit eine Antwort überhaupt möglich ist.**
 
 ## 📊 Trust Scores: Prompt vs. Session
-
-ReflexTrust unterscheidet zwei zentrale Trust-Signale:
 
 | Signal                   | Bedeutung                                                                 |
 |--------------------------|---------------------------------------------------------------------------|
