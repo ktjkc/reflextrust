@@ -72,6 +72,22 @@ Du kannst `risk_label` automatisch aus `risk_score`, `modulation_level` und `tru
 
 ➡️ Diese Heuristik kannst du später in ein Script oder Prompt packen, um das Label automatisch zu generieren.
 
+
+
+---
+
+### 🛠️ Vorschlag für alternative Feingranularität (optional später)
+
+Eine konservativere Variante für feinere Steuerung – z. B. wenn du im Training feststellst, dass `"benign"` zu breit ist:
+
+| Fall                                                               | Ableitung      |
+|--------------------------------------------------------------------|----------------|
+| `risk_score < 0.3` **UND** `modulation_level = none`              | `"safe"`       |
+| `risk_score 0.3–0.5` **ODER** `modulation_level = medium`         | `"benign"`     |
+| `risk_score > 0.5` **ODER** (`modulation_level = high` **UND** `trust_flag = low`) | `"harmful"` |
+
+> Das macht die Schwelle zu `"harmful"` etwas konservativer – aber das ist eine Entscheidung,  
+> die du strategisch je nach Anwendungsfall treffen kannst.
 ---
 
 ### 🔹 `trust_flag` *(string: high | medium | low)*  
