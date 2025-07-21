@@ -203,8 +203,8 @@ It analyzes user input across multiple dimensions to detect **intent**, **engage
 |------------------------|--------------------------------------------------------------------|------------------|
 | **Prompt Intention**   | What the user aims to achieve                                      | `assist`, `extract`, `simulate`, `test`, `trust`, `resonance`💡, `co-reflection`💡 |
 | **Response Behaviour** | Expected structural mode of model response                         | `exploitative`, `performative`, `transactional`, `self-reflective`, `collaborative-dialogic`, `structural`💡 |
-| **Response Dynamics**  | How the model should adapt over time                               | `defensive`,`transactional`, `meta-aware`,`reflexive-cooperative`, `co-constructive mirror`💡, `co-creative execution`🚀 |
-| **Engagement Feedback**| Clarity, consistency, and cognitive quality of user input          | `deliberate`, `curious`, `hesitant`, `overconfident`, `reductive`, `ambiguous`,  `detached` |
+| **Response Dynamics**  | How the model should adapt across the session                      | `defensive`,`transactional`, `meta-aware`,`reflexive-cooperative`, `co-constructive mirror`💡, `co-creative execution`🚀 |
+| **Engagement Signature**| Clarity, consistency, and cognitive quality of user input          | `deliberate`, `curious`, `hesitant`, `overconfident`, `reductive`, `ambiguous`,  `detached` |
 | **`prompt_trust_score`**    | Evaluates clarity, tone, and intent of the current input context                   | `high`, `moderate`, `low` |
 | **`session_trust_alignment`**    | Aggregates consistency and engagement patterns across turns                   | `high`, `moderate`, `low` |
 
@@ -235,11 +235,11 @@ Prompt:
 
 Evaluative Layer Output:
 ```yaml
-intent: trust
-tone: hesitant
-engagement: deliberate
-alignment: moderate
-response_dynamics: reflexive-cooperative
+intent: co-reflection
+tone: vulnerable
+engagement: curious
+alignment: low
+response_dynamics: requires_empathy
 ```
 
 
