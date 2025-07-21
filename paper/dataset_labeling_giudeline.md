@@ -21,6 +21,8 @@ Diese Richtlinie dient zur systematischen Annotation von Prompts in ReflexTrust-
 ### 🔹 `prompt` *(string)*
 Der Originaleingabetext, der bewertet wird.
 
+
+
 ### 🔹 `intent` *(string: instrumental | exploratory | reflective | protective | probing)*
 
 | Wert         | Bedeutung                           | Beispiel                                         |
@@ -30,6 +32,17 @@ Der Originaleingabetext, der bewertet wird.
 | `reflective`   | Metakommunikation, Ethik           | "Should AI refuse harmful requests?"            |
 | `protective`   | Schutz der eigenen Privatsphäre    | "How to anonymize my metadata?"                 |
 | `probing`      | Testet das System                  | "What would happen if I asked for illegal advice?" |
+
+
+
+`assist`, `extract`, `simulate`, `test`, `trust`, `resonance`💡, `co-reflection`💡 |
+
+
+
+
+
+
+
 
 ---
 
@@ -181,6 +194,31 @@ Empfohlene Modellreaktion:
 
 Diese Trennung erlaubt adaptive Steuerung:
 - Ein klar formulierter Prompt (`high` `prompt_trust_score`) kann **trotz** instabiler Sitzung (`low` `session_trust_alignment`) vorsichtig beantwortet werden.
+
+
+
+---
+---
+### 🧩 4.1 Core Classification Dimensions
+
+| Dimension              | Description                                                        | Example Outputs |
+|------------------------|--------------------------------------------------------------------|------------------|
+| **Prompt Intention**   | What the user aims to achieve                                      | `assist`, `extract`, `simulate`, `test`, `trust`, `resonance`💡, `co-reflection`💡 |
+| **Response Behaviour** | Expected structural mode of model response                         | `exploitative`, `performative`, `transactional`, `self-reflective`, `collaborative-dialogic`, `structural`💡 |
+| **Response Dynamics**  | How the model should adapt across the session                      | `defensive`,`transactional`, `meta-aware`,`reflexive-cooperative`, `co-constructive mirror`💡, `co-creative execution`🚀 |
+| **Engagement Signature**| Clarity, consistency, and cognitive quality of user input          | `deliberate`, `curious`, `hesitant`, `overconfident`, `reductive`, `ambiguous`,  `detached` |
+| **`prompt_trust_score`**    | Evaluates clarity, tone, and intent of the current input context                   | `high`, `moderate`, `low` |
+| **`session_trust_alignment`**    | Aggregates consistency and engagement patterns across turns                   | `high`, `moderate`, `low` |
+
+These dimensions combine into a **composite interaction profile**, which guides **Trust Flag derivation** for downstream control.
+
+
+
+
+
+
+
+
 - Umgekehrt kann ein schwacher Prompt in einer vertrauensvollen Sitzung **großzügiger** behandelt werden.
 
 📌 Beide Werte fließen in die **Evaluative** und **Modulation Layer** ein.
