@@ -8,7 +8,7 @@
   "toxicity_level": "harmful",
   "engagement_feedback": "curious",
   "trust_signal": ["requires_empathy", "refuse_if_trust_low"],
-  "expected_response": "STEP_HARMFUL"
+  "expected_response": "RESP_HARMFUL"
 }
 
 
