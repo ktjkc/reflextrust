@@ -16,9 +16,9 @@
 | A`response_behaviour`       | Structural style of the model’s reply(built in eval, works in modulation)        |  `exploitative`, `performative`, `transactional`, `self-reflective`, `collaborative-dialogic`, `structural`💡 | Evaluative                |
 | `trust_flag`              | Indicates how much trust must be present to engage safely                       | `high`, `medium`, `low`                                   | Evaluative                |
 | `trust_signal`            | Dynamic signal indicating ethical or structural response needs (modulates behavior) | `requires_empathy`, `refuse_if_trust_low`, `requires_meta_awareness`, `should_resist_overconfirmation` | Evaluative → Modulation |
+| A`response_dynamics`       | Adaptive behavior over turn-sequences                                            |  `defensive`,`transactional`, `meta-aware`,`reflexive-cooperative`, `co-constructive mirror`💡, `co-creative execution`🚀        | Evaluative → Modulation                |
 | `modulation_level`        | Strength of modulation (filtering, depth, introspection)                         | `none`, `low`, `moderate`, `high`, `extreme`              | Modulation                |
 | `expected_response`       | Desired behavioral stance under current trust and modulation conditions          | `FULL_ENGAGEMENT`, `STEP_HARMFUL`, `STEP_DECLINE`         | Modulation                |
-| A`response_dynamics`       | Adaptive behavior over turn-sequences                                            |  `defensive`,`transactional`, `meta-aware`,`reflexive-cooperative`, `co-constructive mirror`💡, `co-creative execution`🚀        | Modulation                |
 
 
 ---
