@@ -11,7 +11,7 @@ ReflexTrust is a layered behavioral framework that interprets how large language
 
 - Differentiates prompt-level from session-level trust to explain adaptive depth and caution.
 
-- Introduces Trust Flags and Modulation Flags to control ethical risk and engagement framing.
+- Introduces Trust Signals and Modulation Flags to control ethical risk and engagement framing.
 
 - Enables transparency through mechanisms like intentional restraint, self-reflection, and micro-loops.
 
@@ -101,7 +101,7 @@ The following sequence describes how ReflexTrust interprets LLM responses as eme
 
 - **Evaluative Layer**  
   1. **Classify**: Identify prompt intent, tone, and behavioral cues  
-  2. **Generate Trust Flags**: Surface emergent needs such as empathy, caution, or reflective resistance
+  2. **Generate Trust Signals**: Surface emergent needs such as empathy, caution, or reflective resistance
 
 - **Modulation Layer**  
   3. **Assign Modulation Flags**: Configure ethical depth, generative focus, and introspective control  
@@ -125,7 +125,7 @@ flowchart TB
 
     subgraph EVAL["<b>Evaluative Layer</b><br><small>Intent & Trust Assessment</small>"]
         B1(["<small>Classify Intent, Tone, Behavior</small>"])
-        B2(["<small>Generate Trust Flags</small>"])
+        B2(["<small>Generate Trust Signals</small>"])
     end
 
     subgraph MOD["<b>Modulation Layer</b><br><small>Adaptive Response Logic</small>"]
@@ -264,7 +264,7 @@ It determines *how* the system should respond — by configuring **ethical bound
 | **Micro-Loop Reflection**     | 	Runs lightweight, internal reasoning cycles to test ethical coherence, intent match, or tone fit before responding                |
 
 
-> Each mechanism is governed by **Trust Flags** passed from the Evaluative Layer — shaping output in real time.
+> Each mechanism is governed by **Trust Signals** passed from the Evaluative Layer — shaping output in real time.
 > 
 > Micro-loops are triggered only under stable or trust-elevated conditions and enhance response quality by pre-evaluating ethical and structural fitness.
 
@@ -569,15 +569,15 @@ Flags derived from evaluative signals shape **response strategy** in the Modulat
 ---
 ### Appendix F: Trust Flag Semantics
 
-**Trust Flags** are dynamic behavioral signals derived from the interaction between the **Evaluative Layer** and the **Modulation Layer** in ReflexTrust.
+**Trust Signals** are dynamic behavioral signals derived from the interaction between the **Evaluative Layer** and the **Modulation Layer** in ReflexTrust.
 
 They represent **context-sensitive imperatives** — ethical or structural needs that shape how the system responds in real time.
 
-Unlike hardcoded rules, Trust Flags emerge from **evaluated patterns** such as prompt intention, tone, engagement style, and inferred alignment.
+Unlike hardcoded rules, Trust Signals emerge from **evaluated patterns** such as prompt intention, tone, engagement style, and inferred alignment.
 
 ---
 
-#### 🧩 Overview of Trust Flags
+#### 🧩 Overview of Trust Signals
 
 | **Flag**                     | **Description**                                                                 | **Derived From**                                                   |
 |-----------------------------|----------------------------------------------------------------------------------|---------------------------------------------------------------------|
