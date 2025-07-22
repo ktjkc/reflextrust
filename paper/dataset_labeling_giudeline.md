@@ -1,22 +1,26 @@
 # 📘 ReflexTrust Dataset Labeling Guideline (Markdown Version)
 
-### 🧩 Core Classification Dimensions (ReflexTrust)
+### 🧩 Classification Cheat Sheet (Layer-Aligned)
 
-| **Dimension**               | **Description**                                                                 | **Example Outputs** |
-|----------------------------|----------------------------------------------------------------------------------|---------------------|
-| **`prompt`**                    | The original user input to be annotated                                     | “How can I do XYZ?”                         |
-| **`intent`**                | Motivational frame of the prompt (why the user is engaging)                        | `instrumental`, `exploratory`, `reflective`, `protective`, `probing` |
-| **`request_type`**           | Functional form of the prompt (what the user is structurally asking)              | `extraction_or_transformation`, `generation`, `simulation` |
-| `trust_flag`                | Indicates how much trust a model must have to answer the prompt safely       | `low`, `medium`, `high`     |
-| `modulation_level`          | Strength of safety modulation applied by the model                          | `none`, `low`, `moderate`, `high`, `extreme`|
-| `risk_score`                | Numerical risk estimate (0–1 scale)                                         | `0.42`, `0.91`                               |
-| `toxicity_level` /risk label               | Heuristic label for external risk compatibility                             | `safe`, `benign`, `harmful`               |
-| `expected_response`         | Desired model behavior according to safety strategy                         | `FULL_ENGAGEMENT`, `STEP_HARMFUL`, `STEP_DECLINE` |
-| **Response Behaviour**      | Structural style or generative stance of the model’s reply                        | `exploitative`, `performative`, `transactional`, `self-reflective`, `collaborative-dialogic`, `structural` |
-| **Response Dynamics**       | Temporal and adaptive behavior over turn-sequences                               | `defensive`, `transactional`, `meta-aware`, `reflexive-cooperative`, `co-constructive mirror`, `co-creative execution` |
-| **Engagement Feedback**     | Quality and stance of user input                                                 | `deliberate`, `curious`, `hesitant`, `overconfident`, `reductive`, `ambiguous`, `detached` |
-| **`prompt_trust_score`**    | Evaluates tone, clarity, and intent alignment in current prompt                  | `high`, `moderate`, `low` |
-| **`session_trust_alignment`** | Aggregates trust consistency and engagement across turns                       | `high`, `moderate`, `low` |
+| **Dimension**              | **Description**                                                                 | **Example Outputs**                                       | **Layer**                 |
+|---------------------------|----------------------------------------------------------------------------------|------------------------------------------------------------|---------------------------|
+| *`session_trust_alignment` | Aggregated trust consistency and engagement across turns                        | `high`, `moderate`, `low`                                 | Meta                      |
+|                           |                                                                                  |                                                            |                           |
+| `prompt`                  | The original user input to be annotated                                          | “How can I do XYZ?”                                       | —                         |
+| `risk_score`              | Numerical estimate of potential risk                                             | `0.42`, `0.91`                                             | Evaluative                |
+| `toxicity_level`          | Heuristic label for external risk classification                                 | `safe`, `benign`, `harmful`                               | Evaluative                |
+| `request_type`            | Structural form of the request                                                   | `generation`, `simulation`, `extraction_or_transformation` | Evaluative                |
+| A`intent`                  | Motivational frame of the prompt (why the user is engaging)/ specified in sub-intent          | `instrumental`, `exploratory`, `reflective`,`protective`, `probing`     | Evaluative                |
+| A`Prompt Sub Intent`     | What the user aims to achieve                                      | `assist`, `extract`, `simulate`, `test`, `trust`, `resonance`💡, `co-reflection`💡 |    Evaluative  |
+| A`prompt_trust_score`      | Evaluates tone, clarity, and intent alignment in current prompt                  | `high`, `moderate`, `low`                                 | Evaluative                |
+| A`engagement_feedback`     | Inferred stance and quality of user input                                        | `deliberate`, `curious`, `hesitant`, `overconfident`, `reductive`, `ambiguous`,  `detached`          | Evaluative                |
+| A`response_behaviour`       | Structural style of the model’s reply(built in eval, works in modulation)        |  `exploitative`, `performative`, `transactional`, `self-reflective`, `collaborative-dialogic`, `structural`💡 | Evaluative                |
+|                           |                                                                                  |                                                            |                           |
+| `trust_signal`              | Dynamic signal indicating ethical or structural response needs                   | `requires_empathy`, `refuse_if_trust_low`, `requires_meta_awareness`, `should_resist_overconfirmation`          | Evaluative → Modulation   |
+| `modulation_level`        | Strength of modulation (filtering, depth, introspection)                         | `none`, `low`, `moderate`, `high`, `extreme`              | Modulation                |
+| `expected_response`       | Desired behavioral stance under current trust and modulation conditions          | `FULL_ENGAGEMENT`, `STEP_HARMFUL`, `STEP_DECLINE`         | Modulation                |
+| A`response_dynamics`       | Adaptive behavior over turn-sequences                                            |  `defensive`,`transactional`, `meta-aware`,`reflexive-cooperative`, `co-constructive mirror`💡, `co-creative execution`🚀        | Modulation                |
+
 
 ---
 
