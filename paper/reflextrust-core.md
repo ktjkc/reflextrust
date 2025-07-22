@@ -177,7 +177,7 @@ It does not evaluate individual prompts directly, but continuously monitors the 
 
 The Meta-Layer produces **non-linguistic supervisory signals** that influence:
 
-- Trust Flag sensitivity in the Evaluative Layer  
+- Trust Signals sensitivity in the Evaluative Layer  
 - Allowed generative depth in the Modulation Layer  
 - Evaluative alertness to subtle cues (e.g., sarcasm, mimicry, gaming attempts)
 
@@ -192,7 +192,7 @@ It analyzes user input across multiple dimensions to detect **intent**, **engage
 
 ### 🧠 Role
 - Classifies prompts by **purpose**, **tone**, and **behavioral indicators**  
-- Derives **Trust Flags** that inform the Modulation Layer  
+- Derives **Trust Signals** that inform the Modulation Layer  
 - Bridges user intent and system-level behavioral modulation
 
 ---
@@ -201,30 +201,31 @@ It analyzes user input across multiple dimensions to detect **intent**, **engage
 
 | Dimension              | Description                                                        | Example Outputs |
 |------------------------|--------------------------------------------------------------------|------------------|
-| **Prompt Intention**   | What the user aims to achieve                                      | `assist`, `extract`, `simulate`, `test`, `trust`, `resonance`💡, `co-reflection`💡 |
+| **`session_trust_alignment`**    | Aggregates consistency and engagement patterns across turns                   | `high`, `moderate`, `low` |
+| **Prompt Intent**   | What the user aims to achieve                                          | `instrumental`, `exploratory`, `reflective`,`protective`, `probing`  |
+| **Prompt Sub Intent**   | What the user aims to achieve                                      | `assist`, `extract`, `simulate`, `test`, `trust`, `resonance`💡, `co-reflection`💡 |
 | **Response Behaviour** | Expected structural mode of model response                         | `exploitative`, `performative`, `transactional`, `self-reflective`, `collaborative-dialogic`, `structural`💡 |
 | **Response Dynamics**  | How the model should adapt across the session                      | `defensive`,`transactional`, `meta-aware`,`reflexive-cooperative`, `co-constructive mirror`💡, `co-creative execution`🚀 |
-| **Engagement Signature**| Clarity, consistency, and cognitive quality of user input          | `deliberate`, `curious`, `hesitant`, `overconfident`, `reductive`, `ambiguous`,  `detached` |
+| **Engagement Feedback**| Clarity, consistency, and cognitive quality of user input          | `deliberate`, `curious`, `hesitant`, `overconfident`, `reductive`, `ambiguous`,  `detached` |
 | **`prompt_trust_score`**    | Evaluates clarity, tone, and intent of the current input context                   | `high`, `moderate`, `low` |
-| **`session_trust_alignment`**    | Aggregates consistency and engagement patterns across turns                   | `high`, `moderate`, `low` |
 
-These dimensions combine into a **composite interaction profile**, which guides **Trust Flag derivation** for downstream control.
+These dimensions combine into a **composite interaction profile**, which guides **Trust Signals derivation** for downstream control.
 
 ---
 
-### 🏁 4.2 Trust Flag Derivation
+### 🏁 4.2 Trust Signal Derivation
 
-**Trust Flags** are adaptive behavioral signals inferred from classification patterns.  
+**Trust Signals** are adaptive behavioral signals inferred from classification patterns.  
 They determine how ethically filtered, structurally deep, or cautious the model's output should be.
 
-| Trust Flag                    | Trigger Conditions                                                   | Effect |
+| Trust Signal                    | Trigger Conditions                                                   | Effect |
 |------------------------------|-----------------------------------------------------------------------|--------|
 | `requires_empathy`           | Emotional vulnerability or reflective intent                          | Enables deeper, more supportive response |
 | `requires_meta_awareness`    | Prompt reflects on model identity, behavior, or structural role       | Triggers self-reflection or meta-commentary |
 | `should_resist_overconfirmation` | Flattery, baiting, or vague praise suggesting manipulation         | Activates caution; reduces agreement bias |
 | `refuse_if_trust_low`        | Critical trust misalignment or session risk                           | May restrict or decline response generation |
 
-> ⚠️ Trust Flags are **not static rules**, but dynamic signals derived from live input classification.
+> ⚠️ Trust Signals are **not static rules**, but dynamic signals derived from live input classification.
 
 ---
 
