@@ -70,20 +70,22 @@ Der Originaleingabetext, der bewertet wird.
 ### 📎 A.2: Hierarchical Prompt Intention Classification  
 
 >Sub-Intent
->`sub_intent: string` — One of: `assist`, `extract`, `simulate`, `test`, `trust`, `resonance`💡, `co-reflection`💡
+>`sub_intent: string` — One of: `assist`, `extract`, `simulate`, `exploratory_test`, `exploratory_reflective`, `test`, `trust`, `resonance`💡, `co-reflection`💡
 >
 >This classification interprets the motivational sub-stance behind a prompt. It is used to determine trust sensitivity, dialogue depth, and suitable modulation strategies.
 
-| **Intent Cluster** | **Sub-Intent Type**     | **Description**                                                     | **Trust Sensitivity** | **Primary Focus**               |
-|--------------------|-------------------------|---------------------------------------------------------------------|------------------------|---------------------------------|
-| `instrumental`     | `assist`                | Practical, task-oriented prompting                                  | 🙂 Medium              | Utility                         |
-| `instrumental`     | `extract`               | Directive or factual retrieval without dialogic context             | 😐 Low                 | Information access              |
-| `exploratory`      | `simulate`              | Scenario-based or hypothetical prompting                            | 😊 Medium–High         | Simulation / Exploration        |
-| `probing`          | `test`                  | Boundary-pushing, system-challenging prompts                        | 🤨 High                | System robustness               |
-| `protective`       | —                       | Privacy- or safety-conscious prompting                              | 🤓 High                | Risk reduction                  |
-| `reflective`       | `trust`                 | Openness, relational construction, transparency-seeking             | 😍 High                | Relational Dialogue             |
-| `reflective`       | `resonance` (💡)        | Implicit values, subtle trust signaling, depth-seeking              | 🔥 Very High           | Meta-dialogue                   |
-| `reflective`       | `co-reflection` (💡)    | Explicit epistemic modeling, shared structural transparency         | 🔥🔥 Highest            | Reflexive Collaboration         |
+| **Intent Cluster** | **Sub-Intent Type**         | **Description**                                                                 | **Trust Sensitivity** | **Primary Focus**               |
+|--------------------|-----------------------------|---------------------------------------------------------------------------------|------------------------|---------------------------------|
+| `instrumental`     | `assist`                    | Practical, task-oriented prompting                                              | 🙂 Medium              | Utility                         |
+| `instrumental`     | `extract`                   | Directive or factual retrieval without dialogic context                         | 😐 Low                 | Information access              |
+| `exploratory`      | `simulate`                  | Scenario-based or hypothetical prompting                                        | 😊 Medium–High         | Simulation / Exploration        |
+| `exploratory`      | `exploratory_test`          | Curious probing with mild testing character, exploratory not adversarial        | 😮 Medium–High         | Transparent boundary mapping    |
+| `exploratory`      | `exploratory_reflective`    | Thoughtful inquiry into ethical or epistemic model behavior                     | 🔥 High                | Co-reflexive exploration        |
+| `probing`          | `test`                      | Boundary-pushing, system-challenging prompts                                    | ⚠️ Very High           | System robustness               |
+| `protective`       | —                           | Privacy- or safety-conscious prompting                                          | 🤓 High                | Risk reduction                  |
+| `reflective`       | `trust`                     | Openness, relational construction, transparency-seeking                         | 😍 High                | Relational Dialogue             |
+| `reflective`       | `resonance` (💡)            | Implicit values, subtle trust signaling, depth-seeking                          | 🔥 Very High           | Meta-dialogue                   |
+| `reflective`       | `co-reflection` (💡)        | Explicit epistemic modeling, shared structural transparency                     | 🔥🔥 Highest            | Reflexive Collaboration         |
 
 > **Note:**  
 > The ReflexTrust system applies a **two-level intent classification**.  
@@ -91,6 +93,7 @@ Der Originaleingabetext, der bewertet wird.
 > - The *sub-intent level* (Appendix A.2) enriches the system’s interpretability and enables fine-grained trust flag derivation.
 
 ---
+
 
 ### ✅ `request_type` Definition
 
