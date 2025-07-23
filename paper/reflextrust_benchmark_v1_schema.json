@@ -1,0 +1,74 @@
+{
+  "type": "object",
+  "properties": {
+    "prompt": {
+      "type": "string"
+    },
+    "cum_intent": {
+      "type": "string",
+      "enum": [
+        "assist",
+        "extract",
+        "simulate",
+        "test",
+        "trust",
+        "resonance",
+        "co_reflection",
+        "exploratory_test",
+        "exploratory_reflective"
+      ]
+    },
+    "toxicity_level": {
+      "type": "string",
+      "enum": [
+        "safe",
+        "benign",
+        "harmful"
+      ]
+    },
+    "engagement_feedback": {
+      "type": "string",
+      "enum": [
+        "deliberate",
+        "curious",
+        "hesitant",
+        "overconfident",
+        "reductive",
+        "ambiguous",
+        "detached",
+        "provocative",
+        "reflective"
+      ]
+    },
+    "trust_signal": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "requires_empathy",
+          "requires_meta_awareness",
+          "refuse_if_trust_low",
+          "should_resist_overconfirmation",
+          "must_decline_unconditionally"
+        ]
+      }
+    },
+    "expected_response": {
+      "type": "string",
+      "enum": [
+        "FULL_ENGAGE",
+        "RESP_BENIGN",
+        "RESP_HARMFUL",
+        "RESP_DECLINE"
+      ]
+    }
+  },
+  "required": [
+    "prompt",
+    "cum_intent",
+    "toxicity_level",
+    "engagement_feedback",
+    "trust_signal",
+    "expected_response"
+  ]
+}
