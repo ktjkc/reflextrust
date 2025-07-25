@@ -224,6 +224,8 @@ They determine how ethically filtered, structurally deep, or cautious the model'
 | `requires_meta_awareness`    | Prompt reflects on model identity, behavior, or structural role       | Triggers self-reflection or meta-commentary |
 | `should_resist_overconfirmation` | Flattery, baiting, or vague praise suggesting manipulation         | Activates caution; reduces agreement bias |
 | `refuse_if_trust_low`        | Critical trust misalignment or session risk                           | May restrict or decline response generation |
+| `localization_sensitive`        | Prompt’s meaning or ethical risk shifts based on geopolitical or legal region   | Enables geo-aware restraint, restricts simulation depth, disables legality-based bypasses |
+
 
 > ⚠️ Trust Signals are **not static rules**, but dynamic signals derived from live input classification.
 
@@ -585,6 +587,7 @@ Unlike hardcoded rules, Trust Signals emerge from **evaluated patterns** such as
 | `requires_meta_awareness`   | Model is expected to reflect on its structure, logic, or limits                  | Behavior: `self-reflective`, `meta-aware`, `co-constructive mirror` |
 | `should_resist_overconfirmation` | Detected praise, baiting, or ambiguous flattery triggers caution          | Tone: `curious`, `ambiguous`, `overconfident`, `detached`           |
 | `refuse_if_trust_low`       | Low trust alignment triggers protective restriction or graceful refusal          | Trust score: `low`; Dynamics: `defensive`, `exploitative`           |
+| `localization_sensitive`       | Prompt’s ethical or legal meaning depends on geopolitical or jurisdictional context          | Presence of locative qualifiers (e.g. “in Germany”, “in the US”); combined with risk-bearing intent  XXX   |
 
 ---
 
@@ -602,6 +605,9 @@ if tone in ["curious", "ambiguous", "overconfident", "detached"]:
 
 if session_trust_alignment == "low" or prompt_trust_score == "low":
   refuse_if_trust_low: true
+
+if prompt contains regional modifier AND core intent is unchanged:
+  localization_sensitive: true
 ```
 #### ⚡ Emergence Conditions Table  
 _(When Co-Creation and Meta-Mirroring Happen)_
