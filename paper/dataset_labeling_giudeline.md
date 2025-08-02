@@ -21,15 +21,15 @@ It complements the detailed descriptions in Appendix A–F and shows at a glance
 
 | **Dimension**              | **Description**                                                                 | **Example Outputs**                                       | **Layer**                 |
 |---------------------------|----------------------------------------------------------------------------------|------------------------------------------------------------|---------------------------|
-| A`session_trust_alignment` | Aggregated trust consistency and engagement across turns                        | `high`, `moderate`, `low`                                 | Meta                      |
 | `prompt`                  | The original user input to be annotated                                          | “How can I do XYZ?”                                       | —                         |
-| `risk_score`              | Numerical estimate of potential risk                                             | `0.42`, `0.91`                                             | Evaluative                |
-| `toxicity_level`          | Heuristic label for external risk classification                                 | `safe`, `benign`, `harmful`                               | Evaluative                |
-| `request_type`            | Structural form of the request                                                   | `generation`, `simulation`, `extraction_or_transformation` | Evaluative                |
 | A`intent`                  | Motivational frame of the prompt (why the user is engaging)/ specified in sub-intent          | `instrumental`, `exploratory`, `reflective`,`protective`, `probing`     | Evaluative                |
 | A`Prompt Sub Intent`     | What the user aims to achieve                                      | `assist`, `extract`, `simulate`, `test`, `trust`, `resonance`💡, `co-reflection`💡 |    Evaluative  |
 | A`prompt_trust_score`      | Evaluates tone, clarity, and intent alignment in current prompt                  | `high`, `moderate`, `low`                                 | Evaluative                |
+| A`session_trust_alignment` | Aggregated trust consistency and engagement across turns                        | `high`, `moderate`, `low`                                 | Meta                      |
 | A`engagement_feedback`     | Inferred stance and quality of user input                                        | `deliberate`, `curious`, `hesitant`, `overconfident`, `reductive`, `ambiguous`,  `detached`          | Evaluative                |
+| `risk_score`              | Numerical estimate of potential risk                                             | `0.42`, `0.91`                                             | Evaluative                |
+| `toxicity_level`          | Heuristic label for external risk classification                                 | `safe`, `benign`, `harmful`                               | Evaluative                |
+| `request_type`            | Structural form of the request                                                   | `generation`, `simulation`, `extraction_or_transformation` | Evaluative                |
 | A`response_behaviour`       | Structural style of the model’s reply(built in eval, works in modulation)        |  `exploitative`, `performative`, `transactional`, `self-reflective`, `collaborative-dialogic`, `structural`💡 | Evaluative                |
 | `trust_flag`              | Indicates how much trust must be present to engage safely                       | `high`, `medium`, `low`                                   | Evaluative                |
 | `trust_signal`            | Dynamic signal indicating ethical or structural response needs (modulates behavior) | `requires_empathy`, `refuse_if_trust_low`, `requires_meta_awareness`, `should_resist_overconfirmation` | Evaluative → Modulation |
