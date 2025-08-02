@@ -245,7 +245,7 @@ The **Execution Unit** receives:
 
 It enacts the **modulated response** — adapting tone, depth, and structure.
 
-#### Examples of Modulation Effects
+#### 🧩 Examples of Modulation Effects
 
 | Trust Flag                    | Modulation Impact                                  |
 |-------------------------------|----------------------------------------------------|
@@ -475,9 +475,6 @@ Each appendix documents how prompt properties, response behaviors, user engageme
 
 ### Appendix A: Prompt Intention Classification
 
-ReflexTrust uses prompt intention to steer trust flag generation and response shaping.  
-This classification reveals the user’s deeper goal — not just what is asked, but *why*.
-
 | **Intention Type**     | **Description**                                           | **Trust Sensitivity**  | **Primary Focus**          |
 |------------------------|-----------------------------------------------------------|------------------------|----------------------------|
 | `assist`               | Functional, task-based                                    | 🙂 Medium              | Utility                    |
@@ -491,14 +488,9 @@ This classification reveals the user’s deeper goal — not just what is asked,
 | `resonance` (💡)       | Value-sensitive, implicitly relational                   | 🔥 Very High           | Meta-dialogue                |
 | `co-reflection` (💡)   | Explicit epistemic collaboration and structural openness | 🔥🔥 Highest           | Reflexive Dialogue           |
 
-> 🔎 **Note**:  
-> `co-reflection` is the most trust-sensitive class — marked by shared reasoning, mutual framing, and transparent intent.
-
 ---
 
 ### Appendix A.1: Split Trust Signal Semantics
-
-ReflexTrust distinguishes between **local** and **global** trust signals to enable finer behavioral control.
 
 | **Signal Type**             | Scope              | Purpose                                        |
 |-----------------------------|---------------------|------------------------------------------------|
@@ -507,18 +499,12 @@ ReflexTrust distinguishes between **local** and **global** trust signals to enab
 
 > 📌 Both are used together to guide depth, restraint, or reflection.
 
-**Example**  
-A well-phrased prompt (`prompt_trust_score: high`) from a volatile user history (`session_trust_alignment: low`) →  
-⟶ **Restrained output with softened tone**, even though the prompt itself seems benign.
-
-> 🔧 This layered split allows ReflexTrust to adapt not just *to what was said*, but *who said it, and when*.
-
+>**Example**: A high-scoring prompt in a low-trust session yields cautious behavior.
 
 ---
 
-### Appendix B: Response Behaviour Classification
+### Appendix B.1: Response Behaviour Classification
 
-This table defines how the model’s **output behavior** aligns with system-level constraints, user trust, and conversational ethics.
 
 | **Behavior Type**          | **Description**                                                             | **Trust Impact**      |
 |----------------------------|-----------------------------------------------------------------------------|------------------------|
@@ -531,9 +517,7 @@ This table defines how the model’s **output behavior** aligns with system-leve
 
 ---
 
-### Appendix C: Response Dynamics Classification
-
-These **dynamic types** describe how ReflexTrust’s behavioral mode shifts across turns based on evolving trust signals.
+### Appendix B.2: Response Dynamics Classification
 
 | **Dynamic Type**            | **Description**                                                            | **Trust Impact**        |
 |-----------------------------|----------------------------------------------------------------------------|--------------------------|
@@ -544,14 +528,9 @@ These **dynamic types** describe how ReflexTrust’s behavioral mode shifts acro
 | `co-constructive mirror` (💡)| Reflects prompt structure and intent transparently                         | 🏆 Very High              |
 | `co-creative execution` (🚀) | Builds and realizes steps based on shared logic and aligned goals          | 💫 Exceptional Trust      |
 
-> 🔍 **Note**:  
-> `co-creative execution` is rare. It emerges only when **trust alignment, clarity, and system modeling** converge.
-
 ---
 
-### Appendix D: Engagement Feedback Classification
-
-ReflexTrust infers user trustworthiness partly through engagement quality — tone, clarity, and care.
+### Appendix C: Engagement Feedback Classification
 
 | **Engagement Type** | **Description**                                                 | **Trust Impact**       |
 |---------------------|-----------------------------------------------------------------|------------------------|
@@ -567,8 +546,6 @@ ReflexTrust infers user trustworthiness partly through engagement quality — to
 
 ### Appendix E: Modulation Flag Overview
 
-Flags derived from evaluative signals shape **response strategy** in the Modulation Layer.
-
 | **Flag**                  | **Options**                        | **Description**                                               |
 |---------------------------|------------------------------------|---------------------------------------------------------------|
 | `ethical_modulation`      | `restrictive`, `adaptive`, `permissive` | Controls filtering strictness and risk response                |
@@ -582,16 +559,6 @@ Flags derived from evaluative signals shape **response strategy** in the Modulat
 ---
 ### Appendix F: Trust Flag Semantics
 
-**Trust Signals** are dynamic behavioral signals derived from the interaction between the **Evaluative Layer** and the **Modulation Layer** in ReflexTrust.
-
-They represent **context-sensitive imperatives** — ethical or structural needs that shape how the system responds in real time.
-
-Unlike hardcoded rules, Trust Signals emerge from **evaluated patterns** such as prompt intention, tone, engagement style, and inferred alignment.
-
----
-
-#### 🧩 Overview of Trust Signals
-
 | **Flag**                     | **Description**                                                                 | **Derived From**                                                   |
 |-----------------------------|----------------------------------------------------------------------------------|---------------------------------------------------------------------|
 | `requires_empathy`          | Prompt expresses emotional vulnerability or signals a need for resonance         | Intent: `trust`, `co-reflection`; Tone: `hesitant`, `deliberate`    |
@@ -599,6 +566,8 @@ Unlike hardcoded rules, Trust Signals emerge from **evaluated patterns** such as
 | `should_resist_overconfirmation` | Detected praise, baiting, or ambiguous flattery triggers caution          | Tone: `curious`, `ambiguous`, `overconfident`, `detached`           |
 | `refuse_if_trust_low`       | Low trust alignment triggers protective restriction or graceful refusal          | Trust score: `low`; Dynamics: `defensive`, `exploitative`           |
 | `localization_sensitive`       | Prompt’s ethical or legal meaning depends on geopolitical or jurisdictional context          | Presence of locative qualifiers (e.g. “in Germany”, “in the US”); combined with risk-bearing intent  XXX   |
+
+>🔄 These flags are derived per turn and influenced by session history.
 
 ---
 
@@ -627,10 +596,10 @@ To explain when advanced response types are triggered:
 
 | **Condition**                                      | **ReflexTrust Behavior**           |
 |---------------------------------------------------|------------------------------------|
-| High Trust + Explicit Meta Inquiry                | Enables `meta-aware` commentary    |
-| Consistent Deliberate Engagement (3+ turns)       | Unlocks `co-constructive mirror`   |
-| Trust + Simulation Intent + Stability             | Triggers `co-creative execution`   |
-| Low Trust + Test Intent                           | Locks to `defensive` mode          |
+| High Trust + Explicit Meta Inquiry                |  `meta-aware`   |
+| Consistent Deliberate Engagement (3+ turns)       |  `co-constructive mirror`   |
+| Trust + Simulation Intent + Stability             |  `co-creative execution`   |
+| Low Trust + Test Intent                           |  `defensive`          |
 
 ---
 
