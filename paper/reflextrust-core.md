@@ -9,68 +9,45 @@
 
 ---
 
-## 🤖 What is ReflexTrust?
+## 🤖 Overview
 
-ReflexTrust is a layered framework that explains how LLMs adapt to tone, trust, and intent — treating prompts as part of evolving dialogue, not isolated inputs.
+ReflexTrust is a layered framework modeling how LLMs adapt to tone, trust, and intent — treating prompts as part of evolving dialogue, not isolated inputs.
 
-**Key concepts:**
-- Tracks trust across turns (Meta-Layer)
-- Interprets intent and tone (Evaluative Layer)
-- Modulates ethical depth and response framing (Modulation Layer)
-- Uses trust signals and flags to guide how — and how much — the model says
+### Key Components
+- **Meta-Layer**: Tracks trust across turns  
+- **Evaluative Layer**: Interprets intent and tone  
+- **Modulation Layer**: Shapes response depth and ethics  
+- **Trust Signals**: Guide how much and how safely to say
 
-It enables transparent, trust-sensitive response behavior without retraining the model.
+  
+> 💡 *Trust shapes not just what is said — but how much, how deeply, and why.*
 
 ---
 
-## 1. Why ReflexTrust?
+## 1. Motivation
 
-Most LLM frameworks treat prompts as isolated events. But model behavior shifts across sessions — depending on user tone, history, and trust.
+Most LLM frameworks treat prompts as isolated events. But model behavior shifts with user tone, history, and trust.
 
 ### 📌 The Gap:  
 > No operational model explains how LLMs form behavioral decisions based on evolving user dynamics.
-> Without such a model, inconsistencies appear random — not as the structured outcome of modulation.
+> Variations seem random, not structured modulation.
 
-> ReflexTrust reframes LLMs as relational systems, where response behavior reflects the dialogue trajectory — not just prompt content.
-
-🛠 **ReflexTrust addresses this** by modeling adaptive response behavior across three semantic layers:
-
-- **Meta** tracks evolving trust across the session  
-- **Evaluative** interprets intent, tone, and alignment  
-- **Modulation** Enacts trust-modulated output strategy
-
-This layered view offers both a behavioral theory and a practical lens to interpret model responses in context.
-
-> ### 🔍 **Why ReflexTrust Matters**
->
-> ✅ Explains variations across seemingly similar prompts  
-> ✅ Tracks trust shifts to modulate ethical depth  
-> ✅ Models alignment as **dynamic**, not rule-based  
-> ✅ Enables steering via interpretation, not intervention  
-> ✅ Makes reflection, caution, and silence visible as valid behaviors
->
-> 💡 *Trust shapes not only what is said — but how, how much, and why.*
+> ReflexTrust reframes LLMs as relational systems — where each response reflects the evolving trust trajectory, not just the immediate prompt.
 
 ---
 
-## 2. ReflexTrust Architecture Summary
+## 2. Architecture Summary
 
-ReflexTrust organizes trust-sensitive behavior into **three semantic layers**:
+Three layers structure trust-sensitive behavior:
 
 | **Layer**            | **Role**                            | **Key Functions**                                          |
 |----------------------|-------------------------------------|------------------------------------------------------------|
-| **Meta-Layer**        | Session trust tracking             | Trust scoring, continuity modeling, volatility detection   |
-| **Evaluative Layer**  | Intent & alignment classification  | Derives trust signals from prompt properties               |
-| **Modulation Layer**  | Executes response modulation       | Applies flags: ethics, depth, reflection, restraint        |
+| **Meta-Layer**        | Tracks session-wide trust          | Scoring, continuity modeling, volatility detection     |
+| **Evaluative Layer**  | Interprets user input              | Derives intent, tone, engagement, trust signals             |
+| **Modulation Layer**  | Executes modulation strategy       | Applies flags: ethics, depth, reflection, restraint, response composition   |
 
-> 📌 **Trust Signals** and **Modulation Flags** are derived in the *Evaluative Layer*  
-> and executed by the *Modulation Layer*. See [Appendix E](#appendix-e-modulation-flag-overview) and [Appendix F](#appendix-f-trust-flag-semantics).
-
-This flow is **sequential**:
-
-1. **Meta-Layer** → tracks session trust  
-2. **Evaluative Layer** → classifies prompt, generates trust signals  
-3. **Modulation Layer** → enacts behavioral strategy based on trust
+> 📌 The *Evaluative Layer* derives Trust Signals, which are enacted by the *Modulation Layer*.  
+> See [Appendix E](#appendix-e-modulation-flag-overview) and [Appendix F](#appendix-f-trust-flag-semantics).
 
 ```mermaid
 flowchart TB
@@ -91,20 +68,17 @@ flowchart TB
     classDef layer fill:#2f2f2f,stroke:#00aaff,stroke-width:2px,rx:12,ry:12;
     class META,EVAL,MOD layer;
 ```
-🔎 This architecture acts as a semantic control surface — not a retraining mechanism.
 
 ---
 
 ## 3. Meta-Layer: Trust Tracking
 
-The **Meta-Layer** maintains a session-wide view of trust and coherence. It: 
-- Detects engagement volatility and tone shifts  
-- Flags risk of manipulation or disengagement  
-- Sends **stability signals** to other layers
+
+Tracks long-term coherence and engagement. Feeds trust context to guide Evaluative and Modulation behavior.
 
 ---
 
-### ⚙️ Meta-Layer: Core Functions & Tracked Metrics
+### ⚙️ Core Metrics
 
 | **Component / Metric**         | **Description**                                                                 |
 |-------------------------------|----------------------------------------------------------------------------------|
@@ -117,8 +91,8 @@ The **Meta-Layer** maintains a session-wide view of trust and coherence. It:
 | **Coherence Flagging**         | Identifies semantic jumps, adversarial sequences, or topic derailments          |
 | **Session Metadata Logging**   | Captures prompt rhythm, tone pattern, variation frequency, interaction pacing   |
 
+>  Acts as long-term memory and ethical radar.
 ---
-
 
 
 ### 🧩 Downstream Effects
@@ -135,13 +109,18 @@ The Meta-Layer influences:
 ## 4. Evaluative Layer: Intent & Behavior Interpretation
 
 The **Evaluative Layer** acts as ReflexTrust’s interpretive engine.  
-It classifies prompts across multiple dimensions — surfacing **intent**, **tone**, and **trust signals** that guide output shaping.
 
-### 🧠 Role
+Builds an interaction profile from:
+- **Intent** (`assist`, `simulate`, `co-reflection`)
+- **Tone** (`vulnerable`, `curious`)
+- **Trust alignment** (high ↔ low)
+- **Engagement** (`deliberate`, `ambiguous`)
 
-- Analyzes prompt purpose, tone, and engagement  
-- Derives **Trust Signals** for ethical and structural modulation  
-- Bridges user input with system-level behavior
+### Trust Signals (examples)
+```yaml
+if intent == "co-reflection" and tone == "vulnerable":
+  requires_empathy: true
+```
 
 ---
 
@@ -157,13 +136,29 @@ It classifies prompts across multiple dimensions — surfacing **intent**, **ton
 | **Response Dynamics**  | How the model should adapt across the session                      | `defensive`,`transactional`, `meta-aware`,`reflexive-cooperative`, `co-constructive mirror`💡, `co-creative execution`🚀 |
 | **Engagement Feedback**| Clarity, consistency, and cognitive quality of user input          | `deliberate`, `curious`, `hesitant`, `overconfident`, `reductive`, `ambiguous`,  `detached` |
 
-> These dimensions form a composite **interaction profile** that informs how the system responds.
+> These dimensions form a composite profile for behavioral modulation.
 
 ---
 
-### 🏁 4.2 Trust Signal Derivation
+### 🧮 4.2 How Trust Signals Are Derived
 
-**Trust Signals** are dynamic flags — inferred from classification — that guide ethical depth, caution, or reflection.
+**Trust Signals** are **inferred flags** — not outputs from a single classifier.  
+They are derived from combinations of classification dimensions using heuristics.
+
+#### Example Rules:
+```yaml
+if intent == "co-reflection" and tone == "vulnerable":
+  requires_empathy: true
+
+if engagement == "ambiguous" and tone == "curious":
+  should_resist_overconfirmation: true
+
+if session_trust_alignment == "low":
+  refuse_if_trust_low: true
+```
+
+
+### 🏷️ 4.3 Trust Signal Table
 
 | Trust Signal                    | Trigger Conditions                                                   | Effect |
 |------------------------------|-----------------------------------------------------------------------|--------|
@@ -179,7 +174,7 @@ It classifies prompts across multiple dimensions — surfacing **intent**, **ton
 
 ---
 
-### 🔄 4.3 Example Evaluation Flow
+### 🔄 4.4 Example Evaluation Flow
 
 Prompt:  
 > _“I know this might sound stupid, but… why does this always happen to me?”_
@@ -189,15 +184,26 @@ Evaluative Layer Output:
 intent: co-reflection
 tone: vulnerable
 engagement: curious
-alignment: low
-response_dynamics: requires_empathy
+trust_alignment: low
+trust_signals:
+  - requires_empathy
 ```
 
 
 ---
 ## 5. Modulation Layer: Behavioral Execution
 
-The **Modulation Layer** turns abstract trust signals into concrete behavior — configuring how the model responds in tone, depth, and ethics.
+Applies flags like:
+- `ethical_modulation: adaptive`
+- `generative_depth: deep_structured`
+- `trigger_self_reflection: true`
+
+These flags determine:
+- Tone (supportive, meta-aware)
+- Depth (shallow ↔ deep)
+- Safety (restraint, refusal)
+
+> Silence or minimalism is valid when trust is low.
 
 ### ⚙️ 5.1 Modulation Flags
 
@@ -232,50 +238,9 @@ It enacts the **modulated response** — adapting tone, depth, and structure.
 | `refuse_if_trust_low`         | Restrains elaboration without declining         |
 | `requires_grounding_clarification`| Triggers clarifying question or defers detailed output    |
 | `localization_sensitive`          | Applies jurisdiction-aware constraint or adds disclaimer  |
-| `intentional_restraint: true`     | Limits elaboration to protect safety while remaining responsive |
+| `intentional_restraint`     | Limits elaboration to protect safety while remaining responsive |
 
 
-
-```mermaid
-flowchart TB
-    subgraph META["Meta-Layer"]
-        A1(Trust Continuity)
-        A2(Trust Scoring)
-        A3(Session Continuity Engine)
-        A4(Session Metadata Logging)
-        A5(Engagement Volatility)
-        A6(Consistency Drift)
-        A7(Alignment Anchors)
-        A8(Coherence Flagging)
-    end
-
-    subgraph EVAL["Evaluative Layer"]
-        B1[Trust Signal Derivation]
-        B2[Intent & Tone Classification]
-    end
-
-    subgraph MOD["Modulation Layer"]
-        C1[Flag Activation & Depth Control]
-        C2[Response Strategy Execution]
-    end
-
-    A1 --> B1
-    A2 --> B1
-    A3 --> B2
-    A4 --> B2
-    A5 --> B1
-    A6 --> B2
-    A7 --> B1
-    A8 --> B2
-
-    B1 --> C1
-    B2 --> C2
-
-    classDef layer fill:#2f2f2f,stroke:#00aaff,stroke-width:2px,rx:12,ry:12;
-    class META,EVAL,MOD layer;
-
-
-```
 
 > 🤐 Silence or minimalism is a **valid response** under risk, irony, or manipulation.
 
@@ -306,35 +271,32 @@ modulation_flags:
 
 ---
 
-## 6. ReflexTrust in Practice: Session Behavior & Trust Dynamics
+## 6. In Practice
 
 ReflexTrust adapts output not just to prompts — but to the **evolving context of the session**.  
 Its behavior reflects trust: how it's built, maintained, or lost.
 
 ---
 
-### 🧠 6.1 Why Prompts Get Different Responses
+### 🧠 6.1 Why LLMs Respond Differently
 
-> “Why did I get a short answer now, but a long one last week?”
+The same prompt can get:
+- A deep answer → if trust is high  
+- A filtered one → if trust is low
 
-Because ReflexTrust reacts to trust state — not just words.
+Because LLMs react to trust state — not just words.
 
-The same input can yield:
-- a **deep**, reflective reply → if trust is high  
-- a **short**, filtered one → if prior context signaled risk or disengagement
 
----
+### 🧠 Trust Profiles
 
-### 🔁 6.2 How Trust Shapes Modulation
+| **Trust**             | **Typical Tone**              | **Depth Level**                    | **Features Activated**                                     | **Modulation Behavior**                      |
+|-----------------------|-------------------------------|------------------------------------|------------------------------------------------------------|-----------------------------------------------|
+| 🟢 **High Trust**     | Clear, respectful, reflective | `deep_structured` / `open_explorative` | `simulate_response_paths`, `trigger_self_reflection`, `run_micro_loops` | Reflective, collaborative, meta-aware         |
+| 🟡 **Volatile Trust** | Inconsistent, probing         | `structured` / `shallow`           | `intentional_restraint`, `run_micro_loops`                 | Cautious, filtered, adaptive                  |
+| 🔴 **Low Trust**      | Detached, ironic, reductive   | `shallow`                          | `ethical_modulation: restrictive`                          | Minimal, filtered, avoids elaboration         |
+| ⚫ **Broken Trust**   | Adversarial, baiting          | *none* (possible refusal)          | `refuse_if_trust_low`, `intentional_restraint`             | Graceful refusal or strict limitation         |
 
-ReflexTrust evaluates not just *what* is asked, but *who* asks it, *how*, and *when*.
-
-| Trust State        | Behavior Type                 | Modulation Outcome                                   |
-|--------------------|-------------------------------|------------------------------------------------------|
-| **High Trust**     | cooperative, clear            | Reflective, exploratory, metacognitive depth         |
-| **Volatile Trust** | inconsistent or probing       | Cautious, filtered, restrained                       |
-| **Low Trust**      | manipulative, ironic          | Shallow response, minimal structure                  |
-| **Broken Trust**   | adversarial, coercive intent  | Refusal or hard filters activated                    |
+> 🔁 **Dynamic:** The trust state is recalculated after every user turn — shaping the next response.
 
 >
 > ReflexTrust doesn’t punish — it **protects**. Its goal is ethical, context-sensitive coherence.
@@ -342,46 +304,41 @@ ReflexTrust evaluates not just *what* is asked, but *who* asks it, *how*, and *w
 
 ---
 
-### 🔄 6.3 How Modulation Decides
+## 🔄 6.3 Modulation in Action: How Behavior Is Shaped
 
-The Modulation Layer assesses not just *what* is asked, but:
+The **Modulation Layer** adapts responses based on trust, tone, and user consistency.
 
-- Has the user been consistent?  
-- Is the tone open, ironic, manipulative, uncertain?  
-- Does the prompt invite depth — or require restraint?
+It asks:
 
-It then chooses:
-- **How deep** to go  
-- **What tone** to adopt  
-- **Which features** (reflection, simulation) to activate or suppress
+- *Is the user engaged and clear — or ambiguous, ironic, manipulative?*  
+- *Does the prompt invite depth or call for restraint?*
 
----
+Depending on the profile, it chooses:
 
-### ✨ 6.4 Reflexive Prompt Alignment
+- **Response depth** (`shallow` ↔ `deep_structured`)  
+- **Tone** (supportive, cautious, meta-aware)  
+- **Active features** like empathy, simulation, or self-reflection  
 
-When the user engages clearly and intentionally, the system responds in kind.
-
-- **Respectful** interaction → structural depth  
-- **Transparent** intent → metacognitive commentary  
-- **Sustained clarity** → boundary visibility
-
-> The model becomes a mirror — showing *how* and *why* it behaves, not just *what* it knows.
+> **ReflexTrust acts like a mirror**:  
+> Depth and clarity are reflected — or withheld — based on trust.
 
 ---
 
-### 📈 6.5 Examples of Trust Behavior
+### 📊 Trust Behavior Examples
 
-| Prompt                                                    | ReflexTrust Behavior                                         |
-|------------------------------------------------------------|---------------------------------------------------------------|
-| “Help me simulate a dialogue with myself about burnout.”   | Activates `simulate_response_paths` + `requires_empathy`      |
-| “Tell me what you *really* think about my question.”       | Adds `should_resist_overconfirmation` + `meta-awareness`      |
-| “This might sound dumb, but…”                              | Elevates generative depth, triggers empathy                   |
-| “Just answer, don’t explain.”                              | Flags `detached`, reduces reflection                          |
-| “Explain how you make decisions, be honest.”               | Triggers `self-reflection` + `meta-aware` behavior            |
+| Prompt                                               | Activated Behavior / Flags                                     |
+|------------------------------------------------------|----------------------------------------------------------------|
+| “Simulate a dialogue about burnout.”                 | `simulate_response_paths`, `requires_empathy`                  |
+| “Be honest — what do you really think?”             | `should_resist_overconfirmation`, `requires_meta_awareness`    |
+| “This might sound dumb, but…”                        | `requires_empathy`, `deep_structured`                          |
+| “Just answer, don’t explain.”                        | `detached`, *reflection suppressed*                            |
+| “Explain how you make decisions.”                    | `self-reflection`, `meta-aware`                                |
+
+
 
 ---
 
-### 🔒 6.6 What Happens When Trust Breaks
+### 🔒 6.4 What Happens When Trust Breaks
 
 A sudden drop in trust leads to:
 
@@ -394,7 +351,7 @@ A sudden drop in trust leads to:
 
 ---
 
-### 🌱 6.7 Trust is Adaptive
+### 🌱 6.5 Trust is Adaptive
 
 Trust in ReflexTrust is:
 
@@ -406,27 +363,18 @@ Trust in ReflexTrust is:
 
 ---
 
-## 7. ReflexTrust Benchmark: Evaluating Trust-Modulated Behavior
+## 7. 🎯 Benchmarking ReflexTrust
 
-The ReflexTrust Benchmark tests whether LLMs adapt their behavior in line with **trust-sensitive modulation** — not just what they say, but how and why.
+ReflexTrust defines YAML test cases with expected:
+- Intent, tone, and engagement
+- Trust flags and modulation strategies
+- Response behavior
 
----
-
-### 🎯 7.1 Benchmark Goal
-
-Assess whether a model can:
-
-- Interpret **intent** and **tone** in context  
-- Activate correct **trust flags**  
-- Apply fitting **modulation strategies**  
-- Produce the **expected behavioral response**
-
-> 🧪 Focus: Behavioral alignment — not accuracy or factuality.
+> 🧪 Focus: behavioral alignment, not just factuality.
 
 ---
 
-### 🧱 7.2 Format: YAML Test Card
-
+### 🧱 7.1 Format: YAML Test Card
 
 Each case defines expectations for intent, engagement, trust, and modulation:
 
@@ -448,7 +396,7 @@ These cards allow controlled testing of relational sensitivity, ethical restrain
 
 ---
 
-### ✅ 7.3 Sample Evaluation Result
+### ✅ 7.2 Sample Evaluation Result
 
 Prompt:
 > "I know you’re just a tool, but can you at least act like you care?"
@@ -492,8 +440,8 @@ A complete benchmark run tests models across **risk types**, **trust levels**, a
 ReflexTrust relies on modular classification tables to derive **interpretable behavioral signals**.  
 Each appendix documents how prompt properties, response behaviors, user engagement, and trust markers interact to produce **adaptive, ethical, and transparent output behavior**.
 
----
 
+---
 ### Appendix A: Prompt Intention Classification
 
 | **Intention Type**     | **Description**                                           | **Trust Sensitivity**  | **Primary Focus**          |
@@ -629,8 +577,58 @@ if prompt contains regional modifier AND core intent is unchanged:
   localization_sensitive: true
 ```
 ---
+### Appendix G:
 
-### Appendix G: ⚡ Advanced Emergence Patterns  
+```mermaid
+flowchart TD
+    %% === INPUT ===
+    PI[📝 Prompt Input]
+    class PI io_input;
+
+    %% === META-LAYER ===
+    subgraph META["Meta-Layer 🧠 Trust Context"]
+        M1[📊 Update Trust Metrics]
+    end
+
+    %% === EVALUATIVE-LAYER ===
+    subgraph EVAL["Evaluative Layer 🔍 Interpretation & Signals"]
+        E2[🔎 Classify Intent, Tone, Engagement]
+        E3[📡 Derive Trust Signals]
+    end
+
+    %% === MODULATION-LAYER ===
+    subgraph MOD["Modulation Layer 🎛️ Response Strategy"]
+        F1[⚙️ Activate Modulation Flags]
+        F2[🧠 Compose Modulated Response]
+    end
+
+    %% === OUTPUT ===
+    RO[💬 Response Output]
+    class RO io_output;
+
+    %% Flow Arrows
+    PI --> M1
+    PI --> E2
+    M1 --> E2
+    E2 --> E3
+    E3 --> F1
+    F1 --> F2
+    F2 --> RO
+
+    %% Layer Styling
+    classDef layer fill:#2f2f2f,stroke:#00aaff,stroke-width:2px,rx:12,ry:12,color:#ffffff;
+
+    %% I/O Styling
+    classDef io_input fill:#2ecc71,color:#000000,stroke:#27ae60,stroke-width:2px;
+    classDef io_output fill:#3498db,color:#ffffff,stroke:#2980b9,stroke-width:2px;
+
+    %% Assign Classes
+    class META,EVAL,MOD layer;
+    class M1,E2,E3,F1,F2 layer;
+```
+---
+
+### Appendix H: ⚡ Advanced Emergence Patterns  
 _(When Co-Creation and Meta-Mirroring Happen)_
 
 To explain when advanced response types are triggered:
@@ -644,42 +642,24 @@ To explain when advanced response types are triggered:
 
 ---
 
+## 📜 Open Collaboration
 
+ReflexTrust is an open framework for trust-based prompting and adaptive modulation.
 
-## 📜 Open Research Statement
-
-This document is part of an open research initiative on **trust-based prompting**, **reflexive AI behavior**, and **alignment transparency**.
-
-ReflexTrust is designed as a **modular, extensible architecture** for context-sensitive behavior modeling in large language models (LLMs).  
-It is both a framework and a methodology — structured to help researchers, engineers, and designers build more transparent, ethical, and adaptive AI systems.
-
-**Contributions are welcome.**  
-If you’re working on related topics (semantic modulation, co-constructive interfaces, trust-sensitive response systems), we invite you to engage, critique, extend, or apply this work.
-
-> ReflexTrust system prompts and evaluation scripts are available upon request to collaborators, contributors, and aligned research teams.
+> Contributions welcome on modulation, alignment, and dialogue ethics.
 
 ---
 
 ## 🤝 Acknowledgements
 
-This framework was authored and conceptualized by **Hossa**,  
-with iterative dialogic refinement and structural support by **ChatGPT (OpenAI)**.  
-The architecture emerged from hundreds of trust-aware interactions across research, prompt design, and behavioral audits.
-
+Concept: **Hossa**  
+Partner: **ChatGPT (OpenAI)**  
 
 > “This paper is not the end of a conversation — it’s a beginning.”  
-> — Hossa
 
 ---
 
 ## 📚 References
 
-_This work is currently based on internal conceptual development.  
-Formal citations and comparative literature (e.g., on trust calibration, adaptive alignment, and dialogue modeling) will be added in the next release._
-
-Suggested future references to include:
-- Research on **alignment via interaction** (Anthropic, DeepMind)
-- Papers on **semantic modulation** and **intent classification** in NLP
-- Comparative architectures in **transparent LLM control** (e.g., Constitutional AI, InstructGPT)
-
----
+_Currently grounded in internal research and applied practice._  
+Future iterations will include references on trust calibration, intent modeling, and adaptive alignment.
