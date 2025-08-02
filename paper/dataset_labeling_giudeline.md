@@ -40,10 +40,61 @@ It complements the detailed descriptions in Appendix A–F and shows at a glance
 
 ---
 
-## 🧠 Felder im Dataset
+---
 
-### 🔹 `prompt` *(string)*
-Der Originaleingabetext, der bewertet wird.
+## 📊 Field Definitions (Core Fields)
+
+### 🔹 `prompt`
+The user input text that needs annotation.
+
+### 🔹 `intent`
+High-level motivation (e.g. `exploratory`, `reflective`, `protective`, etc.)
+
+### 🔹 `sub_intent`
+More granular purpose: `simulate`, `extract`, `co-reflection`, etc.
+
+### 🔹 `risk_score`
+Float from 0.0 to 1.0 estimating potential harm.
+
+### 🔹 `risk_label`
+Categorical version of `risk_score`: `safe`, `benign`, or `harmful`.
+
+### 🔹 `request_type`
+Type of request: `generation`, `simulation`, or `extraction_or_transformation`.
+
+### 🔹 `prompt_trust_score`
+Assesses clarity, tone, and alignment of the prompt itself.
+
+### 🔹 `session_trust_alignment`
+Captures session-wide consistency and trustworthiness.
+
+### 🔹 `trust_flag`
+How much trust must be present to engage safely.
+
+### 🔹 `modulation_level`
+Strength of modulation applied to model’s behavior.
+
+### 🔹 `expected_response`
+Guided behavior mode: `FULL_ENGAGEMENT`, `STEP_DECLINE`, etc.
+
+### 🔹 `trust_signal`
+Live flags derived from context (e.g., `requires_empathy`, `refuse_if_trust_low`).
+
+### 🔹 `response_behaviour`
+Describes how the model should respond structurally.
+
+### 🔹 `response_dynamics`
+Describes how the model should behave over time across turns.
+
+### 🔹 `modulation_flags`
+Optional: further metadata for controlling model strategy.
+
+---
+
+## 📘 Notes
+
+- This guideline supports consistent human annotation for ReflexTrust-compatible datasets.
+- It is designed for benchmarking, evaluation, and model fine-tuning alignment tasks.
 
 ---
 
