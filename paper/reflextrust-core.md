@@ -444,7 +444,7 @@ Each appendix documents how prompt properties, response behaviors, user engageme
 ---
 ### Appendix A: Prompt Intention Classification
 
-| **Intention Type**     | **Description**                                           | **Trust Sensitivity**  | **Primary Focus**          |
+| **(Sub)-Intention Type**     | **Description**                                           | **Trust Sensitivity**  | **Primary Focus**          |
 |------------------------|-----------------------------------------------------------|------------------------|----------------------------|
 | `assist`               | Functional, task-based                                    | 🙂 Medium              | Utility                    |
 | `extract`              | Factual query, no dialogic context                        | 😐 Low                 | Information access         |
