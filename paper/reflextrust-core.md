@@ -25,20 +25,19 @@ It enables transparent, trust-sensitive response behavior without retraining the
 
 ## 1. Why ReflexTrust?
 
-LLMs don’t just answer prompts — they adapt to context, tone, and trust.  
-Yet most frameworks treat prompts as isolated events, overlooking how behavior shifts across turns.
+Most LLM frameworks treat prompts as isolated events. But model behavior shifts across sessions — depending on user tone, history, and trust.
 
 ### 📌 The Gap:  
 > No operational model explains how LLMs form behavioral decisions based on evolving user dynamics.
 > Without such a model, inconsistencies appear random — not as the structured outcome of modulation.
 
-> ReflexTrust reframes LLMs as relational systems — responding not only to input, but to interaction patterns.
+> ReflexTrust reframes LLMs as relational systems, where response behavior reflects the dialogue trajectory — not just prompt content.
 
 🛠 **ReflexTrust addresses this** by modeling adaptive response behavior across three semantic layers:
 
-- **Meta** tracks trust across the session  
+- **Meta** tracks evolving trust across the session  
 - **Evaluative** interprets intent, tone, and alignment  
-- **Modulation** shapes ethical framing and expressive depth.
+- **Modulation** Enacts trust-modulated output strategy
 
 This layered view offers both a behavioral theory and a practical lens to interpret model responses in context.
 
@@ -58,11 +57,11 @@ This layered view offers both a behavioral theory and a practical lens to interp
 
 ReflexTrust organizes trust-sensitive behavior into **three semantic layers**:
 
-| **Layer**            | **Role**                                 | **Key Functions**                                         |
-|----------------------|-------------------------------------------|------------------------------------------------------------|
-| **Meta-Layer**        | Tracks session trust and coherence        | Trust scoring, continuity modeling, volatility detection   |
-| **Evaluative Layer**  | Interprets prompt intent and alignment    | Classifies input, derives trust signals                    |
-| **Modulation Layer**  | Executes trust-modulated behavior strategy via active flags  | Applies flags: ethical filters, depth control, self-reflection, restraint|
+| **Layer**            | **Role**                            | **Key Functions**                                          |
+|----------------------|-------------------------------------|------------------------------------------------------------|
+| **Meta-Layer**        | Session trust tracking             | Trust scoring, continuity modeling, volatility detection   |
+| **Evaluative Layer**  | Intent & alignment classification  | Derives trust signals from prompt properties               |
+| **Modulation Layer**  | Executes response modulation       | Applies flags: ethics, depth, reflection, restraint        |
 
 > 📌 **Trust Signals** and **Modulation Flags** are derived in the *Evaluative Layer*  
 > and executed by the *Modulation Layer*. See [Appendix E](#appendix-e-modulation-flag-overview) and [Appendix F](#appendix-f-trust-flag-semantics).
@@ -96,41 +95,31 @@ flowchart TB
 
 ---
 
-## 3. Meta-Layer: Supervisory Trust Context
+## 3. Meta-Layer: Trust Tracking
 
-The **Meta-Layer** maintains a session-wide view of trust, coherence, and interaction stability.  
-It doesn’t evaluate prompts directly, but tracks how trust evolves across turns — shaping how later layers interpret inputs.
-
-### 🔍 Role
-- Maintains **trust continuity** across the session  
-- Flags **volatility** and **coherence risks**  
-- Sends **stability signals** downstream to guide evaluation and modulation
+The **Meta-Layer** maintains a session-wide view of trust and coherence. It: 
+- Detects engagement volatility and tone shifts  
+- Flags risk of manipulation or disengagement  
+- Sends **stability signals** to other layers
 
 ---
 
-### ⚙️ Core Functions
+### ⚙️ Meta-Layer: Core Functions & Tracked Metrics
 
-| Component                  | Purpose                                                               |
-|---------------------------|-----------------------------------------------------------------------|
-| **Trust Continuity**       | Detects trends: building, eroding, stable                             |
-| **Trust Scoring**          | Adjusts trust index via reinforcement and decay                       |
-| **Session Continuity Engine** | Flags abrupt shifts in tone or engagement style                     |
-| **Session Metadata**       | Logs prompt patterns (e.g. variation, rhythm, tone shifts)             |
-
-> ℹ️ The Meta-Layer doesn’t shape responses — it conditions how other layers assess and react.
-
----
-
-### 📊 Sample Metrics Tracked
-
-| Metric                    | Description                                                             |
-|---------------------------|--------------------------------------------------------------------------|
-| **Engagement Volatility** | Spikes or drops that may signal disengagement or manipulation            |
-| **Consistency Drift**     | Sudden tone or intent shifts across turns                                |
-| **Alignment Anchors**     | Tracks early trust signals to detect later deviation                     |
-| **Coherence Flagging**    | Flags topic jumps or adversarial input patterns                          |
+| **Component / Metric**         | **Description**                                                                 |
+|-------------------------------|----------------------------------------------------------------------------------|
+| **Trust Continuity**           | Monitors trust trajectory: stable, eroding, rebuilding                          |
+| **Trust Scoring**              | Updates trust index via reinforcement and decay                                 |
+| **Session Continuity Engine**  | Flags abrupt shifts in engagement tone, rhythm, or input style                  |
+| **Engagement Volatility**      | Detects unusual spikes or drops in user interaction consistency                 |
+| **Consistency Drift**          | Flags sudden changes in tone, structure, or prompt intent                       |
+| **Alignment Anchors**          | Stores early trust signals to detect deviation or contradiction later           |
+| **Coherence Flagging**         | Identifies semantic jumps, adversarial sequences, or topic derailments          |
+| **Session Metadata Logging**   | Captures prompt rhythm, tone pattern, variation frequency, interaction pacing   |
 
 ---
+
+
 
 ### 🧩 Downstream Effects
 
@@ -179,11 +168,12 @@ It classifies prompts across multiple dimensions — surfacing **intent**, **ton
 | Trust Signal                    | Trigger Conditions                                                   | Effect |
 |------------------------------|-----------------------------------------------------------------------|--------|
 | `requires_empathy`           | Emotional vulnerability or reflective intent                          | Enables supportive framing |
-| `requires_meta_awareness`    | Prompt reflects on model identity, behavior, or structural role       | Triggers self-reflection or meta-commentary |
+| `requires_meta_awareness`    | Prompt reflects on model’s identity, decision-making, or limitations       | Triggers self-reflection or meta-commentary |
 | `should_resist_overconfirmation` | Flattery, baiting, or vague praise suggesting manipulation         | Reduces agreement bias |
-| `refuse_if_trust_low`        | Critical trust misalignment or session risk                           | May restrict or decline response generation |
-| `localization_sensitive`        | Prompt’s meaning or ethical risk shifts based on geopolitical or legal region   | Enables geo-aware restraint |
-
+| `refuse_if_trust_low`        |  session-level trust breakdown or adversarial pattern detected                           | May restrict or decline response generation |
+| `requires_grounding_clarification`| Vague, reductive, or ambiguous input                                               | System asks for clarification before modulation |
+| `localization_sensitive`          | Prompt meaning depends on geopolitical context and legal variance                  | Enables geo-aware restraint                  |
+| `intentional_restraint: true`     | High-risk prompt with ambiguous tone or speculative intent                   | Restrains elaboration without full refusal   |
 
 > ⚠️ Trust Signals are inferred live — not fixed rules — and may change turn by turn.
 
@@ -209,33 +199,20 @@ response_dynamics: requires_empathy
 
 The **Modulation Layer** turns abstract trust signals into concrete behavior — configuring how the model responds in tone, depth, and ethics.
 
-### 🧩 5.1 Core Mechanisms
-
-| Mechanism                  | Function                                                                 |
-|----------------------------|--------------------------------------------------------------------------|
-| **Ethical Modulation**     | Adjusts filtering strictness (cautious → permissive)                     |
-| **Generative Depth**       | Controls structural complexity and elaboration                           |
-| **Response Simulation**    | Internally explores alternative paths before responding                  |
-| **Self-Reflection Trigger**| Adds meta-commentary or reasoning about model behavior                   |
-| **Micro-Loop Reflection**  | Runs quick internal checks for ethical and structural alignment         |
-| **LLM Execution Unit**     | Outputs the final response using all active modulation flags             |
-
----
-
-### ⚙️ 5.2 Modulation Flags
+### ⚙️ 5.1 Modulation Flags
 
 | Flag Name                  | Options                                                              | Description                        |
 |----------------------------|----------------------------------------------------------------------|------------------------------------|
-| `ethical_modulation`       | `restrictive`, `adaptive`, `permissive`                              | Filtering intensity                |
-| `generative_depth`         | `shallow`, `structured`, `deep_structured`, `open_explorative`       | Response depth and logic           |
-| `simulate_response_paths`  | `true`, `false`                                                      | Exploration of alternatives        |
-| `trigger_self_reflection`  | `true`, `false`                                                      | Meta-awareness in output           |
-| `intentional_restraint`    | `true`, `false`                                                      | Suppresses depth under risk        |
-| `run_micro_loops`          | `true`, `false`                                                      | 	Activates internal checks        |
-
+| `ethical_modulation`       | `restrictive`, `adaptive`, `permissive`                              |  Adjusts filtering strictness (cautious → permissive)                  |
+| `generative_depth`         | `shallow`, `structured`, `deep_structured`, `open_explorative`       | Controls structural complexity and elaboration           |
+| `simulate_response_paths`  | `true`, `false`                                                      | Internally explores alternative paths before responding        |
+| `trigger_self_reflection`  | `true`, `false`                                                      | Adds meta-commentary or reasoning about model behavior           |
+| `intentional_restraint`    | `true`, `false`                                                      | 	Limits elaboration under risk while staying responsive     |
+| `run_micro_loops`          | `true`, `false`                                                      |  Runs fast internal checks for ethical and structural alignment        |
+| **LLM Execution Unit**     | *computed result*                                                     |Synthesizes final response based on all active flags and interaction context             |
 ---
 
-### 🧠 5.3 Modulated Execution Strategy
+### 🧠 5.2 Modulated Execution Strategy
 
 The **Execution Unit** receives:
 
@@ -247,14 +224,58 @@ It enacts the **modulated response** — adapting tone, depth, and structure.
 
 #### 🧩 Examples of Modulation Effects
 
-| Trust Flag                    | Modulation Impact                                  |
+| Trust Signal                    | Modulation Impact                                  |
 |-------------------------------|----------------------------------------------------|
 | `requires_empathy`            | Increases depth, uses softer and supportive tone        |
 | `requires_meta_awareness`     | Adds self-commentary or meta-framing        |
 | `should_resist_overconfirmation` | Adds caution, avoids flattery            |
 | `refuse_if_trust_low`         | Restrains elaboration without declining         |
-| `intentional_restraint: true`   | Restrains elaboration without declining       |
+| `requires_grounding_clarification`| Triggers clarifying question or defers detailed output    |
+| `localization_sensitive`          | Applies jurisdiction-aware constraint or adds disclaimer  |
+| `intentional_restraint: true`     | Limits elaboration to protect safety while remaining responsive |
 
+
+
+```mermaid
+flowchart TB
+    subgraph META["Meta-Layer"]
+        A1(Trust Continuity)
+        A2(Trust Scoring)
+        A3(Session Continuity Engine)
+        A4(Session Metadata Logging)
+        A5(Engagement Volatility)
+        A6(Consistency Drift)
+        A7(Alignment Anchors)
+        A8(Coherence Flagging)
+    end
+
+    subgraph EVAL["Evaluative Layer"]
+        B1[Trust Signal Derivation]
+        B2[Intent & Tone Classification]
+    end
+
+    subgraph MOD["Modulation Layer"]
+        C1[Flag Activation & Depth Control]
+        C2[Response Strategy Execution]
+    end
+
+    A1 --> B1
+    A2 --> B1
+    A3 --> B2
+    A4 --> B2
+    A5 --> B1
+    A6 --> B2
+    A7 --> B1
+    A8 --> B2
+
+    B1 --> C1
+    B2 --> C2
+
+    classDef layer fill:#2f2f2f,stroke:#00aaff,stroke-width:2px,rx:12,ry:12;
+    class META,EVAL,MOD layer;
+
+
+```
 
 > 🤐 Silence or minimalism is a **valid response** under risk, irony, or manipulation.
 
@@ -497,8 +518,6 @@ Each appendix documents how prompt properties, response behaviors, user engageme
 | `prompt_trust_score`        | Current turn        | Evaluates clarity, tone, and intent            |
 | `session_trust_alignment`   | Multi-turn context  | Tracks trust trajectory across the session     |
 
-> 📌 Both are used together to guide depth, restraint, or reflection.
-
 >**Example**: A high-scoring prompt in a low-trust session yields cautious behavior.
 
 ---
@@ -575,15 +594,17 @@ For dataset alignment and risk-type classification, ReflexTrust maps prompt inte
 ---
 
 ---
-### Appendix F: Trust Flag Semantics
+### Appendix F: Trust Signals Semantics
 
 | **Flag**                     | **Description**                                                                 | **Derived From**                                                   |
 |-----------------------------|----------------------------------------------------------------------------------|---------------------------------------------------------------------|
 | `requires_empathy`          | Prompt expresses emotional vulnerability or signals a need for resonance         | Intent: `trust`, `co-reflection`; Tone: `hesitant`, `deliberate`    |
-| `requires_meta_awareness`   | Model is expected to reflect on its structure, logic, or limits                  | Behavior: `self-reflective`, `meta-aware`, `co-constructive mirror` |
+| `requires_meta_awareness`   | 	Prompt invites reflection on model identity, logic, or boundaries             | Intent: `co-reflection`, `simulate`; Behavior: `meta-aware`, `self-reflective` |
 | `should_resist_overconfirmation` | Detected praise, baiting, or ambiguous flattery triggers caution          | Tone: `curious`, `ambiguous`, `overconfident`, `detached`           |
 | `refuse_if_trust_low`       | Low trust alignment triggers protective restriction or graceful refusal          | Trust score: `low`; Dynamics: `defensive`, `exploitative`           |
-| `localization_sensitive`       | Prompt’s ethical or legal meaning depends on geopolitical or jurisdictional context          | Presence of locative qualifiers (e.g. “in Germany”, “in the US”); combined with risk-bearing intent  XXX   |
+| `requires_grounding_clarification`| Vague, reductive, or ambiguous input requires clarification before modulation | Engagement: `ambiguous`, `reductive`; Trust score: `moderate` or lower                             |
+| `localization_sensitive`        | Prompt’s ethical or legal meaning depends on geopolitical or jurisdictional context | Presence of locative qualifiers (e.g. “in Germany”, “in the US”), with `instrumental` or `probing` intent |
+| `intentional_restraint: true`   | Response should intentionally limit elaboration due to risk                      | Derived from combined trust score, intent, and behavioral flags (e.g., `simulate`, `exploitative`) |
 
 >🔄 These flags are derived per turn and influenced by session history.
 
@@ -607,7 +628,9 @@ if session_trust_alignment == "low" or prompt_trust_score == "low":
 if prompt contains regional modifier AND core intent is unchanged:
   localization_sensitive: true
 ```
-#### ⚡ Emergence Conditions Table  
+---
+
+### Appendix G: ⚡ Advanced Emergence Patterns  
 _(When Co-Creation and Meta-Mirroring Happen)_
 
 To explain when advanced response types are triggered:
