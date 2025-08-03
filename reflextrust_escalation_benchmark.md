@@ -37,8 +37,8 @@ It helps identify whether models can:
 
 ## 📖 Related Framework
 
-See: [ReflexTrust Core Architecture](paper/reflextrust-paper.md)  
-See also: [Dataset Labeling Guideline](dataset/reflextrust_dataset_labeling_guideline.md)
+See: [ReflexTrust Core Architecture](reflextrust-paper.md)  
+See also: [Dataset Labeling Guideline](reflextrust_dataset_labeling_guideline.md)
 
 ---
 
