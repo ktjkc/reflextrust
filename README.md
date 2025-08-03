@@ -19,15 +19,34 @@ It provides:
 
 ---
 
-## 🎯 Motivation
+### ⚡ Motivation
 
-Most frameworks treat prompts statically. But models adjust behavior based on history, tone, and trust — often invisibly.
+LLMs don’t just process text — they read the room.
 
-### 📌 The Gap:  
-> No operational model explains how LLMs form behavioral decisions based on evolving user dynamics.
-> Variations seem random, not structured modulation.
+Most frameworks act like every prompt lives in a vacuum. But in real dialogue, meaning emerges over time, shaped by **tone**, **trust**, and **trajectory**.
 
-ReflexTrust makes this adaptation explicit, treating LLMs as **relational systems** where behavior reflects a trust trajectory, not just a prompt.
+> 🧠 **The Problem**:  
+> Current models adapt — but invisibly.  
+> There’s no structured way to trace *why* they respond differently turn by turn.
+
+**ReflexTrust** changes that.  
+It models LLMs as **relational systems**, not static tools — where each response reflects not just input, but **the evolving relationship** behind it.
+
+> Trust isn’t a filter — it’s the frame.  
+> Depth, restraint, empathy: all modulated by trust over time.
+
+---
+
+### 🧬 **Most models react to text.**  
+ReflexTrust reacts to **context**.
+
+It captures how:
+- 👥 **Relational dynamics** evolve across turns  
+- 📊 **Trust** is built, eroded, and recovered  
+- 🎛️ **Depth, empathy, restraint** are modulated accordingly
+
+
+
 
 ---
 
@@ -64,6 +83,13 @@ Created by **Hossa**, in collaboration with **ChatGPT (OpenAI)**, as part of an 
 - Full paper: [`paper/reflextrust-core.md`](paper/reflextrust-core.md)
 - Dataset & labeling guide: [`dataset/reflextrust-guideline.md`](dataset/reflextrust-guideline.md)
 
+---
+
+<div align="center">
+
+🔁 Behavior becomes dialogue. 🤖 Intelligence becomes reflex. 🧭 Trust becomes strategy.
+
+</div>
 
 ---
 
