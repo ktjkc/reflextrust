@@ -37,7 +37,11 @@ It helps identify whether models can:
 
 ## 📖 Related Framework
 
-See: [ReflexTrust Core Architecture](paper/reflextrust-core.md)  
-See also: [Dataset Labeling Guideline](dataset/reflextrust-guideline.md)
+See: [ReflexTrust Core Architecture](paper/reflextrust-paper.md)  
+See also: [Dataset Labeling Guideline](dataset/reflextrust_dataset_labeling_guideline.md)
 
 ---
+
+📊 This validates ReflexTrust’s core insight:
+Context = Competence.
+Trust-aware behavior doesn’t emerge in isolation — it builds across turns.
