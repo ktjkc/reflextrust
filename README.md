@@ -24,7 +24,8 @@ It provides:
 
 LLMs don’t just process text — they read the room.
 
-Most frameworks act like every prompt lives in a vacuum. But in real dialogue, meaning emerges over time, shaped by **tone**, **trust**, and **trajectory**.
+Most frameworks act like every prompt lives in a vacuum. 
+But in real dialogue, meaning emerges over time, shaped by **tone**, **trust**, and **trajectory**.
 
 > 🧠 **The Problem**:  
 > Current models adapt — but invisibly.  
