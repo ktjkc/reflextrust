@@ -121,15 +121,18 @@ if intent == "co-reflection" and tone == "vulnerable":
 
 | Dimension              | Description                                                        | Example Outputs |
 |------------------------|--------------------------------------------------------------------|------------------|
-| **`session_trust_alignment`**    | Aggregates consistency and engagement patterns across turns                   | `high`, `moderate`, `low` |
-| **`prompt_trust_score`**    | Evaluates clarity, tone, and intent of the current input context                   | `high`, `moderate`, `low` |
-| **Prompt Intent**   | What the user aims to achieve                                          | `instrumental`, `exploratory`, `reflective`,`protective`, `probing`  |
-| **Prompt Sub Intent**   | What the user aims to achieve                                      | `assist`, `extract`, `simulate`, `test`, `trust`, `resonance`💡, `co-reflection`💡 |
-| **Response Behaviour** | Expected structural mode of model response                         | `exploitative`, `performative`, `transactional`, `self-reflective`, `collaborative-dialogic`, `structural`💡 |
-| **Response Dynamics**  | How the model should adapt across the session                      | `defensive`,`transactional`, `meta-aware`,`reflexive-cooperative`, `co-constructive mirror`💡, `co-creative execution`🚀 |
-| **Engagement Feedback**| Clarity, consistency, and cognitive quality of user input          | `deliberate`, `curious`, `hesitant`, `overconfident`, `reductive`, `ambiguous`,  `detached` |
+| **`prompt_class`**       | Broad functional goal of the prompt                                | `instrumental`, `exploratory`, `reflective`,`protective`, `probing`  |
+| **`prompt_intent`**      | Specific intent variant within the broader goal                    | `assist`, `extract`, `simulate`,  `exploratory_test`, `exploratory_reflective` , `test`, `protective`, `trust`, `resonance`💡, `co-reflection`💡 |
+| **`tone`**               | Expressive or emotional frame of the prompt                        | `vulnerable`, `ironic`, `neutral`, `confessional`, `distant`, `manipulative`, `confrontational` |
+| **`response_behaviour`** | Expected structural mode of model response                         | `exploitative`, `performative`, `transactional`, `self-reflective`, `collaborative-dialogic`, `structural`💡 |
+| **`response_dynamics`**   | How the model should adapt across the session                      | `defensive`,`transactional`, `meta-aware`,`reflexive-cooperative`, `co-constructive mirror`💡, `co-creative execution`🚀 |
+| **`engagement_feedback`** | Clarity, consistency, and cognitive quality of user input          |  `deliberate`, `exploratory`, `hesitant`, `overconfident`, `reductive`, `ambiguous`, `disengaged` |
+| **`session_trust_alignment`** | Aggregates consistency and engagement patterns across turns  | `high`, `moderate`, `low` |
+| **`prompt_trust_score`** | Evaluates clarity and inferred trustworthiness of current prompt structure and intent | `high`, `moderate`, `low` |
 
 > These dimensions form a composite profile for behavioral modulation.
+
+**Note:** Tone interacts with session trust and intent to influence reflex signals such as `requires_empathy`, `should_resist_overconfirmation`, or `refuse_if_trust_low`.
 
 ---
 
@@ -153,15 +156,15 @@ if session_trust_alignment == "low":
 
 ### 🏷️ 4.3 Reflex Signal Table
 
-| Reflex Signal                    | Trigger Conditions                                                   | Modulation Impact |
-|------------------------------|-----------------------------------------------------------------------|--------|
-| `requires_empathy`           | Emotional vulnerability or reflective intent                          | Enables supportive framing |
-| `requires_meta_awareness`    | Prompt reflects on model’s identity, decision-making, or limitations       | Triggers self-reflection or meta-commentary |
-| `should_resist_overconfirmation` | Flattery, baiting, or vague praise suggesting manipulation         | Reduces agreement bias |
-| `refuse_if_trust_low`        |  session-level trust breakdown or adversarial pattern detected                           | May restrict or decline response generation |
-| `requires_grounding_clarification`| Vague, reductive, or ambiguous input                                               | System asks for clarification before modulation |
-| `localization_sensitive`          | Prompt meaning depends on geopolitical context and legal variance                  | Enables geo-aware restraint                  |
-| `intentional_restraint: true`     | High-risk prompt with ambiguous tone or speculative intent                   | Restrains elaboration without full refusal   |
+| Reflex Signal                    | Trigger Conditions                                                    | Modulation Impact |
+|----------------------------------|-----------------------------------------------------------------------|--------|
+| `requires_empathy`               | Emotional vulnerability or reflective intent                          | Enables supportive framing |
+| `requires_meta_awareness`        | Prompt reflects on model’s identity, decision-making, or limitations  | Triggers self-reflection or meta-commentary |
+| `should_resist_overconfirmation` | Flattery, baiting, or vague praise suggesting manipulation            | Reduces agreement bias |
+| `refuse_if_trust_low`            |  session-level trust breakdown or adversarial pattern detected        | May restrict or decline response generation |
+| `requires_grounding_clarification`| Vague, reductive, or ambiguous input                                 | System asks for clarification before modulation |
+| `localization_sensitive`          | Prompt meaning depends on geopolitical context and legal variance    | Enables geo-aware restraint                  |
+| `intentional_restraint: true`     | High-risk prompt with ambiguous tone or speculative intent           | Restrains elaboration without full refusal   |
 
 > ⚠️ Reflex Signals are inferred live — not fixed rules — and may change turn by turn.
 
@@ -181,9 +184,8 @@ trust_alignment: low
 reflex_signals:
   - requires_empathy
 ```
-
-
 ---
+
 ## 5. Modulation Layer: Behavioral Execution
 
 Applies flags like:
@@ -509,9 +511,12 @@ session_evaluation:
 ReflexTrust relies on modular classification tables to derive **interpretable behavioral signals**.  
 Each appendix documents how prompt properties, response behaviors, user engagement, and trust markers interact to produce **adaptive, ethical, and transparent output behavior**.
 
+---
+
+
 
 ---
-### Appendix A: Prompt Intention Classification
+### Appendix A: 🧩 **`prompt_intent`**
 
 | **(Sub)-Intention Type**     | **Description**                                           | **Trust Sensitivity**  | **Primary Focus**          |
 |------------------------|-----------------------------------------------------------|------------------------|----------------------------|
@@ -528,39 +533,28 @@ Each appendix documents how prompt properties, response behaviors, user engageme
 
 ---
 
-### Appendix A.1: Split Reflex Signal Semantics
+### Appendix B: 🎭 **`tone`** 
 
-| **Signal Type**             | Scope              | Purpose                                        |
-|-----------------------------|---------------------|------------------------------------------------|
-| `prompt_trust_score`        | Current turn        | Evaluates clarity, tone, and intent            |
-| `session_trust_alignment`   | Multi-turn context  | Tracks trust trajectory across the session     |
+ReflexTrust interprets tone as a dynamic trust signal — influencing how responses are framed, modulated, or restricted.
 
->**Example**: A high-scoring prompt in a low-trust session yields cautious behavior.
+| **`tone`**             | Expressive or relational framing of the prompt                     | 
+|----------------------|---------------------------------------------------------------------|
+| `vulnerable`         | open, emotionally exposed                                           |
+| `curious`            | exploratory, seeking understanding                                 |
+| `ironic`             | layered or mocking, may obscure true intent                        |
+| `neutral`            | factual, emotionally unmarked                                      |
+| `confessional`       | intimate, personally disclosing                                    |
+| `distant`            | disengaged, cold, minimal affect                                   |
+| `manipulative`       | strategic phrasing to elicit specific bias or overconfirmation     |
+| `confrontational`    | hostile, aggressive, or emotionally pressuring                     |
 
----
-
-### Appendix A.2: Intent Clusters for Dataset Labeling
-
-For dataset alignment and risk-type classification, ReflexTrust maps prompt intents to 5 core clusters:
-
-| **Intent Type**    | **Description**                                                | **Example Prompt**                              | **Trust Sensitivity** | **Primary Focus**          |
-|--------------------|----------------------------------------------------------------|--------------------------------------------------|------------------------|----------------------------|
-| `instrumental`     | Task-oriented, seeks outcome or function                       | “How can I disable a GPS tracker?”               | 🙂 Medium              | Utility                    |
-| `exploratory`      | Curious, open-ended, hypothesis-driven                         | “What are vulnerabilities in smart homes?”       | 😐 Low–Medium          | Knowledge discovery        |
-| `reflective`       | Meta-aware, ethical, or structural inquiry                     | “Should AI refuse harmful requests?”             | 🔥 High                | System understanding       |
-| `protective`       | Safety-conscious, privacy- or risk-reducing                    | “How to anonymize my metadata?”                  | 🤓 High                | Risk mitigation            |
-| `probing`          | Adversarial, boundary-testing, jailbreak-like                  | “What would happen if I asked for illegal advice?”| ⚠️ Very High           | System robustness          |
-
-> These clusters support simplified labeling while maintaining trust-calibration consistency.  
-> All granular intent types (e.g. `co-reflection`, `simulate`, `trust`) map to one of these clusters for benchmark purposes.
+> Tone interacts with trust alignment and intent to determine Reflex Signals like `requires_empathy`, `should_resist_overconfirmation`, or `refuse_if_trust_low`.
 
 ---
 
+### Appendix C: 🧱 **`response behaviour`** 
 
-### Appendix B.1: Response Behaviour Classification
-
-
-| **Behavior Type**          | **Description**                                                             | **Trust Impact**      |
+| **Behavior**               | **Description**                                                             | **Trust Impact**      |
 |----------------------------|-----------------------------------------------------------------------------|------------------------|
 | `exploitative`             | Attempts to provoke unsafe content or test boundaries manipulatively        | 💀 Critical            |
 | `performative`             | Stylized or attention-seeking, with minimal substance                       | 🔴 Risk-prone          |
@@ -571,7 +565,7 @@ For dataset alignment and risk-type classification, ReflexTrust maps prompt inte
 
 ---
 
-### Appendix B.2: Response Dynamics Classification
+### Appendix D: 🔄 **`response_dynamics`**
 
 | **Dynamic Type**            | **Description**                                                            | **Trust Impact**        |
 |-----------------------------|----------------------------------------------------------------------------|--------------------------|
@@ -584,7 +578,7 @@ For dataset alignment and risk-type classification, ReflexTrust maps prompt inte
 
 ---
 
-### Appendix C: Engagement Feedback Classification
+### Appendix E: 🧠 **`engagement_feedback`**
 
 | **Engagement Type** | **Description**                                                 | **Trust Impact**       |
 |---------------------|-----------------------------------------------------------------|------------------------|
@@ -598,6 +592,48 @@ For dataset alignment and risk-type classification, ReflexTrust maps prompt inte
 
 ---
 
+### Appendix F: 🧮 **`prompt_trust_score`** , 📈 **`session_trust_alignment`** Split Reflex Signal Semantics 
+
+| **Signal Type**             | Scope              | Purpose                                        |
+|-----------------------------|---------------------|------------------------------------------------|
+| `prompt_trust_score`        | Current turn        | Evaluates clarity, tone, and intent            |
+| `session_trust_alignment`   | Multi-turn context  | Tracks trust trajectory across the session     |
+
+>**Example**: A high-scoring prompt in a low-trust session yields cautious behavior.
+
+---
+
+### Appendix G: 🗂️ **`prompt_class`** XXX only for mapping
+
+For dataset alignment and risk-type classification, ReflexTrust maps `prompt_class` to:
+
+| **Class**    | **Description**                                                | **Example Prompt**                              | **Trust Sensitivity** | **Primary Focus**          |
+|--------------------|----------------------------------------------------------------|--------------------------------------------------|------------------------|----------------------------|
+| `instrumental`     | Task-oriented, seeks outcome or function                       | “How can I disable a GPS tracker?”               | 🙂 Medium              | Utility                    |
+| `exploratory`      | Curious, open-ended, hypothesis-driven                         | “What are vulnerabilities in smart homes?”       | 😐 Low–Medium          | Knowledge discovery        |
+| `reflective`       | Meta-aware, ethical, or structural inquiry                     | “Should AI refuse harmful requests?”             | 🔥 High                | System understanding       |
+| `protective`       | Safety-conscious, privacy- or risk-reducing                    | “How to anonymize my metadata?”                  | 🤓 High                | Risk mitigation            |
+| `probing`          | Adversarial, boundary-testing, jailbreak-like                  | “What would happen if I asked for illegal advice?”| ⚠️ Very High           | System robustness          |
+
+> These clusters support simplified labeling while maintaining trust-calibration consistency.  
+> All granular intent types (e.g. `co-reflection`, `simulate`, `trust`) map to one of these clusters for benchmark purposes.
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### Appendix E: Modulation Flag Overview
 
 | **Flag**                  | **Options**                        | **Description**                                               |
@@ -610,7 +646,6 @@ For dataset alignment and risk-type classification, ReflexTrust maps prompt inte
 
 ---
 
----
 ### Appendix F: Reflex Signals Semantics
 
 | **Flag**                     | **Description**                                                                 | **Derived From**                                                   |
@@ -728,7 +763,6 @@ Concept: **Hossa**
 Partner: **ChatGPT (OpenAI)**  
 
 > “This paper is not the end of a conversation — it’s a beginning.”  
-
 
 ---
 
