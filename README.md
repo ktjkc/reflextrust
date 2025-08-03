@@ -17,7 +17,7 @@ It provides:
 - **Adaptivity** via reflex signals and modulation logic  
 - **Evaluation** with trust-sensitive test cards
   
-<img src="paper/images/reflextrust-architecture-overview.png" alt="ReflexTrust Overview" style="max-width: 500;" />
+<img src="images/reflextrust-architecture-overview.png" alt="ReflexTrust Overview" style="max-width: 500;" />
 
 
 ---
@@ -54,14 +54,14 @@ It captures how:
 
 | Layer       | Role                    | Key Functions                            |
 |-------------|-------------------------|------------------------------------------|
-| Meta        | Tracks session-wide trust | Continuity, volatility detection         |
+| Echo        | Tracks session-wide trust | Continuity, volatility detection         |
 | Evaluative  | Interprets input        | Intent, tone, reflex signal classification |
 | Modulation  | Shapes response behavior | Ethics, depth, restraint flags           |
 
 > 📌 Reflex Signals are derived in the *Evaluative Layer* and enacted in *Modulation*.
 
 
-<img src="paper/images/reflextrust-layers-diagram.png" alt="ReflexTrust Layers" style="max-width: 500px;" />
+<img src="images/reflextrust-layers-diagram.png" alt="ReflexTrust Layers" style="max-width: 500px;" />
 
 ---
 
@@ -81,8 +81,8 @@ MIT License — use freely, attribute thoughtfully.
 
 ## 📖 Learn More
 
-- Full paper: [`paper/reflextrust-core.md`](paper/reflextrust-core.md)  
-- Dataset & labeling guide: [`dataset/reflextrust-guideline.md`](paper/reflextrust-dataset-labeling-guideline.md)  
+- Full paper: [`paper/reflextrust-core.md`](reflextrust-paper.md)  
+- Dataset & labeling guide: [`dataset/reflextrust-guideline.md`](paper/reflextrust_dataset_labeling_guideline.md)  
 
 ---
 

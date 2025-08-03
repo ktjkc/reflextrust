@@ -8,11 +8,10 @@
 ReflexTrust is a layered framework modeling how LLMs adapt to tone, trust, and intent — treating prompts as part of evolving dialogue, not isolated inputs.
 
 ### Key Components
-- **Meta-Layer**: Tracks trust across turns  
+- **Echo-Layer**: Tracks trust across turns  
 - **Evaluative Layer**: Interprets intent and tone  
 - **Modulation Layer**: Shapes response depth and ethics  
 - **Reflex Signals**: Guide how much and how safely to say
-
   
 > 💡 *Trust shapes not just what is said — but how much, how deeply, and why.*
 
@@ -36,7 +35,7 @@ Three layers structure trust-sensitive behavior:
 
 | **Layer**            | **Role**                            | **Key Functions**                                          |
 |----------------------|-------------------------------------|------------------------------------------------------------|
-| **Meta-Layer**        | Tracks session-wide trust          | Scoring, continuity modeling, volatility detection     |
+| **Echo-Layer**        | Tracks session-wide trust          | Scoring, continuity modeling, volatility detection     |
 | **Evaluative Layer**  | Interprets user input              | Derives intent, tone, engagement, reflex signals             |
 | **Modulation Layer**  | Executes modulation strategy       | Applies flags: ethics, depth, reflection, restraint, response composition   |
 
@@ -45,7 +44,7 @@ Three layers structure trust-sensitive behavior:
 
 ```mermaid
 flowchart TB
-    subgraph META["<b>Meta-Layer</b><br><small>Session Trust Context</small>"]
+    subgraph META["<b>Echo-Layer</b><br><small>Session Trust Context</small>"]
         A1(["<small>tracks trust across turns</small>"])
     end
 
@@ -65,7 +64,7 @@ flowchart TB
 
 ---
 
-## 3. Meta-Layer: Trust Tracking
+## 3. Echo-Layer: Trust Tracking
 
 
 Tracks long-term coherence and engagement. Feeds trust context to guide Evaluative and Modulation behavior.
@@ -91,12 +90,12 @@ Tracks long-term coherence and engagement. Feeds trust context to guide Evaluati
 
 ### 🧩 Downstream Effects
 
-The Meta-Layer influences:
+The Echo-Layer influences:
 
 - **Evaluative Layer**: adjusts trust sensitivity, highlights subtle tone shifts  
 - **Modulation Layer**: limits or deepens response shaping based on session trajectory  
 
-> “The Meta-Layer is long-term memory and ethical radar — reading patterns, not just prompts.”
+> “The Echo-Layer is long-term memory and ethical radar — reading patterns, not just prompts.”
 
 ---
 
@@ -216,7 +215,7 @@ These flags determine:
 
 The **Execution Unit** receives:
 
-- Trust trajectory (Meta-Layer)  
+- Trust trajectory (Echo-Layer)  
 - Interaction profile (Evaluative Layer)  
 - Active modulation flags (from reflex signals)
 
@@ -655,8 +654,8 @@ flowchart TD
     PI[📝 Prompt Input]
     class PI io_input;
 
-    %% === META-LAYER ===
-    subgraph META["Meta-Layer 🧠 Trust Context"]
+    %% === Echo-Layer ===
+    subgraph META["Echo-Layer 🧠 Trust Context"]
         M1[📊 Update Trust Metrics]
     end
 
