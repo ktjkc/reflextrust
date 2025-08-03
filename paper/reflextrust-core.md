@@ -1,4 +1,4 @@
-**Title: ReflexTrust - A Layered Model for Contextual AI Behavior**
+**ReflexTrust - A Layered Model for Contextual AI Behavior**
 
 ---
 
