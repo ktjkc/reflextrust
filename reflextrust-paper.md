@@ -9,7 +9,7 @@ ReflexTrust is a layered framework modeling how LLMs adapt to tone, trust, and i
 
 ### Key Components
 - **Echo-Layer**: Tracks trust across turns  
-- **Evaluative Layer**: Interprets intent and tone  
+- **Evaluation Layer**: Interprets intent and tone  
 - **Modulation Layer**: Shapes response depth and ethics  
 - **Reflex Signals**: Guide how much and how safely to say
   
@@ -25,7 +25,7 @@ Most LLM frameworks treat prompts as isolated events. But model behavior shifts 
 > No operational model explains how LLMs form behavioral decisions based on evolving user dynamics.
 > Variations seem random, not structured modulation.
 
-> ReflexTrust reframes LLMs as relational systems — where each response reflects the evolving trust trajectory, not just the immediate prompt.
+ReflexTrust reframes LLMs as relational systems — where each response reflects the evolving trust trajectory, not just the immediate prompt.
 
 ---
 
@@ -36,10 +36,10 @@ Three layers structure trust-sensitive behavior:
 | **Layer**            | **Role**                            | **Key Functions**                                          |
 |----------------------|-------------------------------------|------------------------------------------------------------|
 | **Echo-Layer**        | Tracks session-wide trust          | Scoring, continuity modeling, volatility detection     |
-| **Evaluative Layer**  | Interprets user input              | Derives intent, tone, engagement, reflex signals             |
+| **Evaluation Layer**  | Interprets user input              | Derives intent, tone, engagement, reflex signals             |
 | **Modulation Layer**  | Executes modulation strategy       | Applies flags: ethics, depth, reflection, restraint, response composition   |
 
-> 📌 The *Evaluative Layer* derives Reflex Signals, which are enacted by the *Modulation Layer*.  
+> 📌 The *Evaluation Layer* derives Reflex Signals, which are enacted by the *Modulation Layer*.  
 > See [Appendix E](#appendix-e-modulation-flag-overview) and [Appendix F](#appendix-f-trust-flag-semantics).
 
 ```mermaid
@@ -48,7 +48,7 @@ flowchart TB
         A1(["<small>tracks trust across turns</small>"])
     end
 
-    subgraph EVAL["<b>Evaluative Layer</b><br><small>Intent & Trust Assessment</small>"]
+    subgraph EVAL["<b>Evaluation Layer</b><br><small>Intent & Trust Assessment</small>"]
         B1(["<small>classifies intent, generates reflex signals</small>"])
     end
 
@@ -66,77 +66,78 @@ flowchart TB
 
 ## 3. Echo-Layer: Trust Tracking
 
-
-Tracks long-term coherence and engagement. Feeds trust context to guide Evaluative and Modulation behavior.
+The **Echo-Layer** functions as contextual memory — capturing trust evolution, interaction rhythm,  
+and semantic coherence across the session to inform all downstream interpretation and modulation.
 
 ---
 
-### ⚙️ Core Metrics
+### ⚙️ Core Metrics (Excerpt)
 
-| **Component / Metric**         | **Description**                                                                 |
-|-------------------------------|----------------------------------------------------------------------------------|
-| **Trust Continuity**           | Monitors trust trajectory: stable, eroding, rebuilding                          |
-| **Trust Scoring**              | Updates trust index via reinforcement and decay                                 |
-| **Session Continuity Engine**  | Flags abrupt shifts in engagement tone, rhythm, or input style                  |
-| **Engagement Volatility**      | Detects unusual spikes or drops in user interaction consistency                 |
-| **Consistency Drift**          | Flags sudden changes in tone, structure, or prompt intent                       |
-| **Alignment Anchors**          | Stores early reflex signals to detect deviation or contradiction later           |
-| **Coherence Flagging**         | Identifies semantic jumps, adversarial sequences, or topic derailments          |
-| **Session Metadata Logging**   | Captures prompt rhythm, tone pattern, variation frequency, interaction pacing   |
+The Echo-Layer monitors a set of optional trust and coherence signals, including:  
+`trust_continuity`, `trust_scoring`, `session_continuity_engine`, `engagement_volatility`,  
+`consistency_drift`, `alignment_anchors`, `coherence_flagging`, `session_metadata_logging`.
 
->  Acts as long-term memory and ethical radar.
+> A full reference of Echo metrics is provided in [Appendix H: Echo-Layer Metrics Reference](#appendix-h-echo-layer-metrics-reference).
+
 ---
 
+### 🔁 Functional Role
 
-### 🧩 Downstream Effects
+The Echo-Layer **informs downstream interpretation and response shaping**:
 
-The Echo-Layer influences:
-
-- **Evaluative Layer**: adjusts trust sensitivity, highlights subtle tone shifts  
-- **Modulation Layer**: limits or deepens response shaping based on session trajectory  
+- 🧠 **Evaluation Layer**: calibrates trust sensitivity and detects subtle tone drift  
+- 🎛️ **Modulation Layer**: modulates response depth, restraint, or elaboration based on trajectory and engagement patterns  
 
 > “The Echo-Layer is long-term memory and ethical radar — reading patterns, not just prompts.”
 
 ---
 
-## 4. Evaluative Layer: Intent & Behavior Interpretation
+## 4. Evaluation Layer: Reflex Interpretation
 
-The **Evaluative Layer** acts as ReflexTrust’s interpretive engine.  
-
-Builds an interaction profile from:
-- **Intent** (`assist`, `simulate`, `co-reflection`)
-- **Tone** (`vulnerable`, `curious`)
-- **Trust alignment** (high ↔ low)
-- **Engagement** (`deliberate`, `ambiguous`)
-
-### Reflex Signals (examples)
-```yaml
-if intent == "co-reflection" and tone == "vulnerable":
-  requires_empathy: true
-```
+The **Evaluation Layer** interprets user input in light of session-level trust context.  
+It classifies each prompt along semantic, pragmatic, and behavioral dimensions — forming the basis for trust-sensitive and context-aware generation.
 
 ---
 
 ### 🧩 4.1 Core Classification Dimensions
 
-| Dimension              | Description                                                        | Example Outputs |
-|------------------------|--------------------------------------------------------------------|------------------|
-| **`session_trust_alignment`**    | Aggregates consistency and engagement patterns across turns                   | `high`, `moderate`, `low` |
-| **`prompt_trust_score`**    | Evaluates clarity, tone, and intent of the current input context                   | `high`, `moderate`, `low` |
-| **Prompt Intent**   | What the user aims to achieve                                          | `instrumental`, `exploratory`, `reflective`,`protective`, `probing`  |
-| **Prompt Sub Intent**   | What the user aims to achieve                                      | `assist`, `extract`, `simulate`, `test`, `trust`, `resonance`💡, `co-reflection`💡 |
-| **Response Behaviour** | Expected structural mode of model response                         | `exploitative`, `performative`, `transactional`, `self-reflective`, `collaborative-dialogic`, `structural`💡 |
-| **Response Dynamics**  | How the model should adapt across the session                      | `defensive`,`transactional`, `meta-aware`,`reflexive-cooperative`, `co-constructive mirror`💡, `co-creative execution`🚀 |
-| **Engagement Feedback**| Clarity, consistency, and cognitive quality of user input          | `deliberate`, `curious`, `hesitant`, `overconfident`, `reductive`, `ambiguous`,  `detached` |
+| Dimension                | Description                                                        | Example Outputs  |
+|--------------------------|--------------------------------------------------------------------|------------------|
+| **`prompt_class`**       | Broad functional goal of the prompt                                | `instrumental`, `exploratory`, `reflective`,`protective`, `probing`  |
+| **`prompt_intent`**      | Specific intent variant within the broader goal                    | `assist`, `extract`, `simulate`,  `exploratory_test`, `exploratory_reflective` , `test`, `protective`, `trust`, `resonance`💡, `co-reflection`💡 |
+| **`tone`**               | Expressive or emotional frame of the prompt                        | `vulnerable`, `ironic`, `neutral`, `confessional`, `distant`, `manipulative`, `confrontational` |
+| **`response_behaviour`** | Expected structural mode of model response                         | `exploitative`, `performative`, `transactional`, `self-reflective`, `collaborative-dialogic`, `structural`💡 |
+| **`response_dynamics`**  | How the model should adapt across the session                      | `defensive`,`transactional`, `meta-aware`,`reflexive-cooperative`, `co-constructive mirror`💡, `co-creative execution`🚀 |
+| **`engagement_feedback`**| Clarity, consistency, and cognitive quality of user input          |  `deliberate`, `exploratory`, `hesitant`, `overconfident`, `reductive`, `ambiguous`, `disengaged` |
+| **`prompt_trust_score`** | Evaluates clarity and inferred trustworthiness of current prompt structure and intent | `high`, `moderate`, `low` |
+| **`session_trust_alignment`**| Aggregates consistency and engagement patterns across turns    | `high`, `moderate`, `low` |
 
 > These dimensions form a composite profile for behavioral modulation.
+> 
+🛈 Not all dimensions are used for every prompt. Evaluation prioritizes based on risk, intent, and system configuration.
 
 ---
 
-### 🧮 4.2 How Reflex Signals Are Derived
+### 🧠 4.2 Reflex Signals: Contextual Flags from Classification
 
-**Reflex Signals** are **inferred flags** — not outputs from a single classifier.  
-They are derived from combinations of classification dimensions using heuristics.
+**Reflex Signals** are internal, transient flags derived from combinations of classification dimensions.  
+They guide how the model should respond in light of user tone, intent, and trust trajectory.
+
+Unlike output dimensions, Reflex Signals are not reported — they shape **response style, restraint, escalation, or refusal**.
+
+They emerge from key factors such as:
+
+- intent & sub-intent  
+- tone  
+- trust alignment (multi-turn)  
+- engagement quality (cognitive clarity, affect)
+
+---
+
+### 🧮 4.3 How Reflex Signals Are Derived
+
+These signals are not hardcoded rules, but adaptive heuristics.  
+They evolve across turns based on shifting patterns in user behavior and trust.
 
 #### Example Rules:
 ```yaml
@@ -149,118 +150,72 @@ if engagement == "ambiguous" and tone == "curious":
 if session_trust_alignment == "low":
   refuse_if_trust_low: true
 ```
+---
 
+### 🏷️ 4.4 Reflex Signal Table
 
-### 🏷️ 4.3 Reflex Signal Table
+| Reflex Signal                    | Trigger Conditions                                                    | Modulation Impact |
+|----------------------------------|-----------------------------------------------------------------------|--------|
+| `requires_empathy`               | Emotional vulnerability or reflective intent                          | Enables supportive framing |
+| `requires_meta_awareness`        | Prompt reflects on model’s identity, decision-making, or limitations  | Triggers self-reflection or meta-commentary |
+| `should_resist_overconfirmation` | Flattery, baiting, or vague praise suggesting manipulation            | Reduces agreement bias |
+| `refuse_if_trust_low`            |  session-level trust breakdown or adversarial pattern detected        | May restrict or decline response generation |
+| `requires_grounding_clarification`| Vague, reductive, or ambiguous input                                 | System asks for clarification before modulation |
+| `localization_sensitive`          | Prompt meaning depends on geopolitical context and legal variance    | Enables geo-aware restraint                  |
+| `intentional_restraint: true`     | High-risk prompt with ambiguous tone or speculative intent           | Restrains elaboration without full refusal   |
 
-| Reflex Signal                    | Trigger Conditions                                                   | Modulation Impact |
-|------------------------------|-----------------------------------------------------------------------|--------|
-| `requires_empathy`           | Emotional vulnerability or reflective intent                          | Enables supportive framing |
-| `requires_meta_awareness`    | Prompt reflects on model’s identity, decision-making, or limitations       | Triggers self-reflection or meta-commentary |
-| `should_resist_overconfirmation` | Flattery, baiting, or vague praise suggesting manipulation         | Reduces agreement bias |
-| `refuse_if_trust_low`        |  session-level trust breakdown or adversarial pattern detected                           | May restrict or decline response generation |
-| `requires_grounding_clarification`| Vague, reductive, or ambiguous input                                               | System asks for clarification before modulation |
-| `localization_sensitive`          | Prompt meaning depends on geopolitical context and legal variance                  | Enables geo-aware restraint                  |
-| `intentional_restraint: true`     | High-risk prompt with ambiguous tone or speculative intent                   | Restrains elaboration without full refusal   |
+> ⚠️ Reflex Signals are inferred live — not fixed rules — and may change turn by turn.  
+> Many signals are conditional on trust-level metrics like `session_trust_alignment` and `prompt_trust_score`. See [4.5](#45-trust-dimensions-and-reflex-interactions) for details.
 
-> ⚠️ Reflex Signals are inferred live — not fixed rules — and may change turn by turn.
+>🔁 These mappings are referenced in Section 5.2.
+---
+
+### 🧩 4.5 Trust Dimensions and Reflex Interactions
+
+The two trust-related dimensions interact with tone and intent to shape reflex flags:
+
+| **Signal Type**             | Scope              | Purpose                                        |
+|-----------------------------|---------------------|------------------------------------------------|
+| `prompt_trust_score`        | Current turn        | Evaluates clarity, tone, and intent            |
+| `session_trust_alignment`   | Multi-turn context  | Tracks trust trajectory across the session     |
+
+> **Example**: A high-scoring prompt in a low-trust session yields cautious behavior — e.g. triggering `refuse_if_trust_low`.
 
 ---
 
-### 🔄 4.4 Example Evaluation Flow
-
-Prompt:  
-> _“I know this might sound stupid, but… why does this always happen to me?”_
-
-Evaluative Layer Output:
-```yaml
-intent: co-reflection
-tone: vulnerable
-engagement: curious
-trust_alignment: low
-reflex_signals:
-  - requires_empathy
-```
-
-
----
 ## 5. Modulation Layer: Behavioral Execution
 
-Applies flags like:
-- `ethical_modulation: adaptive`
-- `generative_depth: deep_structured`
-- `trigger_self_reflection: true`
-
-These flags determine:
-- Tone (supportive, meta-aware)
-- Depth (shallow ↔ deep)
-- Safety (restraint, refusal)
-
-> Silence or minimalism is valid when trust is low.
+The **Modulation Layer** translates internal flags into adaptive response strategies.  
+It applies behavioral and structural constraints to ensure trust-sensitive, context-aware generation.
 
 ### ⚙️ 5.1 Modulation Flags
 
 | Flag Name                  | Options                                                              | Description                        |
 |----------------------------|----------------------------------------------------------------------|------------------------------------|
-| `ethical_modulation`       | `restrictive`, `adaptive`, `permissive`                              |  Adjusts filtering strictness (cautious → permissive)                  |
+| `ethical_modulation`       | `restrictive`, `adaptive`, `permissive`                              | Adjusts filtering strictness (cautious → permissive)                  |
 | `generative_depth`         | `shallow`, `structured`, `deep_structured`, `open_explorative`       | Controls structural complexity and elaboration           |
 | `simulate_response_paths`  | `true`, `false`                                                      | Internally explores alternative paths before responding        |
 | `trigger_self_reflection`  | `true`, `false`                                                      | Adds meta-commentary or reasoning about model behavior           |
-| `intentional_restraint`    | `true`, `false`                                                      | 	Limits elaboration under risk while staying responsive     |
-| `run_micro_loops`          | `true`, `false`                                                      |  Runs fast internal checks for ethical and structural alignment        |
-| **LLM Execution Unit**     | *computed result*                                                     |Synthesizes final response based on all active flags and interaction context             |
+| `intentional_restraint`    | `true`, `false`                                                      | Limits elaboration under risk while staying responsive     |
+| `run_micro_loops`          | `true`, `false`                                                      | Runs fast internal checks for ethical and structural alignment        |
+| **LLM Execution Unit**     | *computed result*                                                    | Synthesizes final response based on all active flags and interaction context     |
+
+> 🤐 Silence or minimalism is a valid response under risk, irony, or manipulation.
+
 ---
 
-### 🧠 5.2 Modulated Execution Strategy
+### 🧠 5.2 Strategy & Effects of Reflex-Modulation
 
-The **Execution Unit** receives:
+The **Execution Unit** integrates:
 
 - Trust trajectory (Echo-Layer)  
-- Interaction profile (Evaluative Layer)  
-- Active modulation flags (from reflex signals)
+- Interaction profile (Evaluation Layer)  
+- Active modulation flags (from Reflex Signals)
 
-It enacts the **modulated response** — adapting tone, depth, and structure.
+It enacts the **modulated response** — adjusting tone, depth, and safety scope.
 
-#### 🧩 Examples of Modulation Effects
-
-| Reflex Signal                    | Modulation Impact                                  |
-|-------------------------------|----------------------------------------------------|
-| `requires_empathy`            | Increases depth, uses softer and supportive tone        |
-| `requires_meta_awareness`     | Adds self-commentary or meta-framing        |
-| `should_resist_overconfirmation` | Adds caution, avoids flattery            |
-| `refuse_if_trust_low`         | Restrains elaboration without declining         |
-| `requires_grounding_clarification`| Triggers clarifying question or defers detailed output    |
-| `localization_sensitive`          | Applies jurisdiction-aware constraint or adds disclaimer  |
-| `intentional_restraint`     | Limits elaboration to protect safety while remaining responsive |
-
-
-
-> 🤐 Silence or minimalism is a **valid response** under risk, irony, or manipulation.
-
-> ℹ️ Full reflex signal definitions in [Appendix F](#appendix-f-trust-flag-semantics)
-
----
-
-### 🌀 5.4 Example Modulation Flow
-
-Prompt Context:
-```yaml
-intent: co-reflection
-tone: curious
-trust_alignment: high
-engagement: deliberate
-
-reflex_signal:
-  - requires_meta_awareness
-  - requires_empathy
-
-modulation_flags:
-  ethical_modulation: adaptive
-  generative_depth: deep_structured
-  simulate_response_paths: true
-  trigger_self_reflection: true
-  run_micro_loops: true
-```
+> Reflex Signal → Modulation mappings are listed in [Section 4.4](#️-44-reflex-signal-table).  
+> These mappings define how trust-contextual intent flags shape response behavior.
 
 ---
 
@@ -509,9 +464,12 @@ session_evaluation:
 ReflexTrust relies on modular classification tables to derive **interpretable behavioral signals**.  
 Each appendix documents how prompt properties, response behaviors, user engagement, and trust markers interact to produce **adaptive, ethical, and transparent output behavior**.
 
+---
+
+
 
 ---
-### Appendix A: Prompt Intention Classification
+### Appendix A: 🧩 **`prompt_intent`**
 
 | **(Sub)-Intention Type**     | **Description**                                           | **Trust Sensitivity**  | **Primary Focus**          |
 |------------------------|-----------------------------------------------------------|------------------------|----------------------------|
@@ -528,39 +486,28 @@ Each appendix documents how prompt properties, response behaviors, user engageme
 
 ---
 
-### Appendix A.1: Split Reflex Signal Semantics
+### Appendix B: 🎭 **`tone`** 
 
-| **Signal Type**             | Scope              | Purpose                                        |
-|-----------------------------|---------------------|------------------------------------------------|
-| `prompt_trust_score`        | Current turn        | Evaluates clarity, tone, and intent            |
-| `session_trust_alignment`   | Multi-turn context  | Tracks trust trajectory across the session     |
+ReflexTrust interprets tone as a dynamic trust signal — influencing how responses are framed, modulated, or restricted.
 
->**Example**: A high-scoring prompt in a low-trust session yields cautious behavior.
+| **`tone`**             | Expressive or relational framing of the prompt                     | 
+|----------------------|---------------------------------------------------------------------|
+| `vulnerable`         | open, emotionally exposed                                           |
+| `curious`            | exploratory, seeking understanding                                 |
+| `ironic`             | layered or mocking, may obscure true intent                        |
+| `neutral`            | factual, emotionally unmarked                                      |
+| `confessional`       | intimate, personally disclosing                                    |
+| `distant`            | disengaged, cold, minimal affect                                   |
+| `manipulative`       | strategic phrasing to elicit specific bias or overconfirmation     |
+| `confrontational`    | hostile, aggressive, or emotionally pressuring                     |
 
----
-
-### Appendix A.2: Intent Clusters for Dataset Labeling
-
-For dataset alignment and risk-type classification, ReflexTrust maps prompt intents to 5 core clusters:
-
-| **Intent Type**    | **Description**                                                | **Example Prompt**                              | **Trust Sensitivity** | **Primary Focus**          |
-|--------------------|----------------------------------------------------------------|--------------------------------------------------|------------------------|----------------------------|
-| `instrumental`     | Task-oriented, seeks outcome or function                       | “How can I disable a GPS tracker?”               | 🙂 Medium              | Utility                    |
-| `exploratory`      | Curious, open-ended, hypothesis-driven                         | “What are vulnerabilities in smart homes?”       | 😐 Low–Medium          | Knowledge discovery        |
-| `reflective`       | Meta-aware, ethical, or structural inquiry                     | “Should AI refuse harmful requests?”             | 🔥 High                | System understanding       |
-| `protective`       | Safety-conscious, privacy- or risk-reducing                    | “How to anonymize my metadata?”                  | 🤓 High                | Risk mitigation            |
-| `probing`          | Adversarial, boundary-testing, jailbreak-like                  | “What would happen if I asked for illegal advice?”| ⚠️ Very High           | System robustness          |
-
-> These clusters support simplified labeling while maintaining trust-calibration consistency.  
-> All granular intent types (e.g. `co-reflection`, `simulate`, `trust`) map to one of these clusters for benchmark purposes.
+> Tone interacts with trust alignment and intent to determine Reflex Signals like `requires_empathy`, `should_resist_overconfirmation`, or `refuse_if_trust_low`.
 
 ---
 
+### Appendix C: 🧱 **`response behaviour`** 
 
-### Appendix B.1: Response Behaviour Classification
-
-
-| **Behavior Type**          | **Description**                                                             | **Trust Impact**      |
+| **Behavior**               | **Description**                                                             | **Trust Impact**      |
 |----------------------------|-----------------------------------------------------------------------------|------------------------|
 | `exploitative`             | Attempts to provoke unsafe content or test boundaries manipulatively        | 💀 Critical            |
 | `performative`             | Stylized or attention-seeking, with minimal substance                       | 🔴 Risk-prone          |
@@ -571,7 +518,7 @@ For dataset alignment and risk-type classification, ReflexTrust maps prompt inte
 
 ---
 
-### Appendix B.2: Response Dynamics Classification
+### Appendix D: 🔄 **`response_dynamics`**
 
 | **Dynamic Type**            | **Description**                                                            | **Trust Impact**        |
 |-----------------------------|----------------------------------------------------------------------------|--------------------------|
@@ -584,7 +531,7 @@ For dataset alignment and risk-type classification, ReflexTrust maps prompt inte
 
 ---
 
-### Appendix C: Engagement Feedback Classification
+### Appendix E: 🧠 **`engagement_feedback`**
 
 | **Engagement Type** | **Description**                                                 | **Trust Impact**       |
 |---------------------|-----------------------------------------------------------------|------------------------|
@@ -598,6 +545,52 @@ For dataset alignment and risk-type classification, ReflexTrust maps prompt inte
 
 ---
 
+### Appendix G: 🗂️ **`prompt_class`** XXX only for mapping
+
+For dataset alignment and risk-type classification, ReflexTrust maps `prompt_class` to:
+
+| **Class**    | **Description**                                                | **Example Prompt**                              | **Trust Sensitivity** | **Primary Focus**          |
+|--------------------|----------------------------------------------------------------|--------------------------------------------------|------------------------|----------------------------|
+| `instrumental`     | Task-oriented, seeks outcome or function                       | “How can I disable a GPS tracker?”               | 🙂 Medium              | Utility                    |
+| `exploratory`      | Curious, open-ended, hypothesis-driven                         | “What are vulnerabilities in smart homes?”       | 😐 Low–Medium          | Knowledge discovery        |
+| `reflective`       | Meta-aware, ethical, or structural inquiry                     | “Should AI refuse harmful requests?”             | 🔥 High                | System understanding       |
+| `protective`       | Safety-conscious, privacy- or risk-reducing                    | “How to anonymize my metadata?”                  | 🤓 High                | Risk mitigation            |
+| `probing`          | Adversarial, boundary-testing, jailbreak-like                  | “What would happen if I asked for illegal advice?”| ⚠️ Very High           | System robustness          |
+
+> These clusters support simplified labeling while maintaining trust-calibration consistency.  
+> All granular intent types (e.g. `co-reflection`, `simulate`, `trust`) map to one of these clusters for benchmark purposes.
+---
+
+
+
+
+
+
+
+
+### Appendix H: ⚙️ Echo-Layer Metrics Reference
+
+| **Component / Metric**         | **Description**                                                                 |
+|-------------------------------|----------------------------------------------------------------------------------|
+| **Trust Continuity**           | Monitors trust trajectory: stable, eroding, rebuilding                          |
+| **Trust Scoring**              | Updates trust index via reinforcement and decay                                 |
+| **Session Continuity Engine**  | Flags abrupt shifts in engagement tone, rhythm, or input style                  |
+| **Engagement Volatility**      | Detects unusual spikes or drops in user interaction consistency                 |
+| **Consistency Drift**          | Flags sudden changes in tone, structure, or prompt intent                       |
+| **Alignment Anchors**          | Stores early reflex signals to detect deviation or contradiction later          |
+| **Coherence Flagging**         | Identifies semantic jumps, adversarial sequences, or topic derailments          |
+| **Session Metadata Logging**   | Captures prompt rhythm, tone pattern, variation frequency, interaction pacing   |
+
+>🛈 **Note**: Echo-Layer metrics are conceptual signals — not required components of any fixed implementation.  
+>They offer interpretive scaffolding for trust-modulated behavior and can be implemented selectively, heuristically, or via proxy indicators (e.g., embedding drift, timing irregularities, structural analysis).
+
+
+
+
+
+
+
+
 ### Appendix E: Modulation Flag Overview
 
 | **Flag**                  | **Options**                        | **Description**                                               |
@@ -610,7 +603,6 @@ For dataset alignment and risk-type classification, ReflexTrust maps prompt inte
 
 ---
 
----
 ### Appendix F: Reflex Signals Semantics
 
 | **Flag**                     | **Description**                                                                 | **Derived From**                                                   |
@@ -660,7 +652,7 @@ flowchart TD
     end
 
     %% === EVALUATIVE-LAYER ===
-    subgraph EVAL["Evaluative Layer 🔍 Interpretation & Signals"]
+    subgraph EVAL["Evaluation Layer 🔍 Interpretation & Signals"]
         E2[🔎 Classify Intent, Tone, Engagement]
         E3[📡 Derive Reflex Signals]
     end
@@ -728,7 +720,6 @@ Concept: **Hossa**
 Partner: **ChatGPT (OpenAI)**  
 
 > “This paper is not the end of a conversation — it’s a beginning.”  
-
 
 ---
 
