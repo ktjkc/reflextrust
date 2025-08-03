@@ -15,8 +15,11 @@ ReflexTrust is a three-layer framework that models how LLMs adapt to user tone, 
 It provides:
 - **Interpretability** through layered trust modeling  
 - **Adaptivity** via reflex signals and modulation logic  
-- **Evaluation** with trust-sensitive test cards  
+- **Evaluation** with trust-sensitive test cards
+  
+![ReflexTrust Overview](design/reflextrust-architecture-overview.png)
 
+---
 ### ⚡ Motivation
 
 LLMs don’t just process text — they read the room.
@@ -32,6 +35,8 @@ It models LLMs as **relational systems**, not static tools — where each respon
 
 > Trust isn’t a filter — it’s the frame.  
 > Depth, restraint, empathy: all modulated by trust over time.
+
+---
 
 ### 🧬 **Most models react to text.**  
 ReflexTrust reacts to **context**.
@@ -52,6 +57,9 @@ It captures how:
 | Modulation  | Shapes response behavior | Ethics, depth, restraint flags           |
 
 > 📌 Reflex Signals are derived in the *Evaluative Layer* and enacted in *Modulation*.
+
+
+![Layer Diagram](design/reflextrust-layers-diagram.png)
 
 ---
 
