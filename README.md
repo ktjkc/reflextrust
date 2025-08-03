@@ -54,7 +54,7 @@ It captures how:
 
 | Layer       | Role                    | Key Functions                            |
 |-------------|-------------------------|------------------------------------------|
-| Meta        | Tracks session-wide trust | Continuity, volatility detection         |
+| Echo        | Tracks session-wide trust | Continuity, volatility detection         |
 | Evaluative  | Interprets input        | Intent, tone, reflex signal classification |
 | Modulation  | Shapes response behavior | Ethics, depth, restraint flags           |
 
