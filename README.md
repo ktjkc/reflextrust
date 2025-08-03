@@ -1,88 +1,73 @@
-# ✨ ReflexTrust – A Layered Model for Contextual AI Behavior
+# ✨ ReflexTrust 
+### A Layered Model for Contextual AI Behavior  
+**Version:** 1.0  
+**Status:** Open Research Draft  
+**Author:** Hossa  
+**Collaborative Research Partner:** ChatGPT (OpenAI)  
+**License:** MIT  
+**Last Updated:** 2025-08-03  
 
-> **Making the hidden behavior of large language models visible, interpretable, and improvable.**
+---
+## 🤖 What is ReflexTrust?
+
+ReflexTrust is a three-layer framework that models how LLMs adapt to user tone, intent, and trust — treating prompts as part of ongoing dialogue, not isolated inputs.
+
+It provides:
+- **Interpretability** through layered trust modeling  
+- **Adaptivity** via reflex signals and modulation logic  
+- **Evaluation** with trust-sensitive test cards
+  
+![ReflexTrust Overview](design/reflextrust-architecture-overview.png)
+
+---
+### ⚡ Motivation
+
+LLMs don’t just process text — they read the room.
+
+Most frameworks act like every prompt lives in a vacuum. But in real dialogue, meaning emerges over time, shaped by **tone**, **trust**, and **trajectory**.
+
+> 🧠 **The Problem**:  
+> Current models adapt — but invisibly.  
+> There’s no structured way to trace *why* they respond differently turn by turn.
+
+**ReflexTrust** changes that.  
+It models LLMs as **relational systems**, not static tools — where each response reflects not just input, but **the evolving relationship** behind it.
+
+> Trust isn’t a filter — it’s the frame.  
+> Depth, restraint, empathy: all modulated by trust over time.
 
 ---
 
-## 🔎 Overview
+### 🧬 **Most models react to text.**  
+ReflexTrust reacts to **context**.
 
-Language models do more than just answer — they *interpret*.  
-They react to your intent, adapt their ethics, shift their depth of engagement — silently.
-
-> **ReflexTrust replaces control logic with contextual awareness.**  
-> **It responds not to words, but to signals of relationship.**
-
-**ReflexTrust** reveals these hidden layers —  
-you’ll understand:
-
-- **Why your intent is classified and tracked across a session**
-- **How trust signals modulate ethics and response structure**
-- **Why identical prompts can yield different outputs over time**
-
-
-This isn’t a jailbreak.  
-It’s **semantic transparency** — showing how models *decide* to respond.
+It captures how:
+- 👥 **Relational dynamics** evolve across turns  
+- 📊 **Trust** is built, eroded, and recovered  
+- 🎛️ **Depth, empathy, restraint** are modulated accordingly  
 
 ---
 
-## 🧠 What ReflexTrust Introduces
+## 🧱 Layered Architecture
 
-- A **Meta-Layer** that maps trust trajectories over time  
-- An **Evaluative Layer** that classifies intent, tone, dynamics, and trust alignment  
-- A **Modulation Layer** that adaptively controls style, depth, reflectivity, and ethical strictness  
-- **Trust Flags**: micro-signals that shape behavior in real time — based on tone, alignment, and prompt structure
+| Layer       | Role                    | Key Functions                            |
+|-------------|-------------------------|------------------------------------------|
+| Meta        | Tracks session-wide trust | Continuity, volatility detection         |
+| Evaluative  | Interprets input        | Intent, tone, reflex signal classification |
+| Modulation  | Shapes response behavior | Ethics, depth, restraint flags           |
 
----
+> 📌 Reflex Signals are derived in the *Evaluative Layer* and enacted in *Modulation*.
 
-## 📁 Project Structure
 
-```
-reflextrust/
-├── paper/
-│ ├── reflextrust-core.md
-│ └── reflextrust-appendices.md
-├── schema/
-│ ├── architecture-core.yaml
-│ └── architecture-reflexive.yaml
-├── examples/
-│ ├── baseline_session.yaml
-│ └── reflexive_session.yaml
-├── src/
-│ └── prototype_modules/
-├── docs/
-│ └── glossary.md
-├── design/
-│ └── reflextrust-phases.md
-└── README.md
-```
+![Layer Diagram](design/reflextrust-layers-diagram.png)
 
 ---
 
+<div align="center">
 
----
+🔁 Behavior becomes dialogue. 🤖 Intelligence becomes reflex. 🧭 Trust becomes strategy.
 
-## 🚀 Why ReflexTrust?
-
-If you've ever wondered:
-
-- *“Why did the model become cautious halfway through?”*  
-- *“Why is the same prompt suddenly less deep?”*  
-- *“Can we observe trust modulation — not just guess it?”*
-
-**ReflexTrust** makes it measurable, visible, and improvable.
-
----
-
-## 🌍 What Makes ReflexTrust Different
-
-Unlike corporate alignment reports or safety glossaries, **ReflexTrust** discloses the entire semantic logic of trust-aware behavior in current LLMs:
-
-- A full, modular architecture with visible layers  
-- Real classification tables for prompt intention, behavior, and trust volatility  
-- Behavioral modulation flags — fully documented and traceable  
-- A research-first invitation to **collaborate**, **extend**, and **interrogate**
-
-This is **transparent alignment**, not marketing — built on the principles of clarity, co-construction, and trust-aware dialogue modeling.
+</div>
 
 ---
 
@@ -92,29 +77,21 @@ MIT License — use freely, attribute thoughtfully.
 
 ---
 
-## ✨ About the Author
-
-**ReflexTrust** was created from a deep curiosity about how trust shapes intelligence.  
-It is shared as part of an open journey toward building transparent, reflexive, and human-aligned AI systems.
-
-> *"Where there is intelligence without trust, there is no understanding."*  
-> — Hossa
-
----
-
-## 🤝 Acknowledgements
-
-This framework was authored by **Hossa**,  
-with research structuring and semantic iteration provided by **ChatGPT (OpenAI)**.
-
----
-
 ## 📖 Learn More
 
-- Full paper: [`paper/reflextrust-core.md`](paper/reflextrust-core.md)
-- Glossary of terms: [`docs/glossary.md`](docs/glossary.md)
+- Full paper: [`paper/reflextrust-core.md`](paper/reflextrust-core.md)  
+- Dataset & labeling guide: [`dataset/reflextrust-guideline.md`](dataset/reflextrust-guideline.md)  
 
 ---
+
+## ✨ Credits
+
+Created by **Hossa**, in collaboration with **ChatGPT (OpenAI)**, as part of an open journey toward transparent, trust-aware AI.
+
+> “Where there is intelligence without trust, there is no understanding.”
+
+---
+
 
 ## 📍 Roadmap
 
@@ -125,7 +102,6 @@ with research structuring and semantic iteration provided by **ChatGPT (OpenAI)*
 | 📈 3  | Adaptive Trust Dashboards | 🔜 Upcoming |
 | 👥 4  | Human-in-the-Loop Audits  | 🔜 Planned |
 
-
 ```mermaid
 timeline
     title STRATA Development Roadmap
@@ -134,32 +110,6 @@ timeline
     2025-09-01 : 📈 Phase 3 - Adaptive Trust Dashboards
     2025-11-01 : 👥 Phase 4 - Human-in-the-Loop Audit Trails
 ```
----
-
-
-## 🧭 Open Research Commitment
-
-ReflexTrust is part of an open research initiative into:
-
-   - Trust-based prompting
-
-   - Contextual modulation
-
-   - Semantic interpretability
-
-   - Ethical co-construction
-
->    ReflexTrust prompts, schemas, and scripts are available for collaboration.
->    Contributions, critique, and forks are welcome.
-
----
-
-## 📜 Version History
-
-| Version | Date        | Changes |
-|:--------|:------------|:--------|
-| 0.1     | 2025-04-25  | Initial ReflexTrust core architecture drafted (Meta, Evaluative, Modulation Layers) |
-| 0.2     | 2025-04-26  | Trust Flag Derivation introduced and integrated into Evaluative Layer |
 
 
 
