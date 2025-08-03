@@ -722,10 +722,14 @@ ReflexTrust is an open framework for trust-based prompting and adaptive modulati
 
 ## 🤝 Acknowledgements
 
+🧬 Most models react to text.
+ReflexTrust reacts to context.
+
 Concept: **Hossa**  
 Partner: **ChatGPT (OpenAI)**  
 
 > “This paper is not the end of a conversation — it’s a beginning.”  
+
 
 ---
 
