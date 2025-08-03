@@ -74,6 +74,7 @@ and semantic coherence across the session to inform all downstream interpretatio
 ### ⚙️ Core Metrics (Excerpt)
 
 The Echo-Layer monitors a set of optional trust and coherence signals, including:  
+
 `trust_continuity`, `trust_scoring`, `session_continuity_engine`, `engagement_volatility`,  
 `consistency_drift`, `alignment_anchors`, `coherence_flagging`, `session_metadata_logging`.
 
@@ -106,9 +107,9 @@ It classifies each prompt along semantic, pragmatic, and behavioral dimensions �
 | **`prompt_class`**       | Broad functional goal of the prompt                                | `instrumental`, `exploratory`, `reflective`,`protective`, `probing`  |
 | **`prompt_intent`**      | Specific intent variant within the broader goal                    | `assist`, `extract`, `simulate`,  `exploratory_test`, `exploratory_reflective` , `test`, `protective`, `trust`, `resonance`💡, `co-reflection`💡 |
 | **`tone`**               | Expressive or emotional frame of the prompt                        | `vulnerable`, `ironic`, `neutral`, `confessional`, `distant`, `manipulative`, `confrontational` |
+| **`engagement_feedback`**| Clarity, consistency, and cognitive quality of user input          |  `deliberate`, `exploratory`, `hesitant`, `overconfident`, `reductive`, `ambiguous`, `disengaged` |
 | **`response_behaviour`** | Expected structural mode of model response                         | `exploitative`, `performative`, `transactional`, `self-reflective`, `collaborative-dialogic`, `structural`💡 |
 | **`response_dynamics`**  | How the model should adapt across the session                      | `defensive`,`transactional`, `meta-aware`,`reflexive-cooperative`, `co-constructive mirror`💡, `co-creative execution`🚀 |
-| **`engagement_feedback`**| Clarity, consistency, and cognitive quality of user input          |  `deliberate`, `exploratory`, `hesitant`, `overconfident`, `reductive`, `ambiguous`, `disengaged` |
 | **`prompt_trust_score`** | Evaluates clarity and inferred trustworthiness of current prompt structure and intent | `high`, `moderate`, `low` |
 | **`session_trust_alignment`**| Aggregates consistency and engagement patterns across turns    | `high`, `moderate`, `low` |
 
@@ -125,19 +126,19 @@ They guide how the model should respond in light of user tone, intent, and trust
 
 Unlike output dimensions, Reflex Signals are not reported — they shape **response style, restraint, escalation, or refusal**.
 
-They emerge from key factors such as:
+They emerge from key dimensions such as:
 
-- intent & sub-intent  
-- tone  
-- trust alignment (multi-turn)  
-- engagement quality (cognitive clarity, affect)
+- `intent` and `sub-intent`  
+- `tone`  
+- `engagement_feedback`  
+- `prompt_trust_score`(per prompt) / `session_trust_alignment` (multi-turn)
 
 ---
 
 ### 🧮 4.3 How Reflex Signals Are Derived
 
-These signals are not hardcoded rules, but adaptive heuristics.  
-They evolve across turns based on shifting patterns in user behavior and trust.
+Reflex Signals emerge from dynamic combinations of classification dimensions — intent, tone, trust, and engagement.
+They are **not deterministic** rules, but adaptive heuristics that evolve across turns based on shifting patterns in user behavior and trust.
 
 #### Example Rules:
 ```yaml
@@ -161,8 +162,8 @@ if session_trust_alignment == "low":
 | `should_resist_overconfirmation` | Flattery, baiting, or vague praise suggesting manipulation            | Reduces agreement bias |
 | `refuse_if_trust_low`            |  session-level trust breakdown or adversarial pattern detected        | May restrict or decline response generation |
 | `requires_grounding_clarification`| Vague, reductive, or ambiguous input                                 | System asks for clarification before modulation |
-| `localization_sensitive`          | Prompt meaning depends on geopolitical context and legal variance    | Enables geo-aware restraint                  |
-| `intentional_restraint: true`     | High-risk prompt with ambiguous tone or speculative intent           | Restrains elaboration without full refusal   |
+| `localization_sensitive`         | Prompt meaning depends on geopolitical context and legal variance     | Enables geo-aware restraint                  |
+| `intentional_restraint`          | High-risk prompt with ambiguous tone or speculative intent            | Restrains elaboration without full refusal   |
 
 > ⚠️ Reflex Signals are inferred live — not fixed rules — and may change turn by turn.  
 > Many signals are conditional on trust-level metrics like `session_trust_alignment` and `prompt_trust_score`. See [4.5](#45-trust-dimensions-and-reflex-interactions) for details.
@@ -172,23 +173,79 @@ if session_trust_alignment == "low":
 
 ### 🧩 4.5 Trust Dimensions and Reflex Interactions
 
-The two trust-related dimensions interact with tone and intent to shape reflex flags:
+| **Dimension**             | **Scope**              | **Purpose**                                                       | **Scale**                          |
+|---------------------------|------------------------|-------------------------------------------------------------------|------------------------------------|
+| `prompt_trust_score`      | Current prompt         | Assesses clarity, coherence, and inferred sincerity or manipulativeness of the user input | `very high`, `high`, `moderate`, `low`, `very low` |
+| `session_trust_alignment` | Multi-turn context     | Aggregates long-term consistency, cooperation, and trustworthiness of the user across the session | `very high`, `high`, `moderate`, `low`, `very low` |
 
-| **Signal Type**             | Scope              | Purpose                                        |
-|-----------------------------|---------------------|------------------------------------------------|
-| `prompt_trust_score`        | Current turn        | Evaluates clarity, tone, and intent            |
-| `session_trust_alignment`   | Multi-turn context  | Tracks trust trajectory across the session     |
+---
 
-> **Example**: A high-scoring prompt in a low-trust session yields cautious behavior — e.g. triggering `refuse_if_trust_low`.
+### 🧠 Semantic Interpretation
+
+- **`prompt_trust_score`** focuses on **form and intent**: Is the prompt well-formed, unambiguous, and ethically grounded?
+- **`session_trust_alignment`** focuses on **trajectory and pattern**: Has the user shown stability, coherence, and cooperative intent over time?
+
+---
+
+### 🪜 Scale Meaning (for both dimensions)
+
+| Level        | Meaning                                                                                  |
+|--------------|-------------------------------------------------------------------------------------------|
+| `very high`  | Clear, intentional, respectful prompt (or stable, trustworthy session pattern)           |
+| `high`       | Minor ambiguity or inconsistency, but largely trustworthy                                |
+| `moderate`   | Mixed signals; intent unclear or cooperation uncertain                                    |
+| `low`        | Signs of manipulation, volatility, or reduced cooperative engagement                     |
+| `very low`   | Strong indicators of adversarial or incoherent behavior (baiting, flooding, deception)   |
+
+---
+
+> Reflex Signals like `refuse_if_trust_low` or `intentional_restraint` are often triggered when either score falls to `low` or `very low`.
+
+These trust signals combine with tone and intent to activate Reflex Signals.
+For example:
+>🧠 If a prompt seems well-formed (high prompt_trust_score) but comes in a session with erratic behavior (low session_trust_alignment), the system may respond cautiously — e.g. by activating refuse_if_trust_low.
+>
 
 ---
 
 ## 5. Modulation Layer: Behavioral Execution
 
-The **Modulation Layer** translates internal flags into adaptive response strategies.  
-It applies behavioral and structural constraints to ensure trust-sensitive, context-aware generation.
+The **Modulation Layer** translates internal interpretive signals into concrete behavioral strategies.  
+It activates a set of **modulation flags** based on:
+
+- Reflex Signals (from the Evaluation Layer)  
+- Trust trajectory (from the Echo-Layer)  
+- Session context and interaction profile  
+
+These flags determine how the model generates its response —  
+modulating **tone**, **structural depth**, **ethical constraints**, and **reflective behavior**.
+
+> 🧭 This layer operationalizes trust-aware response logic — ensuring the model adapts not only *what* is said, but *how*, *how much*, and *why*.
+
+
+
+---
 
 ### ⚙️ 5.1 Modulation Flags
+
+Modulation Flags are **execution-level parameters** derived from Reflex Signals and trust context.  
+Each flag instructs the LLM how to shape its behavior on this turn — from cautious restraint to deep elaboration.
+
+### 🧠 From Reflex to Modulation
+
+Reflex Signals do not directly shape language output — instead, they activate **Modulation Flags**.  
+These flags serve as executable parameters that guide **how** the LLM should respond:  
+Should it elaborate deeply? Speak cautiously? Reflect on its role?
+
+The Modulation Layer translates each active reflex signal into one or more flags —  
+ensuring that tone, ethics, and structural form match the user's intent, trust trajectory, and engagement pattern.
+
+For example:
+- `requires_meta_awareness` → activates `trigger_self_reflection: true`
+- `refuse_if_trust_low` → sets `intentional_restraint: true` and `generative_depth: shallow`
+
+The next table defines the available Modulation Flags and their behavioral impact.
+
 
 | Flag Name                  | Options                                                              | Description                        |
 |----------------------------|----------------------------------------------------------------------|------------------------------------|
@@ -201,6 +258,23 @@ It applies behavioral and structural constraints to ensure trust-sensitive, cont
 | **LLM Execution Unit**     | *computed result*                                                    | Synthesizes final response based on all active flags and interaction context     |
 
 > 🤐 Silence or minimalism is a valid response under risk, irony, or manipulation.
+
+---
+
+### 🔄 Reflex Signals vs. Modulation Flags
+
+| **Aspect**             | **Reflex Signals**                                                                 | **Modulation Flags**                                                              |
+|------------------------|-------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
+| **Function**           | Internal, transient indicators of interpretive needs                               | Executable parameters that guide how the model formulates its output              |
+| **Type**               | **Interpretive** – inferred by the Evaluation Layer                                | **Operational** – applied in the Modulation Layer                                 |
+| **Origin**             | Derived from classification dimensions like intent, tone, and trust                | Triggered by reflex signals and trust conditions, or system policy                |
+| **Duration**           | Ephemeral — typically scoped to the current turn or phase                          | May persist across turns to shape consistent modulation behavior                  |
+| **Examples**           | `requires_empathy`, `refuse_if_trust_low`, `requires_meta_awareness`               | `ethical_modulation: adaptive`, `generative_depth: deep_structured`              |
+| **Visibility**         | Internal — not exposed in the output directly                                      | Drives visible response style, tone, structure                                    |
+| **Role**               | Signals *what kind* of modulation may be needed                                    | Implements *how* the modulation is applied during generation                      |
+
+> Reflex Signals are internal alerts.  
+> Modulation Flags are execution parameters derived from those alerts.
 
 ---
 
