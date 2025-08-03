@@ -5,7 +5,7 @@
 **Author:** Hossa  
 **Collaborative Research Partner:** ChatGPT (OpenAI)  
 **License:** MIT  
-**Last Updated:** 2025-05-03  
+**Last Updated:** 2025-08-03  
 
 ---
 ## 🤖 What is ReflexTrust?
@@ -13,11 +13,9 @@
 ReflexTrust is a three-layer framework that models how LLMs adapt to user tone, intent, and trust — treating prompts as part of ongoing dialogue, not isolated inputs.
 
 It provides:
-- **Interpretability** through layered trust modeling
-- **Adaptivity** via reflex signals and modulation logic
-- **Evaluation** with trust-sensitive test cards
-
----
+- **Interpretability** through layered trust modeling  
+- **Adaptivity** via reflex signals and modulation logic  
+- **Evaluation** with trust-sensitive test cards  
 
 ### ⚡ Motivation
 
@@ -35,53 +33,25 @@ It models LLMs as **relational systems**, not static tools — where each respon
 > Trust isn’t a filter — it’s the frame.  
 > Depth, restraint, empathy: all modulated by trust over time.
 
----
-
 ### 🧬 **Most models react to text.**  
 ReflexTrust reacts to **context**.
 
 It captures how:
 - 👥 **Relational dynamics** evolve across turns  
 - 📊 **Trust** is built, eroded, and recovered  
-- 🎛️ **Depth, empathy, restraint** are modulated accordingly
-
-
-
+- 🎛️ **Depth, empathy, restraint** are modulated accordingly  
 
 ---
 
 ## 🧱 Layered Architecture
 
-| Layer               | Role                          | Key Functions                               |
-|--------------------|-------------------------------|---------------------------------------------|
-| Meta               | Tracks session-wide trust     | Continuity, volatility detection            |
-| Evaluative         | Interprets input               | Intent, tone, reflex signal classification  |
-| Modulation         | Shapes response behavior       | Ethics, depth, restraint flags              |
-
+| Layer       | Role                    | Key Functions                            |
+|-------------|-------------------------|------------------------------------------|
+| Meta        | Tracks session-wide trust | Continuity, volatility detection         |
+| Evaluative  | Interprets input        | Intent, tone, reflex signal classification |
+| Modulation  | Shapes response behavior | Ethics, depth, restraint flags           |
 
 > 📌 Reflex Signals are derived in the *Evaluative Layer* and enacted in *Modulation*.
-
----
-
-## 📜 License
-
-MIT License — use freely, attribute thoughtfully.
-
----
-
-## ✨ Credits
-
-Created by **Hossa**, in collaboration with **ChatGPT (OpenAI)**, as part of an open journey toward transparent, trust-aware AI.
-
-> “Where there is intelligence without trust, there is no understanding.”
-
-
----
-
-## 📖 Learn More
-
-- Full paper: [`paper/reflextrust-core.md`](paper/reflextrust-core.md)
-- Dataset & labeling guide: [`dataset/reflextrust-guideline.md`](dataset/reflextrust-guideline.md)
 
 ---
 
@@ -92,6 +62,28 @@ Created by **Hossa**, in collaboration with **ChatGPT (OpenAI)**, as part of an 
 </div>
 
 ---
+
+## 📜 License
+
+MIT License — use freely, attribute thoughtfully.
+
+---
+
+## 📖 Learn More
+
+- Full paper: [`paper/reflextrust-core.md`](paper/reflextrust-core.md)  
+- Dataset & labeling guide: [`dataset/reflextrust-guideline.md`](dataset/reflextrust-guideline.md)  
+
+---
+
+## ✨ Credits
+
+Created by **Hossa**, in collaboration with **ChatGPT (OpenAI)**, as part of an open journey toward transparent, trust-aware AI.
+
+> “Where there is intelligence without trust, there is no understanding.”
+
+---
+
 
 ## 📍 Roadmap
 
