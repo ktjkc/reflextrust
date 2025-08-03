@@ -8,7 +8,7 @@
 ReflexTrust is a layered framework modeling how LLMs adapt to tone, trust, and intent — treating prompts as part of evolving dialogue, not isolated inputs.
 
 ### Key Components
-- **Echo-layer**: Tracks trust across turns  
+- **Echo-Layer**: Tracks trust across turns  
 - **Evaluative Layer**: Interprets intent and tone  
 - **Modulation Layer**: Shapes response depth and ethics  
 - **Reflex Signals**: Guide how much and how safely to say
