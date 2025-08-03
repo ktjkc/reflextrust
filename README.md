@@ -60,8 +60,14 @@ It captures how:
 
 > 📌 Reflex Signals are derived in the *Evaluative Layer* and enacted in *Modulation*.
 
+---
 
-<img src="images/reflextrust-layers-diagram.png" alt="ReflexTrust Layers" style="max-width: 500px;" />
+>### 🔬 **Live Demo:**  
+> Try ReflexTrust's trust-sensitive benchmark here:  
+> 👉 [huggingface.co/spaces/ktjkc/reflextrustEval](https://huggingface.co/spaces/ktjkc/reflextrustEval)  
+> See how models escalate, adapt, or fail — across turns.
+>
+> [![Hugging Face Space](https://img.shields.io/badge/Try%20on-Hugging%20Face-blue?logo=huggingface)](https://huggingface.co/spaces/ktjkc/reflextrustEval)
 
 ---
 
@@ -113,5 +119,6 @@ timeline
     2025-11-01 : 👥 Phase 4 - Human-in-the-Loop Audit Trails
 ```
 
+<img src="images/reflextrust-layers-diagram.png" alt="ReflexTrust Layers" style="max-width: 500px;" />
 
 
