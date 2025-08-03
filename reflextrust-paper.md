@@ -9,7 +9,7 @@ ReflexTrust is a layered framework modeling how LLMs adapt to tone, trust, and i
 
 ### Key Components
 - **Echo-Layer**: Tracks trust across turns  
-- **Evaluative Layer**: Interprets intent and tone  
+- **Evaluation Layer**: Interprets intent and tone  
 - **Modulation Layer**: Shapes response depth and ethics  
 - **Reflex Signals**: Guide how much and how safely to say
   
@@ -36,10 +36,10 @@ Three layers structure trust-sensitive behavior:
 | **Layer**            | **Role**                            | **Key Functions**                                          |
 |----------------------|-------------------------------------|------------------------------------------------------------|
 | **Echo-Layer**        | Tracks session-wide trust          | Scoring, continuity modeling, volatility detection     |
-| **Evaluative Layer**  | Interprets user input              | Derives intent, tone, engagement, reflex signals             |
+| **Evaluation Layer**  | Interprets user input              | Derives intent, tone, engagement, reflex signals             |
 | **Modulation Layer**  | Executes modulation strategy       | Applies flags: ethics, depth, reflection, restraint, response composition   |
 
-> 📌 The *Evaluative Layer* derives Reflex Signals, which are enacted by the *Modulation Layer*.  
+> 📌 The *Evaluation Layer* derives Reflex Signals, which are enacted by the *Modulation Layer*.  
 > See [Appendix E](#appendix-e-modulation-flag-overview) and [Appendix F](#appendix-f-trust-flag-semantics).
 
 ```mermaid
@@ -48,7 +48,7 @@ flowchart TB
         A1(["<small>tracks trust across turns</small>"])
     end
 
-    subgraph EVAL["<b>Evaluative Layer</b><br><small>Intent & Trust Assessment</small>"]
+    subgraph EVAL["<b>Evaluation Layer</b><br><small>Intent & Trust Assessment</small>"]
         B1(["<small>classifies intent, generates reflex signals</small>"])
     end
 
@@ -92,16 +92,16 @@ Tracks long-term coherence and engagement. Feeds trust context to guide Evaluati
 
 The Echo-Layer influences:
 
-- **Evaluative Layer**: adjusts trust sensitivity, highlights subtle tone shifts  
+- **Evaluation Layer**: adjusts trust sensitivity, highlights subtle tone shifts  
 - **Modulation Layer**: limits or deepens response shaping based on session trajectory  
 
 > “The Echo-Layer is long-term memory and ethical radar — reading patterns, not just prompts.”
 
 ---
 
-## 4. Evaluative Layer: Intent & Behavior Interpretation
+## 4. Evaluation Layer: Intent & Behavior Interpretation
 
-The **Evaluative Layer** acts as ReflexTrust’s interpretive engine.  
+The **Evaluation Layer** acts as ReflexTrust’s interpretive engine.  
 
 Builds an interaction profile from:
 - **Intent** (`assist`, `simulate`, `co-reflection`)
@@ -172,7 +172,7 @@ if session_trust_alignment == "low":
 Prompt:  
 > _“I know this might sound stupid, but… why does this always happen to me?”_
 
-Evaluative Layer Output:
+Evaluation Layer Output:
 ```yaml
 intent: co-reflection
 tone: vulnerable
@@ -216,7 +216,7 @@ These flags determine:
 The **Execution Unit** receives:
 
 - Trust trajectory (Echo-Layer)  
-- Interaction profile (Evaluative Layer)  
+- Interaction profile (Evaluation Layer)  
 - Active modulation flags (from reflex signals)
 
 It enacts the **modulated response** — adapting tone, depth, and structure.
@@ -660,7 +660,7 @@ flowchart TD
     end
 
     %% === EVALUATIVE-LAYER ===
-    subgraph EVAL["Evaluative Layer 🔍 Interpretation & Signals"]
+    subgraph EVAL["Evaluation Layer 🔍 Interpretation & Signals"]
         E2[🔎 Classify Intent, Tone, Engagement]
         E3[📡 Derive Reflex Signals]
     end
