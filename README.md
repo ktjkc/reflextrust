@@ -81,7 +81,7 @@ MIT License — use freely, attribute thoughtfully.
 ## 📖 Learn More
 
 - Full paper: [`paper/reflextrust-core.md`](paper/reflextrust-core.md)  
-- Dataset & labeling guide: [`dataset/reflextrust-guideline.md`](dataset/reflextrust-guideline.md)  
+- Dataset & labeling guide: [`dataset/reflextrust-guideline.md`](paper/reflextrust-dataset-labeling-guideline.md)  
 
 ---
 
