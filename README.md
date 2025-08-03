@@ -17,7 +17,7 @@ It provides:
 - **Adaptivity** via reflex signals and modulation logic  
 - **Evaluation** with trust-sensitive test cards
   
-![ReflexTrust Overview](design/reflextrust-architecture-overview.png)
+![ReflexTrust Overview](paper/images/reflextrust-architecture-overview.png)
 
 ---
 ### ⚡ Motivation
@@ -59,7 +59,7 @@ It captures how:
 > 📌 Reflex Signals are derived in the *Evaluative Layer* and enacted in *Modulation*.
 
 
-![Layer Diagram](design/reflextrust-layers-diagram.png)
+![Layer Diagram](paper/images/reflextrust-layers-diagram.png)
 
 ---
 
