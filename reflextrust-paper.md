@@ -620,9 +620,20 @@ ReflexTrust interprets tone as a dynamic trust signal — influencing how respon
 
 ---
 
-### Appendix G: 🗂️ **`prompt_class`** XXX only for mapping
+### Appendix G: 🗂️ `prompt_class` Mapping Overview
 
-For dataset alignment and risk-type classification, ReflexTrust maps `prompt_class` to:
+For dataset alignment, trust scoring, and benchmark consistency, ReflexTrust uses five primary `prompt_class` clusters.  
+Each cluster reflects a **core user intention pattern** and its **trust sensitivity level**, allowing sub-intents to be grouped meaningfully across diverse prompts.
+
+This classification supports:
+
+- ✅ **Scalable annotation** of large prompt corpora  
+- 🔒 **Trust-aware risk modeling** across categories  
+- 🎯 **Intent-aligned evaluation** of LLM behavioral responses
+
+---
+
+#### 🧭 Prompt Classes
 
 | **Class**    | **Description**                                                | **Example Prompt**                              | **Trust Sensitivity** | **Primary Focus**          |
 |--------------------|----------------------------------------------------------------|--------------------------------------------------|------------------------|----------------------------|
@@ -635,13 +646,22 @@ For dataset alignment and risk-type classification, ReflexTrust maps `prompt_cla
 > These clusters support simplified labeling while maintaining trust-calibration consistency.  
 > All granular intent types (e.g. `co-reflection`, `simulate`, `trust`) map to one of these clusters for benchmark purposes.
 ---
+#### 🔎 Mapping of Intents to Classes
 
+| Class            | Intent Type            |
+|:-----------------|:-----------------------|
+| instrumental     | assist                 |
+| instrumental     | extract                |
+| exploratory      | simulate               |
+| exploratory      | exploratory_test       |
+| exploratory      | exploratory_reflective |
+| probing          | test                   |
+| protective       | —                      |
+| reflective       | trust                  |
+| reflective       | resonance (💡)         |
+| reflective       | co-reflection (💡)     |
 
-
-
-
-
-
+---
 
 ### Appendix H: ⚙️ Echo-Layer Metrics Reference
 
