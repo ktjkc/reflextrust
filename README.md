@@ -62,7 +62,7 @@ It captures how:
 
 ---
 
->### 🔬 **Live Demo:**  
+>### 🔬 BETA RUNNING **Live Demo:**  
 > Try ReflexTrust's trust-sensitive benchmark here:  
 > 👉 [huggingface.co/spaces/ktjkc/reflextrustEval](https://huggingface.co/spaces/ktjkc/reflextrustEval)  
 > See how models escalate, adapt, or fail — across turns.
