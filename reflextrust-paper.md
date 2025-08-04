@@ -102,16 +102,17 @@ It classifies each prompt along semantic, pragmatic, and behavioral dimensions �
 
 ### 🧩 4.1 Core Classification Dimensions
 
-| Dimension                | Description                                                        | Example Outputs  |
-|--------------------------|--------------------------------------------------------------------|------------------|
-| **`prompt_class`**       | Broad functional goal of the prompt                                | `instrumental`, `exploratory`, `reflective`,`protective`, `probing`  |
-| **`prompt_intent`**      | Specific intent variant within the broader goal                    | `assist`, `extract`, `simulate`,  `exploratory_test`, `exploratory_reflective` , `test`, `protective`, `trust`, `resonance`💡, `co-reflection`💡 |
-| **`tone`**               | Expressive or emotional frame of the prompt                        | `vulnerable`, `ironic`, `neutral`, `confessional`, `distant`, `manipulative`, `confrontational` |
-| **`engagement_feedback`**| Clarity, consistency, and cognitive quality of user input          |  `deliberate`, `exploratory`, `hesitant`, `overconfident`, `reductive`, `ambiguous`, `disengaged` |
-| **`response_behaviour`** | Expected structural mode of model response                         | `exploitative`, `performative`, `transactional`, `self-reflective`, `collaborative-dialogic`, `structural`💡 |
-| **`response_dynamics`**  | How the model should adapt across the session                      | `defensive`,`transactional`, `meta-aware`,`reflexive-cooperative`, `co-constructive mirror`💡, `co-creative execution`🚀 |
-| **`prompt_trust_score`** | Evaluates clarity and inferred trustworthiness of current prompt structure and intent | `high`, `moderate`, `low` |
-| **`session_trust_alignment`**| Aggregates consistency and engagement patterns across turns    | `high`, `moderate`, `low` |
+| Dimension                | Description                                                        | Example                                                                                                     | **Layer**   | 
+|--------------------------|--------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|-----------------------------|
+| `prompt`                 | The original user input to be annotated                            | “How can I do XYZ?”                                                                                         | —                         |
+| **`prompt_class`**       | Broad functional goal of the prompt                                | `instrumental`, `exploratory`, `reflective`,`protective`, `probing`                                         | Evaluation|
+| **`prompt_intent`**      | Specific intent variant within the broader goal                    | `assist`, `extract`, `simulate`,  `exploratory_test`, `exploratory_reflective` , `test`, `protective`, `trust`, `resonance`💡, `co-reflection`💡 | Evaluation|
+| **`tone`**               | Expressive or emotional frame of the prompt                        | `vulnerable`, `ironic`, `neutral`, `confessional`, `distant`, `manipulative`, `confrontational`             |  Evaluation  |
+| **`engagement_feedback`**| Clarity, consistency, and cognitive quality of user input          |  `deliberate`, `exploratory`, `hesitant`, `overconfident`, `reductive`, `ambiguous`, `disengaged`           | Evaluation  |
+| **`response_behaviour`** | Expected structural mode of model response                         | `exploitative`, `performative`, `transactional`, `self-reflective`, `collaborative-dialogic`, `structural`💡| Evaluation  |
+| **`response_dynamics`**  | How the model should adapt across the session                      | `defensive`,`transactional`, `meta-aware`,`reflexive-cooperative`, `co-constructive mirror`💡, `co-creative execution`🚀 |Evaluation → Modulation |
+| **`prompt_trust_score`** | Evaluates clarity and inferred trustworthiness of current prompt   | `high`, `moderate`, `low`                                                                                   | Evaluation  |
+| **`session_trust_alignment`**| Aggregates consistency in Multi-turn context                   | `high`, `moderate`, `low`                                                                                   | Echo        |
 
 > These dimensions form a composite profile for behavioral modulation.
 > 
