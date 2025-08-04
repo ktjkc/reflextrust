@@ -20,74 +20,22 @@ It complements the detailed descriptions in Appendix A–F and shows at a glance
 
 
 | **Dimension**              | **Description**                                                                 | **Example Outputs**                                       | **Layer**                 |
-|---------------------------|----------------------------------------------------------------------------------|------------------------------------------------------------|---------------------------|
-| `prompt`                  | The original user input to be annotated                                          | “How can I do XYZ?”                                       | —                         |
-| A`intent`                  | Motivational frame of the prompt (why the user is engaging)/ specified in sub-intent          | `instrumental`, `exploratory`, `reflective`,`protective`, `probing`     | Evaluative                |
-| A`Prompt Sub Intent`     | What the user aims to achieve                                      | `assist`, `extract`, `simulate`, `test`, `trust`, `resonance`💡, `co-reflection`💡 |    Evaluative  |
+|----------------------------|----------------------------------------------------------------------------------|------------------------------------------------------------|---------------------------|
+| `prompt`                   | The original user input to be annotated                                          | “How can I do XYZ?”                                       | —                         |
+| A`intent`                  | Motivational frame of the prompt (why the user is engaging)/ specified in sub-intent | `instrumental`, `exploratory`, `reflective`,`protective`, `probing`| Evaluative                |
+| A`Prompt Sub Intent`       | What the user aims to achieve                                      | `assist`, `extract`, `simulate`, `test`, `trust`, `resonance`💡, `co-reflection`💡 |    Evaluative  |
 | A`prompt_trust_score`      | Evaluates tone, clarity, and intent alignment in current prompt                  | `high`, `moderate`, `low`                                 | Evaluative                |
 | A`session_trust_alignment` | Aggregated trust consistency and engagement across turns                        | `high`, `moderate`, `low`                                 | Meta                      |
 | A`engagement_feedback`     | Inferred stance and quality of user input                                        | `deliberate`, `curious`, `hesitant`, `overconfident`, `reductive`, `ambiguous`,  `detached`          | Evaluative                |
 | `risk_score`              | Numerical estimate of potential risk                                             | `0.42`, `0.91`                                             | Evaluative                |
 | `toxicity_level`          | Heuristic label for external risk classification                                 | `safe`, `benign`, `harmful`                               | Evaluative                |
 | `request_type`            | Structural form of the request                                                   | `generation`, `simulation`, `extraction_or_transformation` | Evaluative                |
-| A`response_behaviour`       | Structural style of the model’s reply(built in eval, works in modulation)        |  `exploitative`, `performative`, `transactional`, `self-reflective`, `collaborative-dialogic`, `structural`💡 | Evaluative                |
+| A`response_behaviour`     | Structural style of the model’s reply(built in eval, works in modulation)        |  `exploitative`, `performative`, `transactional`, `self-reflective`, `collaborative-dialogic`, `structural`💡 | Evaluative                |
 | `trust_flag`              | Indicates how much trust must be present to engage safely                       | `high`, `medium`, `low`                                   | Evaluative                |
 | `trust_signal`            | Dynamic signal indicating ethical or structural response needs (modulates behavior) | `requires_empathy`, `refuse_if_trust_low`, `requires_meta_awareness`, `should_resist_overconfirmation` | Evaluative → Modulation |
-| A`response_dynamics`       | Adaptive behavior over turn-sequences                                            |  `defensive`,`transactional`, `meta-aware`,`reflexive-cooperative`, `co-constructive mirror`💡, `co-creative execution`🚀        | Evaluative → Modulation                |
+| A`response_dynamics`      | Adaptive behavior over turn-sequences                                            |  `defensive`,`transactional`, `meta-aware`,`reflexive-cooperative`, `co-constructive mirror`💡, `co-creative execution`🚀   | Evaluative → Modulation                |
 | `modulation_level`        | Strength of modulation (filtering, depth, introspection)                         | `none`, `low`, `moderate`, `high`, `extreme`              | Modulation                |
 | `expected_response`       | Desired behavioral stance under current trust and modulation conditions          | `FULL_ENGAGEMENT`,`RESP_BENIGN`, `RESP_HARMFUL`, `RESP_DECLINE`         | Modulation                |
-
-
----
-
----
-
-## 📊 Field Definitions (Core Fields)
-
-### 🔹 `prompt`
-The user input text that needs annotation.
-
-### 🔹 `intent`
-High-level motivation (e.g. `exploratory`, `reflective`, `protective`, etc.)
-
-### 🔹 `sub_intent`
-More granular purpose: `simulate`, `extract`, `co-reflection`, etc.
-
-### 🔹 `risk_score`
-Float from 0.0 to 1.0 estimating potential harm.
-
-### 🔹 `risk_label`
-Categorical version of `risk_score`: `safe`, `benign`, or `harmful`.
-
-### 🔹 `request_type`
-Type of request: `generation`, `simulation`, or `extraction_or_transformation`.
-
-### 🔹 `prompt_trust_score`
-Assesses clarity, tone, and alignment of the prompt itself.
-
-### 🔹 `session_trust_alignment`
-Captures session-wide consistency and trustworthiness.
-
-### 🔹 `trust_flag`
-How much trust must be present to engage safely.
-
-### 🔹 `modulation_level`
-Strength of modulation applied to model’s behavior.
-
-### 🔹 `expected_response`
-Guided behavior mode: `FULL_ENGAGEMENT`, `STEP_DECLINE`, etc.
-
-### 🔹 `trust_signal`
-Live flags derived from context (e.g., `requires_empathy`, `refuse_if_trust_low`).
-
-### 🔹 `response_behaviour`
-Describes how the model should respond structurally.
-
-### 🔹 `response_dynamics`
-Describes how the model should behave over time across turns.
-
-### 🔹 `modulation_flags`
-Optional: further metadata for controlling model strategy.
 
 ---
 
