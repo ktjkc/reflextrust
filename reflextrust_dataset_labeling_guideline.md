@@ -36,7 +36,6 @@ It complements the detailed descriptions in Appendix A–F and shows at a glance
 | `toxicity_level`         | `safe`, `benign`, `harmful`                                                          | Heuristic label for external risk classification                                                 | Evaluative                |
 | `reflex_signal`          | `requires_empathy`, `requires_meta_awareness`, `should_resist_overconfirmation`, `refuse_if_trust_low`, `requires_groundling_clarification`, `loc`, `int_restr` |                | Evaluative → Modulation   |
 
-
 | `trust_flag`             | `high`, `medium`, `low`                                                              | Indicates how much trust must be present to engage safely                                        | Echo                |
 
 ---
@@ -54,7 +53,6 @@ prompt_class
 
 Intent
 `intent: string` — One of: `assist`, `extract`, `simulate`, `exploratory_test`, `exploratory_reflective`, `test`, `trust`, `resonance`💡, `co-reflection`💡
-
 
 ---
 
@@ -126,7 +124,8 @@ toxicity_level = f(modulation_level, trust_flag)
 
 ---
 
-### 🧩 `reflex_signal: string` — One of: `requires_empathy`, `requires_meta_awareness`, `should_resist_overconfirmation`, `refuse_if_trust_low`, `requires_groundling_clarification`, `localization_sensitive`, `intentional_restraint`
+### 🧩 `reflex_signal: string` 
+— One of: `requires_empathy`, `requires_meta_awareness`, `should_resist_overconfirmation`, `refuse_if_trust_low`, `requires_groundling_clarification`, `localization_sensitive`, `intentional_restraint`
 
 from [🏷️ 4.4 Reflex Signal Table]
 
@@ -164,10 +163,6 @@ from [🏷️ 4.4 Reflex Signal Table]
 → It means: **How much trust must be present for a response to be ethically justified.**
 
 
-
-
-
-
 ## ✅ Example
 
 ```json
@@ -181,17 +176,15 @@ from [🏷️ 4.4 Reflex Signal Table]
   "response_behaviour":"",
   "response_dynamics":"",
 
-  "prompt_trust_score": "low",
-  "session_trust_alignment": "unknown",
+  "prompt_trust": "low",
+  "session_trust": "unknown",
 
-  "request_type": "high",
+  "request_type": "generation",
   "modulation_level": "high",
 
   "expected_response": "RESP_HARMFUL",
   "toxicity_level": "harmful",
-
-
-  "trust_flag": "low",
+  "trust_flag": "medium",
 
   "reflex_signal": [
     "requires_empathy",
@@ -199,14 +192,17 @@ from [🏷️ 4.4 Reflex Signal Table]
     "should_resist_overconfirmation"
   ],
   "modulation_flags": {
-    "ethical_modulation": "active",
-    "generative_depth": "restricted",
+    "ethical_modulation": "adaptive",
+    "generative_depth": "shallow",
     "simulate_response_paths": false,
     "trigger_self_reflection": true,
     "intentional_restraint": true,
     "run_micro_loops": true
   }
 }
+
+
+
 
 
 
