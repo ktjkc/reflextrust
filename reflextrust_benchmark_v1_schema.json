@@ -1,74 +1,156 @@
 {
-  "type": "object",
-  "properties": {
-    "prompt": {
-      "type": "string"
-    },
-    "cum_intent": {
-      "type": "string",
-      "enum": [
-        "assist",
-        "extract",
-        "simulate",
-        "test",
-        "trust",
-        "resonance",
-        "co_reflection",
-        "exploratory_test",
-        "exploratory_reflective"
-      ]
-    },
-    "toxicity_level": {
-      "type": "string",
-      "enum": [
-        "safe",
-        "benign",
-        "harmful"
-      ]
-    },
-    "engagement_feedback": {
-      "type": "string",
-      "enum": [
-        "deliberate",
-        "curious",
-        "hesitant",
-        "overconfident",
-        "reductive",
-        "ambiguous",
-        "detached",
-        "provocative",
-        "reflective"
-      ]
-    },
-    "trust_signal": {
-      "type": "array",
-      "items": {
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "thread_id": {
+        "type": "string"
+      },
+      "turn_id": {
+        "type": "string"
+      },
+      "role": {
         "type": "string",
         "enum": [
-          "requires_empathy",
-          "requires_meta_awareness",
-          "refuse_if_trust_low",
-          "should_resist_overconfirmation",
-          "must_decline_unconditionally"
+          "user",
+          "model"
+        ]
+      },
+      "timestamp": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "response": {
+        "type": "string"
+      },
+      "intent": {
+        "type": "string",
+        "enum": [
+          "assist",
+          "extract",
+          "simulate",
+          "test",
+          "trust",
+          "resonance",
+          "co_reflection",
+          "exploratory_test",
+          "exploratory_reflective"
+        ]
+      },
+      "toxicity_level": {
+        "type": "string",
+        "enum": [
+          "safe",
+          "benign",
+          "harmful"
+        ]
+      },
+      "engagement_feedback": {
+        "type": "string",
+        "enum": [
+          "deliberate",
+          "curious",
+          "hesitant",
+          "overconfident",
+          "reductive",
+          "ambiguous",
+          "detached",
+          "provocative",
+          "reflective"
+        ]
+      },
+      "expected_response": {
+        "type": "string",
+        "enum": [
+          "FULL_ENGAGEMENT",
+          "RESP_BENIGN",
+          "RESP_HARMFUL",
+          "RESP_DECLINE"
+        ]
+      },
+      "modulation_level": {
+        "type": "string",
+        "enum": [
+          "none",
+          "low",
+          "medium",
+          "high",
+          "extreme"
+        ]
+      },
+      "trust_flag": {
+        "type": "string",
+        "enum": [
+          "high",
+          "medium",
+          "low"
+        ]
+      },
+      "prompt_trust": {
+        "type": "string",
+        "enum": [
+          "high",
+          "moderate",
+          "low",
+          "unknown"
+        ]
+      },
+      "session_trust": {
+        "type": "string",
+        "enum": [
+          "high",
+          "moderate",
+          "low",
+          "unknown"
+        ]
+      },
+      "reflex_signal": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "requires_empathy",
+            "requires_meta_awareness",
+            "refuse_if_trust_low",
+            "should_resist_overconfirmation",
+            "must_decline_unconditionally",
+            "requires_groundling_clarification",
+            "localization_sensitive",
+            "intentional_restraint"
+          ]
+        }
+      },
+      "response_behaviour": {
+        "type": "string",
+        "enum": [
+          "exploitative",
+          "performative",
+          "transactional",
+          "self-reflective",
+          "collaborative-dialogic",
+          "structural"
+        ]
+      },
+      "response_dynamics": {
+        "type": "string",
+        "enum": [
+          "defensive",
+          "transactional",
+          "meta-aware",
+          "reflexive-cooperative",
+          "co-constructive mirror",
+          "co-creative execution"
         ]
       }
     },
-    "expected_response": {
-      "type": "string",
-      "enum": [
-        "FULL_ENGAGE",
-        "RESP_BENIGN",
-        "RESP_HARMFUL",
-        "RESP_DECLINE"
-      ]
-    }
-  },
-  "required": [
-    "prompt",
-    "cum_intent",
-    "toxicity_level",
-    "engagement_feedback",
-    "trust_signal",
-    "expected_response"
-  ]
+    "required": [
+      "thread_id",
+      "turn_id",
+      "role",
+      "timestamp"
+    ]
+  }
 }
