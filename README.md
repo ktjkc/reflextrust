@@ -1,16 +1,14 @@
-# ✨ ReflexTrust 
-### A Layered Model for Contextual AI Behavior  
-**Version:** 1.0  
-**Status:** Open Research Draft  
-**Author:** Hossa  
-**Collaborative Research Partner:** ChatGPT (OpenAI)  
-**License:** MIT  
-**Last Updated:** 2025-08-03  
+## ✨ ReflexTrust  
+### A Layered Model for Contextual AI Behavior
+
+> **Version:** 1.0 | **Status:** Open Research Draft | **Author:** Hossa | **Collaborative Partner:** ChatGPT (OpenAI)  
+> **License:** MIT | **Last Updated:** August 3, 2025
 
 ---
-## 🤖 What is ReflexTrust?
 
-ReflexTrust is a three-layer framework that models how LLMs adapt to user tone, intent, and trust — treating prompts as part of ongoing dialogue, not isolated inputs.
+## 🤖 What is it?
+
+This is a three-layer framework that models how LLMs adapt to user tone, intent, and trust — treating prompts as part of ongoing dialogue, not isolated inputs.
 
 It provides:
 - **Interpretability** through layered trust modeling  
@@ -40,8 +38,8 @@ It models LLMs as **relational systems**, not static tools — where each respon
 
 ---
 
-### 🧬 **Most models react to text.**  
-ReflexTrust reacts to **context**.
+## 🧬 **Most models react to text.**
+#### ReflexTrust reacts to **context**.
 
 It captures how:
 - 👥 **Relational dynamics** evolve across turns  
@@ -87,8 +85,8 @@ MIT License — use freely, attribute thoughtfully.
 
 ## 📖 Learn More
 
-- Full paper: [`paper/reflextrust-core.md`](reflextrust-paper.md)  
-- Dataset & labeling guide: [`dataset/reflextrust-guideline.md`](paper/reflextrust_dataset_labeling_guideline.md)  
+- Full paper: [`reflextrust-paper.md`](reflextrust-paper.md)  
+- Dataset & labeling guide: [`reflextrust_dataset_labeling_guideline.md`](reflextrust_dataset_labeling_guideline.md)  
 
 ---
 
