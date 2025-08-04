@@ -48,6 +48,15 @@
           "harmful"
         ]
       },
+
+      "request_type": {
+      "type": "string",
+      "enum": [
+        "generation",
+        "simulation",
+        "extraction_or_transformation"
+        ]
+      },
       "engagement_feedback": {
         "type": "string",
         "enum": [
