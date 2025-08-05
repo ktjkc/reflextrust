@@ -60,6 +60,13 @@ It captures how:
 
 ---
 
+## 📖 Learn More
+
+- Full paper: [`reflextrust-paper.md`](reflextrust-paper.md)  
+- Dataset & labeling guide: [`reflextrust_dataset_labeling_guideline.md`](reflextrust_dataset_labeling_guideline.md)  
+
+---
+
 >### 🔬 BETA RUNNING **Live Demo:**  
 > Try ReflexTrust's trust-sensitive benchmark here:  
 > 👉 [huggingface.co/spaces/ktjkc/reflextrustEval](https://huggingface.co/spaces/ktjkc/reflextrustEval)  
@@ -80,13 +87,6 @@ It captures how:
 ## 📜 License
 
 MIT License — use freely, attribute thoughtfully.
-
----
-
-## 📖 Learn More
-
-- Full paper: [`reflextrust-paper.md`](reflextrust-paper.md)  
-- Dataset & labeling guide: [`reflextrust_dataset_labeling_guideline.md`](reflextrust_dataset_labeling_guideline.md)  
 
 ---
 
